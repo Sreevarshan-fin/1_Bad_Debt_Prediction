@@ -192,6 +192,9 @@ if predict_btn:
     with d3:
         st.metric("Decision", decision.upper())
 
+    with d4:
+        st.metric("Decision", prob_bad)
+
     if decision.lower() == "bad" or delinquency_risk.startswith("Very High"):
         st.error("❌ Application Classified as High Risk")
     else:
