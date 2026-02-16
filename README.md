@@ -1,9 +1,15 @@
-# Bad Debt Prediction
+# **Bad Debt Prediction**
+
+### **Project Overview**
+
+
+
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://1baddebtprediction-c87rnuzn44s9dqhzpyndxg.streamlit.app/)
 
 
 ---
 
-### Business Problem 
+### **Business Problem** 
 
 Credit-based businesses let customers buy now and pay later through EMI or postpaid models. This helps grow sales, but it also brings repayment risk. Most customers pay on time, but some delay or default, and when dues can’t be recovered, they turn into bad debt that directly affects revenue and cash flow.
 
@@ -13,7 +19,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-### Why This Problem Is Hard 
+### **Why This Problem Is Hard**
 
 The biggest challenge is class imbalance — bad customers are a small part of the population. Because of this, accuracy alone can be misleading. A model can show high accuracy while still missing most risky customers.
 
@@ -23,7 +29,7 @@ From a business standpoint, missing a bad customer is more costly than wrongly f
 
 ---
 
-### Solution Approach 
+### **Solution Approach**
 
 I treated this as a loss-reduction and decision-support problem, not just a modeling exercise.
 
@@ -49,13 +55,13 @@ Instead of optimizing only for accuracy, the focus was on catching risky custome
 
 ---
 
-### Project Architecture
+### **Project Architecture**
 
 <img width="808" height="888" alt="Screenshot 2026-02-16 122622" src="https://github.com/user-attachments/assets/c3da0378-edb8-412e-807b-debd4839b0e0" />
 
 
 
-### Data Source 
+### **Data Source**
 
 **This project uses real client data under a Non-Disclosure Agreement, so raw dataset details cannot be disclosed.**
 
@@ -67,7 +73,7 @@ The working dataset contains about 92K customers and 99 features, covering demog
 
 ---
 
-### Modeling Strategy 
+### **Modeling Strategy**
 
 * Treated this as an **imbalanced classification problem**, where the goal was to rank customer risk properly rather than chase overall accuracy, since bad cases were a small share of the data.
 
@@ -94,7 +100,7 @@ The working dataset contains about 92K customers and 99 features, covering demog
 -----
 
 
-### Experiment Tracking & Model Lifecycle Setup (AWS MLflow)
+### **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
 
 
 - **MLflow Tracking Server on AWS EC2**
@@ -125,7 +131,7 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 
 ---
 
-### Model Evaluation
+### **Model Evaluation**
 
 Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini ≈ 0.48, indicating effective separation between good and bad customers.
 KS statistic ≈ 34% confirms good risk discrimination across score deciles.
@@ -133,7 +139,9 @@ The confusion matrix is based on the model’s default classification output.
 
 <img width="6618" height="1326" alt="Untitled design (5)" src="https://github.com/user-attachments/assets/286464de-6b6d-4993-971e-510cbc1093b9" />
 
-**KS statistics**
+
+
+- **KS statistics**
 
 <img width="1392" height="365" alt="image" src="https://github.com/user-attachments/assets/93ad1646-dc63-4bf6-8cf9-d275117640d2" />
 
@@ -157,6 +165,7 @@ The confusion matrix is based on the model’s default classification output.
 
 Calculated Population Stability Index (PSI) by binning prediction probabilities and comparing train vs test distributions. Total PSI = 0.3996, which indicates significant data drift (> 0.25 threshold). This suggests the score distribution has shifted and the model should be monitored closely and considered for recalibration or retraining.
 
+--------------------
 
 **CSI (Characteristic Stability Index)**
 
@@ -167,6 +176,7 @@ Calculated Population Stability Index (PSI) by binning prediction probabilities 
 
 Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature drift between train and test datasets. Feature distributions are highly stable and within safe monitoring limits.
 
+-------------------
 
 ### Business Impact
  * Helped lower potential credit loss by flagging risky applications before approval.
@@ -174,6 +184,8 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
  * Simulation suggests potential reduction up to 50–60% under early-review strategy
  * Enabled early identification of risky customers using model-based risk scoring.
  * Implemented monitoring and drift checks to detect future behavior changes in model performance.
+
+--------
    
 ## Future Improvements
 
@@ -181,7 +193,7 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 
 * Although features are stable, score distribution drift indicates the need for stronger monitoring, drift alerts, recalibration, and periodic retraining to keep risk decisions accurate as data patterns change.
 
----
+----------
 
 ### **Challenges**
 
