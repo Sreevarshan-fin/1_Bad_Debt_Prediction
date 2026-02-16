@@ -4,14 +4,8 @@
 
 
 
-st.markdown(
-    """
-    <a href="https://your-app-link.streamlit.app" target="_blank">
-        <img src="https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png" width="200">
-    </a>
-    """,
-    unsafe_allow_html=True
-)
+st.link_button("🚀 Launch App", "https://1baddebtprediction-c87rnuzn44s9dqhzpyndxg.streamlit.app/")
+
 
 
 ---
