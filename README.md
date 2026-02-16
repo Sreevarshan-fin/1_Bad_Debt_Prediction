@@ -1,6 +1,8 @@
 # **Bad Debt Prediction**
 
-### **Project Overview**
+### **Overview**
+This project builds an end-to-end machine learning system to predict whether a credit applicant is likely to become a bad debt case before approval. It addresses class imbalance and focuses on risk ranking rather than raw accuracy using WoE–IV feature selection and ensemble models. Models were evaluated with ROC-AUC, KS, and Gini, with Random Forest selected for stable performance. Risk scores are converted into Low/Medium/High bands to support explainable credit decisions. The solution also includes MLflow experiment tracking and PSI/CSI drift monitoring for model lifecycle control.
+
 
 
 
