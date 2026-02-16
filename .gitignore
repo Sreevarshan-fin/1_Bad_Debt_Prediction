@@ -1,0 +1,7 @@
+__pycache__/
+*.db
+*.csv
+INFO
+WARNING
+runtime.txt
+model.joblib
