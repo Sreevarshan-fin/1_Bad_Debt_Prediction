@@ -35,7 +35,7 @@ hr {
 
 /* Buttons — professional blue */
 .stButton>button {
-    background-color: #2f6fed;
+    background-color: #F87171;
     color: white;
     border-radius: 6px;
     border: none;
