@@ -4,7 +4,8 @@
 
 
 
-st.link_button("🚀 Launch App", "https://1baddebtprediction-c87rnuzn44s9dqhzpyndxg.streamlit.app/")
+[![Launch App](https://img.shields.io/badge/Streamlit-App-DC2626?logo=streamlit&logoColor=white&style=for-the-badge)](https://1baddebtprediction-c87rnuzn44s9dqhzpyndxg.streamlit.app/)
+
 
 
 
