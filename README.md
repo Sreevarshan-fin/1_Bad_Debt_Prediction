@@ -51,7 +51,8 @@ Instead of optimizing only for accuracy, the focus was on catching risky custome
 
 ### Project Architecture
 
-<img width="702" height="776" alt="image" src="https://github.com/user-attachments/assets/14f873cb-21fa-40ac-882a-51e942b52579" />
+<img width="808" height="888" alt="Screenshot 2026-02-16 122622" src="https://github.com/user-attachments/assets/c3da0378-edb8-412e-807b-debd4839b0e0" />
+
 
 
 ### Data Source 
@@ -60,7 +61,8 @@ Instead of optimizing only for accuracy, the focus was on catching risky custome
 
 The working dataset contains about 92K customers and 99 features, covering demographic, behavioral, credit, and bureau attributes. This master dataset was used for all analysis and modeling.
 
-<img width="1536" height="620" alt="ChatGPT Image Feb 5, 2026, 04_53_42 PM" src="https://github.com/user-attachments/assets/b49eef6a-c0c7-4988-987b-89ae276ab26d" />
+<img width="1536" height="620" alt="ChatGPT Image Feb 5, 2026, 04_53_42 PM" src="https://github.com/user-attachments/assets/53e13e26-d449-4fa3-b005-401bf319a352" />
+
 
 
 ---
@@ -99,23 +101,25 @@ The working dataset contains about 92K customers and 99 features, covering demog
 
 MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifacts centrally.
 
-<img width="1852" height="143" alt="EC2_Instance" src="https://github.com/user-attachments/assets/850500ce-7d35-4209-92da-e42ac698597f" />
+<img width="1852" height="143" alt="EC2_Instance" src="https://github.com/user-attachments/assets/3dd85c69-89f4-490c-962a-a569ce3b2807" />
+
 
 - **Experiment Run Tracking**
 
  Multiple model runs tracked with parameters and performance metrics to enable reproducible model comparison.
  
 
- <img width="1917" height="893" alt="Experimental_Tracking_Table_EC2" src="https://github.com/user-attachments/assets/88c83ed9-b15a-425e-ae11-f3ebde624a8d" />
- 
+<img width="1917" height="893" alt="Experimental_Tracking_Table_EC2" src="https://github.com/user-attachments/assets/886ff470-703b-4e5a-bb10-3dbdcfce65b1" />
 
- <img width="1193" height="512" alt="Comparision_2" src="https://github.com/user-attachments/assets/76987936-b513-44d7-bd2a-cbb376f124bd" />
+ 
+<img width="1193" height="512" alt="Comparision_2" src="https://github.com/user-attachments/assets/b72fcd6f-df1a-4e6c-aa33-12c1145eadc3" />
+
 
 
 - **Model Registry**
 
 
-<img width="1911" height="837" alt="Model_Register" src="https://github.com/user-attachments/assets/2a71f774-36a8-453c-b51d-4490cc9c0e0b" />
+<img width="1911" height="837" alt="Model_Register" src="https://github.com/user-attachments/assets/f246e200-9457-45bd-9828-1f98526183ca" />
 
 
 
@@ -127,7 +131,13 @@ Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini
 KS statistic ≈ 34% confirms good risk discrimination across score deciles.
 The confusion matrix is based on the model’s default classification output.
 
-<img width="6618" height="1326" alt="Untitled design (5)" src="https://github.com/user-attachments/assets/4279e49a-e318-4b29-8ef4-488894037b1c" />
+<img width="6618" height="1326" alt="Untitled design (5)" src="https://github.com/user-attachments/assets/286464de-6b6d-4993-971e-510cbc1093b9" />
+
+**KS statistics**
+
+<img width="1392" height="365" alt="image" src="https://github.com/user-attachments/assets/93ad1646-dc63-4bf6-8cf9-d275117640d2" />
+
+
 
 -------------
 
@@ -137,7 +147,9 @@ The confusion matrix is based on the model’s default classification output.
 
 **PSI (Population Stability Index)**
 
-<img width="910" height="377" alt="image" src="https://github.com/user-attachments/assets/48ce6200-651f-4cbf-9021-561ddaa2fdfb" />
+
+<img width="915" height="393" alt="image" src="https://github.com/user-attachments/assets/12d7cc8a-04c2-41a3-ba42-001ab0362b1b" />
+
 
 
 
@@ -148,7 +160,8 @@ Calculated Population Stability Index (PSI) by binning prediction probabilities 
 
 **CSI (Characteristic Stability Index)**
 
-<img width="703" height="643" alt="image" src="https://github.com/user-attachments/assets/0ed200cb-798e-4e57-b66d-bd9093b62cfe" />
+<img width="721" height="660" alt="image" src="https://github.com/user-attachments/assets/0616c1b4-9ec6-4ac5-8c85-9480224ddf2e" />
+
 
 **Summary:**
 
