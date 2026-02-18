@@ -1,7 +1,7 @@
 # **Bad Debt Prediction**
 
 ### **Overview**
-This project builds an end-to-end machine learning system to predict whether a credit applicant is likely to become a bad debt case before approval. It addresses class imbalance and focuses on risk ranking rather than raw accuracy using WoE–IV feature selection and ensemble models. Models were evaluated with ROC-AUC, KS, and Gini, with Random Forest selected for stable performance. Risk scores are converted into Low/Medium/High bands to support explainable credit decisions. The solution also includes MLflow experiment tracking and PSI/CSI drift monitoring for model lifecycle control.
+This project builds an end-to-end machine learning system to predict whether a credit applicant is likely to become a bad debt case before approval. It addresses class imbalance and focuses on risk ranking rather than raw accuracy using WoE–IV feature selection and ensemble models. Models were evaluated with ROC-AUC, KS, and Gini, with Random Forest selected for stable performance. Credit scores are converted into Low/Medium/High bands to support explainable credit decisions. The solution also includes MLflow experiment tracking and PSI/CSI drift monitoring for model lifecycle control.
 
 
 
@@ -85,7 +85,7 @@ The working dataset contains about 92K customers and 99 features, covering demog
 
 * Tried multiple model types — Logistic Regression, Random Forest, XGBoost, and CatBoost — to see how both linear and tree-based methods performed on the same cleaned feature set.
 
-* Tested different imbalance treatments like **under-sampling and SMOTE-Tomek**. SMOTE helped improve bad-customer recall, but in some runs it also led to overfitting, especially with boosting models.
+* Tested different imbalance treatments like **under-sampling and SMOTE-Tomek**. **Oversampling SMOTE-TOMEK** helped improve bad-customer recall, but in some runs it also led to overfitting, especially with boosting models.
 
 * Compared models using **recall for bad customers, ROC-AUC, KS, and Gini**, since these are more meaningful for credit risk than plain accuracy.
 
@@ -185,9 +185,9 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 ### Business Impact
  * Helped lower potential credit loss by flagging risky applications before approval.
  * Improved credit approval quality using standardized credit scores and simple risk bands (Low/Medium/High).
- * Simulation suggests potential reduction up to 50–60% under early-review strategy
+ * Detected ~60% of high-risk applicants suggested potential reduction up to 50–60% under early-review strategy
  * Enabled early identification of risky customers using model-based risk scoring.
- * Implemented monitoring and drift checks to detect future behavior changes in model performance.
+ * Implemented monitoring and drift checks to detect future behavior changes in model performance and indicating score distribution shift and need for recalibration..
 
 --------
    
