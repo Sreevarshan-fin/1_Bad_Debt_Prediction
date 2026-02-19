@@ -61,8 +61,7 @@ Instead of optimizing only for accuracy, the focus was on catching risky custome
 
 ### **Project Architecture**
 
-(https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg?v=1)
-
+![Project Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg?v=1)
 
 
 
