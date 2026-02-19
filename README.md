@@ -39,8 +39,8 @@ Developed an imbalanced credit-risk model to predict good vs. bad customers, pri
 ### **Project Architecture**
 
 
+![project](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg)
 
-![Credit Risk Flow](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg)
 
 
 ### **Data Source**
