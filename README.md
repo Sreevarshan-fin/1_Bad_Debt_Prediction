@@ -4,15 +4,12 @@ Built a bad-debt prediction system to identify high-risk credit applicants befor
 
 
 
-[![Launch App](https://img.shields.io/badge/Streamlit-App-DC2626?logo=streamlit&logoColor=white&style=for-the-badge)](https://1baddebtprediction-c87rnuzn44s9dqhzpyndxg.streamlit.app/)
-
-
 
 ---
 
 ### **Business Problem** 
 
-Credit-based businesses let customers buy now and pay later through EMI or postpaid models. This helps grow sales, but it also brings repayment risk. Most customers pay on time, but some delay or default, and when dues can’t be recovered, they turn into bad debt that directly affects revenue and cash flow leads financial loss.
+Credit-based businesses let customers buy now and pay later through EMI or postpaid models. This helps grow sales, but it also brings repayment risk. Most customers pay on time, but some delay or default, and when dues can’t be recovered, they turn into bad debt that directly affects revenue and cash flow and leads financial loss.
 
 Companies already collect customer details, repayment history, and bureau data. But credit approvals are not always fully risk-driven. Because of that, some high-risk customers still get approved, leading to avoidable losses.
 
@@ -180,9 +177,9 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 ### Business Impact
  * Helped lower potential credit loss by flagging risky applications before approval.
  * Improved credit approval quality using standardized credit scores and simple risk bands (Low/Medium/High).
- * Detected ~60% of high-risk applicants suggested potential reduction up to 50–60% under early-review strategy
+ * Detected ~60% of high-risk applicants indicating meaningful potential loss reduction under an early-review strategy
  * Enabled early identification of risky customers using model-based risk scoring.
- * Implemented monitoring and drift checks to detect future behavior changes in model performance and indicating score distribution shift and need for recalibration..
+ * Implemented monitoring and drift checks to detect future behavior changes in model performance and indicating a score distribution shift and the need for recalibration.
 
 --------
    
