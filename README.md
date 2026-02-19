@@ -71,7 +71,7 @@ Instead of optimizing only for accuracy, the focus was on catching risky custome
 
 The working dataset contains about 92K customers and 99 features, covering demographic, behavioral, credit, and bureau attributes. This master dataset was used for all analysis and modeling.
 
-<img width="1536" height="620" alt="ChatGPT Image Feb 5, 2026, 04_53_42 PM" src="https://github.com/user-attachments/assets/53e13e26-d449-4fa3-b005-401bf319a352" />
+![Credit Risk Flow](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
 
 
