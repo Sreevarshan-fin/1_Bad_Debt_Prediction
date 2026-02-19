@@ -91,7 +91,8 @@ Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini
 KS statistic ≈ 34% confirms good risk discrimination across score deciles.
 The confusion matrix is based on the model’s default classification output.
 
-<img width="6618" height="1326" alt="Untitled design (5)" src="https://github.com/user-attachments/assets/286464de-6b6d-4993-971e-510cbc1093b9" />
+![Model Metrics](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_model_metrics_dashboard.svg)
+
 
 
 
