@@ -1,13 +1,10 @@
 # **Bad Debt Prediction**
 
-### **Overview**
-This project builds an end-to-end machine learning system to predict whether a credit applicant is likely to become a bad debt case before approval. It addresses class imbalance and focuses on risk ranking rather than raw accuracy using WoE–IV feature selection and ensemble models. Models were evaluated with ROC-AUC, KS, and Gini, with Random Forest selected for stable performance. Credit scores are converted into Low/Medium/High bands to support explainable credit decisions. The solution also includes MLflow experiment tracking and PSI/CSI drift monitoring for model lifecycle control.
-
+Built a bad-debt prediction system to identify high-risk credit applicants before approval using WoE–IV, SMOTE, and ensemble models, evaluated via ROC-AUC and KS. Enabled explainable risk bands with MLflow tracking and PSI/CSI monitoring for production readiness.
 
 
 
 [![Launch App](https://img.shields.io/badge/Streamlit-App-DC2626?logo=streamlit&logoColor=white&style=for-the-badge)](https://1baddebtprediction-c87rnuzn44s9dqhzpyndxg.streamlit.app/)
-
 
 
 
@@ -35,27 +32,7 @@ From a business standpoint, missing a bad customer is more costly than wrongly f
 
 ### **Solution Approach**
 
-I treated this as a loss-reduction and decision-support problem, not just a modeling exercise.
-
-Instead of optimizing only for accuracy, the focus was on catching risky customers early and ranking customers by risk level.
-
-**Main steps included:**
-
-* Handling class imbalance carefully
-
-* Removing noisy and unstable features
-
-* Selecting stable predictors using WoE and IV
-
-* Prioritizing bad-customer recall over raw accuracy
-
-* Using ROC, KS, and Gini for ranking quality
-
-* Converting predictions into Low / Medium / High risk bands
-
-* Using model scores to support decisions, not replace policy
-
-* The goal was to strengthen credit decisions 
+Developed an imbalanced credit-risk model to predict good vs. bad customers, prioritizing early risk detection and ranking over raw accuracy using WoE–IV feature engineering, SMOTE-Tomek balancing, and multi-model benchmarking (LR, RF, XGBoost, CatBoost) with MLflow tracking. Chose Random Forest for its stable KS/Gini and consistent bad-customer recall, and delivered explainable Low/Medium/High risk bands to strengthen credit decision-making.
 
 ---
 
@@ -76,33 +53,6 @@ The working dataset contains about 92K customers and 99 features, covering demog
 
 
 ---
-
-### **Modeling Strategy**
-
-* Treated this as an **imbalanced classification problem**, where the goal was to rank customer risk properly rather than chase overall accuracy, since bad cases were a small share of the data.
-
-* Spent time on **feature stability and explainability**. Used WoE and IV to shortlist useful predictors and removed variables that were noisy, too correlated, or showed signs of leakage during validation.
-
-* Tried multiple model types — Logistic Regression, Random Forest, XGBoost, and CatBoost — to see how both linear and tree-based methods performed on the same cleaned feature set.
-
-* Tested different imbalance treatments like **under-sampling and SMOTE-Tomek**. **Oversampling SMOTE-TOMEK** helped improve bad-customer recall, but in some runs it also led to overfitting, especially with boosting models.
-
-* Compared models using **recall for bad customers, ROC-AUC, KS, and Gini**, since these are more meaningful for credit risk than plain accuracy.
-
-* Logged experiments and parameter settings using **MLflow**, which helped track results and compare runs properly. Best models were saved in the registry for version control.
-
-* XGBoost showed slightly better recall at first, but results were not consistent across resamples and folds.
-
-* Random Forest gave **more stable KS and Gini values** and more consistent ranking across validations, so I chose it as the main production model.
-
-* Kept XGBoost as a **challenger model** to compare performance over time instead of discarding it completely.
-
-* Tested multiple probability cutoffs and fixed the working threshold at **0.3** to improve risky-customer detection while keeping false positives manageable.
-
-* Final model outputs are stored in **SQLite as probability risk scores**, which are used for risk banding and review — not for automatic approval decisions.
-
------
-
 
 ### **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
 
