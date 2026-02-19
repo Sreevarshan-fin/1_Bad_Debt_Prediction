@@ -144,7 +144,27 @@ Calculated Population Stability Index (PSI) by binning prediction probabilities 
 
 **CSI (Characteristic Stability Index)**
 
-<img width="721" height="660" alt="image" src="https://github.com/user-attachments/assets/0616c1b4-9ec6-4ac5-8c85-9480224ddf2e" />
+| Feature | Train Count | Test Count | CSI |
+|--------|------------:|-----------:|-----:|
+| Active Credit Cards | 62912 | 20960 | 0.000017 |
+| Applicant Age | 62912 | 20960 | 0.000134 |
+| Bureau Default | 62912 | 20960 | 0.000080 |
+| Bureau Enquiries (Last 12 Months) | 62912 | 20960 | 0.000357 |
+| Credit Card Payment Failures | 62912 | 20960 | 0.000051 |
+| Credit Score | 62912 | 20960 | 0.000000 |
+| Derogatory | 62912 | 20960 | 0.000000 |
+| Document Type | 62912 | 20960 | 0.000097 |
+| Employment Status | 62912 | 20960 | 0.001132 |
+| Late_Payment_30DPD_Last_12M | 62912 | 20960 | 0.000000 |
+| Late_Payment_30DPD_Last_24M | 62912 | 20960 | 0.000000 |
+| Long_Term_Payment_Delinquency_Count | 62912 | 20960 | 0.000012 |
+| Occupation Type | 62912 | 20960 | 0.001164 |
+| Open Defaults | 62912 | 20960 | 0.000000 |
+| Recent Payment Irregularity | 62912 | 20960 | 0.000000 |
+| Residential Status | 62912 | 20960 | 0.000119 |
+| Score Card | 62912 | 20960 | 0.000063 |
+| Total Historical Defaults | 62912 | 20960 | 0.000000 |
+
 
 
 **Summary:**
