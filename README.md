@@ -44,7 +44,7 @@ Developed an imbalanced credit-risk model to predict good vs. bad customers, pri
 
 **This project uses real client data under a Non-Disclosure Agreement, so raw dataset details cannot be disclosed.**
 
-The working dataset contains about 92K customers and 99 features, covering demographic, behavioral, credit, and bureau attributes. This master dataset was used for all analysis and modeling.
+The working dataset contains about 100K customers and 99 features, covering demographic, behavioral, credit, and bureau attributes. This master dataset was used for all analysis and modeling.
 
 
 
