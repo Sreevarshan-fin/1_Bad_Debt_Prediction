@@ -2,7 +2,7 @@
 
 ### **Overview**
 
-Built a bad-debt prediction system to identify high-risk credit applicants before approval using WoE–IV feature engineering, SMOTE for class imbalance, and ensemble models (Logistic Regression, Random Forest, XGBoost, CatBoost). Evaluated model performance using ROC-AUC, KS Statistic, and Gini. Implemented explainable risk bands (Low/Medium/High) for credit decision support, integrated experiment tracking with MLflow, and deployed the model using a Streamlit scoring interface on AWS EC2 for real-time prediction and monitoring with PSI/CSI drift detection.
+Built a bad-debt prediction system to identify high-risk credit applicants before approval using WoE–IV feature engineering, SMOTETOMEK for class imbalance, and ensemble models (Logistic Regression, Random Forest, XGBoost, CatBoost). Evaluated model performance using ROC-AUC, KS Statistic, and Gini. Implemented explainable risk bands (Low/Medium/High) for credit decision support, integrated experiment tracking with MLflow, and deployed the model using a Streamlit scoring interface on AWS EC2 for real-time prediction and monitoring with PSI/CSI drift detection.
 
 ---
 
