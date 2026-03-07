@@ -32,6 +32,41 @@ Developed an imbalanced credit-risk model to predict good vs. bad customers, pri
 
 ---
 
+#### Model Comparison – Attempt 1 (Under-Sampling)
+
+| Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
+| ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
+| Logistic Regression | 0.67           | 0.65         | 0.74          | 0.68          | 0.15           | 0.37        | 0.25     | 0.75         | Yes         |
+| CatBoost            | 0.71           | 0.68         | 0.79          | 0.70          | 0.16           | 0.65        | 0.76     | 0.75         | Yes         |
+| XGBoost             | **0.76**       | **0.72**     | **0.84**      | 0.69          | 0.15           | 0.66        | 0.76     | 0.74         | No          |
+| Random Forest       | 0.68           | 0.65         | 0.76          | **0.70**      | 0.16           | 0.66        | **0.77** | 0.75         | Yes         |
+
+**Observation**
+
+* Under-sampling reduced majority class dominance but caused **information loss**.
+* Some models showed **overfitting between training and test metrics**.
+* XGBoost performed relatively stable compared to others.
+
+---
+
+####  Model Comparison – Attempt 2 (SMOTE-Tomek Oversampling)
+
+| Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
+| ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
+| Logistic Regression | 0.61           | **0.97**     | 0.78          | 0.32          | 0.09           | **0.91**    | 0.40     | 0.69         | Yes         |
+| CatBoost            | 0.70           | **0.98**     | **0.88**      | 0.45          | 0.10           | 0.82        | 0.56     | 0.70         | Yes         |
+| XGBoost             | **0.78**       | 0.77         | **0.88**      | **0.76**      | 0.15           | 0.47        | **0.81** | 0.70         | No          |
+| Random Forest       | 0.74           | 0.76         | 0.84          | 0.72          | **0.16**       | **0.61**    | 0.78     | **0.74**     | No          |
+
+**Observation**
+
+* SMOTE-Tomek improved **class balance and recall for bad customers**.
+* Random Forest and XGBoost showed **better generalization and lower overfitting**.
+* Random Forest was selected due to **stable KS, Gini, and higher recall for risky customers**.
+
+
+---
+
 ### **Project Architecture**
 
 
