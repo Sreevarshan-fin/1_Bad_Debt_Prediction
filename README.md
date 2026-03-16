@@ -238,12 +238,13 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 
 -------------------
 
-### Business Impact
- * Helped lower potential credit loss by flagging risky applications before approval.
- * Improved credit approval quality using standardized credit scores and simple risk bands (Low/Medium/High).
- * Detected ~60% of high-risk applicants indicating meaningful potential loss reduction under an early-review strategy
- * Enabled early identification of risky customers using model-based risk scoring.
- * Implemented monitoring and drift checks to detect future behavior changes in model performance and indicating a score distribution shift and the need for recalibration.
+### Business Impact (Scenario)
+
+* In a scenario with **₹1 million potential bad-debt exposure**, traditional approval methods may fail to detect risky applicants early.
+* The model **detects ~60% of high-risk borrowers**, enabling preventive actions such as rejection, manual review, or stricter credit terms.
+* Early risk identification could **reduce potential losses from ₹1 million to approximately ₹0.5 million** through proactive credit controls.
+* **PSI and CSI monitoring** help detect shifts in customer behavior and score distributions, supporting timely model recalibration and retraining.
+* The solution enables **data-driven credit decisions, improved portfolio risk control, and more sustainable lending operations**.
 
 --------
    
