@@ -263,6 +263,27 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 * Balancing recall vs precision when using SMOTE-Tomek — improved detection but increased overfitting in some models.
 
 ---
+## **Project Structure**
+
+```
+bad-debt-prediction/
+│
+├── app/
+│   └── app.py                     # Streamlit deployment           
+│
+├── models/
+│   └── model.joblib               # Trained model
+│
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_model_training.ipynb
+|
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
+-----
 
 ## Tech Stack
 
