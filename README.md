@@ -276,16 +276,18 @@ bad-debt-prediction/
 │
 ├── notebooks/
 │   ├── 01_data_cleaning.ipynb
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_model_training.ipynb
+│   ├── 02_feature_engineering & Model Training & Evaluation.ipynb
+│   ├── 03_PSI and CSI.ipynb
 |
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
+
 -----
 
-## **Stream lit UI Demo**
+## **Streamlit UI Demo**
+
 
 
 
