@@ -84,7 +84,7 @@ st.divider()
 # LOAD MODEL
 # =====================================
 BASE_DIR = os.path.dirname(__file__)
-model_data = joblib.load(os.path.join(BASE_DIR, "model.joblib"))
+model_data = joblib.load(os.path.join(BASE_DIR, "model/model.joblib"))
 
 model = model_data["model"]
 features = model_data["features"]
