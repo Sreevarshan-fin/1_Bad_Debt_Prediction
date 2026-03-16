@@ -1,13 +1,13 @@
 # **Bad Debt Prediction**
 
-### **Overview**
+### 🔹 **Overview**
 
 Built a bad-debt prediction system to identify high-risk credit applicants before approval using WoE–IV feature engineering, SMOTETOMEK for class imbalance, and ensemble models (Logistic Regression, Random Forest, XGBoost, CatBoost). Evaluated model performance using ROC-AUC, KS Statistic, and Gini. Implemented explainable risk bands (Low/Medium/High) for credit decision support, integrated experiment tracking with MLflow, and deployed the model using a Streamlit scoring interface on AWS EC2 for real-time prediction and monitoring with PSI/CSI drift detection.
 
 [![Open Streamlit App](https://img.shields.io/badge/Open%20App-Streamlit-red?logo=streamlit)](https://1baddebtprediction-h6ntjamopchs3yrgmzjhwf.streamlit.app/)
 ---
 
-### **Business Problem** 
+### 🔹 **Business Problem** 
 
 Credit-based businesses let customers buy now and pay later through EMI or postpaid models. This helps grow sales, but it also brings repayment risk. Most customers pay on time, but some delay or default, and when dues can’t be recovered, they turn into bad debt that directly affects revenue and cash flow and leads financial loss.
 
@@ -17,7 +17,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-### **Why This Problem Is Hard**
+### 🔹 **Why This Problem Is Hard**
 
 * **Class imbalance:** Only a small percentage of customers default, so a model can achieve high accuracy while still missing many risky borrowers.
 * **Feature stability:** Some variables may appear predictive during training but may not remain reliable when applied to new customers or future data.
@@ -26,7 +26,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-## Solution Approach
+## 🔹 Solution Approach
 
 * **Defined the problem as a binary classification task** to identify **Good (0)** and **Bad (1)** customers using historical credit data.
 
@@ -63,7 +63,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-#### Model Comparison – Attempt 1 (Under-Sampling)
+#### 🔹 Model Comparison – Attempt 1 (Under-Sampling)
 
 | Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
 | ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
@@ -98,7 +98,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-### Business Impact (Scenario)
+### 🔹 Business Impact (Scenario)
 
 * In a scenario with **₹1 million potential bad-debt exposure**, traditional approval methods may fail to detect risky applicants early.
 * The model **detects ~60% of high-risk borrowers**, enabling preventive actions such as rejection, manual review, or stricter credit terms.
@@ -108,14 +108,14 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-### **Project Architecture**
+### 🔹 **Project Architecture**
 
 
 ![Credit Risk Flow](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg)
 
 -----
 
-### **Data Source**
+### 🔹 **Data Source**
 
 **This project uses real client data under a Non-Disclosure Agreement, so raw dataset details cannot be disclosed.**
 
@@ -129,7 +129,7 @@ The working dataset contains about 100K customers and 99 features, covering demo
 
 ---
 
-### **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
+### 🔹 **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
 
 
 - **MLflow Tracking Server on AWS EC2**
@@ -139,7 +139,7 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 <img width="1852" height="143" alt="EC2_Instance" src="https://github.com/user-attachments/assets/3dd85c69-89f4-490c-962a-a569ce3b2807" />
 
 
-- **Experiment Run Tracking**
+-  **Experiment Run Tracking**
 
  Multiple model runs tracked with parameters and performance metrics to enable reproducible model comparison.
  
@@ -160,7 +160,7 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 
 ---
 
-### **Model Evaluation**
+### 🔹 **Model Evaluation**
 
 Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini ≈ 0.48, indicating effective separation between good and bad customers.
 KS statistic ≈ 34% confirms good risk discrimination across score deciles.
@@ -171,7 +171,7 @@ The confusion matrix is based on the model’s default classification output.
 
 
 
-- **KS statistics**
+- 🔹 **KS statistics**
 
 | Decile | Minimum_Probability | Maximum_Probability | Bad | Good | Bad Rate | Good Rate | Cum Bad | Cum Good | Cum Bad Rate | Cum Good Rate | KS |
 |--------|---------------------|---------------------|-----|------|----------|-----------|---------|----------|--------------|---------------|------|
@@ -189,7 +189,7 @@ The confusion matrix is based on the model’s default classification output.
 
 -------------
 
-### Monitoring and Data Drift 
+### 🔹 Monitoring and Data Drift 
 
 **Note :** This project demonstrates model monitoring and drift detection using PSI, CSI. Since real production data was not available, drift analysis was performed using **holdout test predictions** to simulate monitoring conditions.
 
@@ -249,7 +249,7 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 
 --------
    
-## Future Improvements
+## 🔹 Future Improvements
 
 * Maintain an audit-ready scoring history and performance tracking setup so credit decisions can be reviewed and explained over time.
 
@@ -257,7 +257,7 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 
 ----------
 
-### **Challenges**
+### 🔹 **Challenges**
 
 * Handling severe **class imbalance**, where bad customers were a small minority — required careful metric selection and resampling strategy testing.
 * Avoiding misleading accuracy and shifting evaluation toward **bad-class recall, KS, and Gini**.
@@ -265,7 +265,7 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 * Balancing recall vs precision when using SMOTE-Tomek — improved detection but increased overfitting in some models.
 
 ---
-## **Project Structure**
+## 🔹 **Project Structure**
 
 ```
 bad-debt-prediction/
@@ -288,7 +288,7 @@ bad-debt-prediction/
 
 -----
   
-## Tech Stack
+## 🔹 Tech Stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
