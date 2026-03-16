@@ -2,7 +2,7 @@
 
 ### 🔹 **Overview**
 
-Built a bad-debt prediction system to identify high-risk credit applicants before approval using WoE–IV feature engineering, SMOTETOMEK for class imbalance, and ensemble models (Logistic Regression, Random Forest, XGBoost, CatBoost). Evaluated model performance using ROC-AUC, KS Statistic, and Gini. Implemented explainable risk bands (Low/Medium/High) for credit decision support, integrated experiment tracking with MLflow, and deployed the model using a Streamlit scoring interface on AWS EC2 for real-time prediction and monitoring with PSI/CSI drift detection.
+This project demonstrates a data-driven approach to predicting potential bad-debt customers before credit approval. It addresses key real-world challenges such as class imbalance and risk-focused evaluation using WoE–IV feature engineering and SMOTE-Tomek resampling. Multiple machine learning models (Logistic Regression, Random Forest, XGBoost, CatBoost) are compared using ROC-AUC, KS, and Gini to prioritize detection of risky borrowers. The workflow includes MLflow experiment tracking, a Streamlit scoring interface for real-time predictions, and PSI/CSI monitoring to evaluate model stability and detect drift over time.
 
 [![Open Streamlit App](https://img.shields.io/badge/Open%20App-Streamlit-red?logo=streamlit)](https://1baddebtprediction-h6ntjamopchs3yrgmzjhwf.streamlit.app/)
 ---
