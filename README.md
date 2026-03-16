@@ -27,37 +27,39 @@ From a business standpoint, missing a bad customer is more costly than wrongly f
 
 ---
 
-### **Solution Approach**
+## Solution Approach
 
-• Defined the problem as a **binary classification task** to identify **Good (0)** and **Bad (1)** customers using historical credit data.
+* **Defined the problem as a binary classification task** to identify **Good (0)** and **Bad (1)** customers using historical credit data.
 
-• Performed **data cleaning and preprocessing**, including handling missing values, removing duplicates, and validating variables to ensure the dataset accurately reflects **customer financial and credit behavior**.
+* Performed **data cleaning and preprocessing**, including handling missing values, removing duplicates, and validating variables to ensure the dataset accurately reflects customer financial and credit behavior.
 
-• Conducted **Exploratory Data Analysis (EDA)** to understand patterns in customer credit behavior and identify variables associated with **higher default risk**.
+* Conducted **Exploratory Data Analysis (EDA)** to understand patterns in customer credit behavior and identify variables associated with higher default risk.
 
-• Evaluated two **credit-related variables** (**NO_SCORE_CR21** and **SCORE_CR22**) using **box plot analysis** to compare their distributions across **Good (0)** and **Bad (1)** customers.
+* Evaluated two credit-related variables (**NO_SCORE_CR21** and **SCORE_CR22**) using **box plot analysis** to compare their distributions across Good (0) and Bad (1) customers.
 
-• Based on stronger discriminatory power and clearer separation between risk groups, **SCORE_CR22 was selected as the primary credit-related feature for further analysis and modeling**.
+* Based on stronger discriminatory power and clearer separation between risk groups, **SCORE_CR22 was selected as the primary credit-related feature** for further analysis and modeling.
 
-• Applied **feature engineering using Weight of Evidence (WoE) binning and Information Value (IV)** for both **categorical and numerical variables** to create **monotonic risk relationships** and identify the most predictive features.
+* Applied **feature engineering using Weight of Evidence (WoE) binning and Information Value (IV)** for both categorical and numerical variables to create monotonic risk relationships and identify the most predictive features.
 
-• Addressed **class imbalance** using **SMOTE–Tomek resampling**, improving the model’s ability to detect **bad customers**.
+* Addressed **class imbalance using SMOTE–Tomek resampling**, improving the model’s ability to detect minority **bad-customer cases**.
 
-• Trained and benchmarked multiple machine learning models, including **Logistic Regression, Random Forest, XGBoost, and CatBoost**, to identify the best-performing model.
+* Trained and benchmarked multiple machine learning models, including **Logistic Regression, Random Forest, XGBoost, and CatBoost**, to identify the best-performing model.
 
-• Used **MLflow** to track experiments, parameters, and model evaluation metrics, ensuring **experiment management and reproducibility**.
+* Designed the modeling approach to **prioritize recall for bad customers**, ensuring that a higher proportion of risky borrowers are identified early, since missing a bad customer results in **direct financial loss for the business**.
 
-• Evaluated model performance using **KS statistic, Gini coefficient, and recall for bad customers**, prioritizing **risk ranking capability rather than only overall accuracy**.
+* Used **MLflow** to track experiments, parameters, and model evaluation metrics, ensuring **experiment management and reproducibility**.
 
-• Implemented **Population Stability Index (PSI)** and **Characteristic Stability Index (CSI)** on **Out-of-Time (OOT) validation datasets** to detect **data drift and feature distribution changes**, ensuring the model’s **long-term stability and robustness**.
+* Evaluated model performance using **KS statistic, Gini coefficient, ROC-AUC, and recall for bad customers**, prioritizing **risk ranking capability and early risk detection rather than relying solely on accuracy**.
 
-• Analyzed **feature importance and key risk drivers** to understand the most influential factors contributing to **customer default behavior**.
+* Implemented **Population Stability Index (PSI)** and **Characteristic Stability Index (CSI)** on **Out-of-Time (OOT) validation datasets** to detect data drift and feature distribution changes, ensuring the model’s **long-term stability and reliability**.
 
-• Deployed the trained model on **AWS SageMaker for scalable inference**, enabling **real-time credit risk prediction**.
+* Analyzed **feature importance and key risk drivers** to understand the factors contributing most significantly to customer default behavior.
 
-• Built an **interactive Streamlit application** that allows users to input customer attributes and obtain **instant credit risk predictions and risk scores**.
+* Deployed the trained model on **AWS SageMaker** for scalable inference, enabling **real-time credit risk prediction**.
 
-• The final solution supports **risk-based lending decisions**, helping financial institutions **reduce default exposure and improve overall credit portfolio quality**.
+* Built an interactive **Streamlit application** that allows users to input customer attributes and obtain instant **credit risk predictions and risk scores**.
+
+* The final system supports **risk-based lending decisions**, helping financial institutions **capture more high-risk borrowers early, reduce bad-debt exposure, and improve overall credit portfolio quality**.
 
 
 ---
