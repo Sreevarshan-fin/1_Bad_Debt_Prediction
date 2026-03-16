@@ -19,11 +19,10 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ### **Why This Problem Is Hard**
 
-The biggest challenge is class imbalance — bad customers are a small part of the population. Because of this, accuracy alone can be misleading. A model can show high accuracy while still missing most risky customers.
+* **Class imbalance:** Only a small percentage of customers default, so a model can achieve high accuracy while still missing many risky borrowers.
+* **Feature stability:** Some variables may appear predictive during training but may not remain reliable when applied to new customers or future data.
+* **Business trade-offs:** Missing a bad customer leads to direct financial loss, while wrongly rejecting a good customer only results in lost opportunity, making model evaluation and threshold decisions more complex.
 
-Another issue is feature stability. Some variables look predictive during training but don’t remain reliable in real portfolios. Also, credit decisions must be explainable and aligned with policy — not just statistically strong.
-
-From a business standpoint, missing a bad customer is more costly than wrongly flagging a good one — so model trade-offs matter.
 
 ---
 
