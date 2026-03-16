@@ -248,16 +248,6 @@ Calculated Population Stability Index (PSI) by binning prediction probabilities 
 
 Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature drift between train and test datasets. Feature distributions are highly stable and within safe monitoring limits.
 
--------------------
-
-### Business Impact (Scenario)
-
-* In a scenario with **₹1 million potential bad-debt exposure**, traditional approval methods may fail to detect risky applicants early.
-* The model **detects ~60% of high-risk borrowers**, enabling preventive actions such as rejection, manual review, or stricter credit terms.
-* Early risk identification could **reduce potential losses from ₹1 million to approximately ₹0.5 million** through proactive credit controls.
-* **PSI and CSI monitoring** help detect shifts in customer behavior and score distributions, supporting timely model recalibration and retraining.
-* The solution enables **data-driven credit decisions, improved portfolio risk control, and more sustainable lending operations**.
-
 --------
    
 ## Future Improvements
