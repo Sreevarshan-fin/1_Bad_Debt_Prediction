@@ -9,11 +9,9 @@ This project demonstrates a data-driven approach to predicting potential bad-deb
 
 ### 🔹 **Business Problem** 
 
-Credit-based businesses let customers buy now and pay later through EMI or postpaid models. This helps grow sales, but it also brings repayment risk. Most customers pay on time, but some delay or default, and when dues can’t be recovered, they turn into bad debt that directly affects revenue and cash flow and leads financial loss.
+Credit-based businesses enable “buy now, pay later” models, increasing sales but introducing repayment risk. Some high-risk customers get approved due to non-risk-driven decisions, leading to bad debt and financial loss.
 
-Companies already collect customer details, repayment history, and bureau data. But credit approvals are not always fully risk-driven. Because of that, some high-risk customers still get approved, leading to avoidable losses.
-
-This project focuses on predicting whether a customer is likely to be Good or Bad before approval, so decisions can be more risk-aware.
+👉 Goal: Predict Good (0) vs Bad (1) customers before approval to improve credit decisions.
 
 ---
 
