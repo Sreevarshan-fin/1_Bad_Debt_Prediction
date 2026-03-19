@@ -131,10 +131,10 @@ SMOTE-Tomek improved **recall for bad customers**, which is critical since faili
 
 ### 🔹 Business Impact (Scenario)
 
-* In a scenario with **₹1 million potential bad-debt exposure**, traditional approval methods may fail to detect risky applicants early.
-* The model **detects ~60% of high-risk borrowers**, enabling preventive actions such as rejection, manual review, or stricter credit terms.
-* Early risk identification could **reduce potential losses from ₹1 million to approximately ₹0.4million** through proactive credit controls.
-* **PSI and CSI monitoring** help detect shifts in customer behavior and score distributions, supporting timely model recalibration and retraining.
+* Achieved ~60% recall for high-risk borrowers, improving early identification of potential defaulters before credit approval
+* Demonstrated potential to reduce bad-debt exposure from **₹1M to ~₹0.4M** based on model-driven risk detection (scenario-based estimate)
+* Improved credit decisioning by prioritizing **risk-focused metrics (KS, Gini, Recall)** over traditional accuracy
+* Enabled continuous model monitoring using **PSI/CSI**, supporting early detection of behavior shifts and timely **model recalibration**.
 
 ---
 
