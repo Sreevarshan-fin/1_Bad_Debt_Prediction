@@ -248,6 +248,22 @@ Calculated Population Stability Index (PSI) by binning prediction probabilities 
 
 Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature drift between train and test datasets. Feature distributions are highly stable and within safe monitoring limits.
 
+### 🔹 PSI Insight & Action
+
+> PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
+
+**Actions:**
+
+* Trigger alert when PSI > 0.25
+* Retrain model periodically (monthly/quarterly)
+* Recalculate WoE bins on new data
+* Monitor drift across customer segments
+
+**Insight:**
+
+  Low CSI + High PSI → **concept drift**, not feature drift
+
+---
 --------
    
 ## 🔹 Future Improvements
