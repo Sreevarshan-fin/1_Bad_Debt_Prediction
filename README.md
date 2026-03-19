@@ -183,8 +183,9 @@ bad-debt-prediction/
 ```
 
 ---
+---
 
-## **Proof of Work - Detalied Section**
+## 👉 **Proof of Work - Detalied Section**
 
 #### 🔹 **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
 
