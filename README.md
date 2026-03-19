@@ -2,7 +2,7 @@
 
 ### 🔹 **Overview**
 
-This project demonstrates a data-driven approach to predicting potential bad-debt customers before credit approval. It addresses key real-world challenges such as class imbalance and risk-focused evaluation using WoE–IV feature engineering and SMOTE-Tomek resampling. Multiple machine learning models (Logistic Regression, Random Forest, XGBoost, CatBoost) are compared using ROC-AUC, KS, and Gini to prioritize detection of risky borrowers. The workflow includes MLflow experiment tracking, a Streamlit scoring interface for real-time predictions, and PSI/CSI monitoring to evaluate model stability and detect drift over time.
+This project builds a data-driven system to predict bad-debt customers before credit approval. It handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling, and compares models (Logistic Regression, Random Forest, XGBoost, CatBoost) using ROC-AUC, KS, and Gini with a focus on risk detection. The solution includes MLflow tracking, a Streamlit app for real-time scoring, and PSI/CSI monitoring to ensure model stability and detect drift.
 
 [![Open Streamlit App](https://img.shields.io/badge/Open%20App-Streamlit-red?logo=streamlit)](https://1baddebtprediction-h6ntjamopchs3yrgmzjhwf.streamlit.app/)
 ---
