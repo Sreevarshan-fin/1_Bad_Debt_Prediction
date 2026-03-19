@@ -95,8 +95,34 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 * Random Forest and XGBoost showed **better generalization and lower overfitting**.
 * Random Forest was selected due to **stable KS, Gini, and higher recall for risky customers**.
 
+----------
+
+### 🔹 **Model Evaluation**
+
+Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini ≈ 0.48, indicating effective separation between good and bad customers.
+KS statistic ≈ 34% confirms good risk discrimination across score deciles.
+The confusion matrix is based on the model’s default classification output.
+
+![Model Metrics](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_model_metrics_dashboard.svg)
 
 ---
+
+### 🔹 PSI Insight & Action
+
+> PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
+
+**Actions:**
+
+* Trigger alert when PSI > 0.25
+* Retrain model periodically (monthly/quarterly)
+* Recalculate WoE bins on new data
+* Monitor drift across customer segments
+
+**Insight:**
+
+  Low CSI + High PSI → **concept drift**, not feature drift.
+
+-------------
 
 ### 🔹 Business Impact (Scenario)
 
@@ -160,16 +186,6 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 
 
 ---
-
-### 🔹 **Model Evaluation**
-
-Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini ≈ 0.48, indicating effective separation between good and bad customers.
-KS statistic ≈ 34% confirms good risk discrimination across score deciles.
-The confusion matrix is based on the model’s default classification output.
-
-![Model Metrics](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_model_metrics_dashboard.svg)
-
-
 
 
 - 🔹 **KS statistics**
@@ -248,22 +264,6 @@ Calculated Population Stability Index (PSI) by binning prediction probabilities 
 
 Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature drift between train and test datasets. Feature distributions are highly stable and within safe monitoring limits.
 
-### 🔹 PSI Insight & Action
-
-> PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
-
-**Actions:**
-
-* Trigger alert when PSI > 0.25
-* Retrain model periodically (monthly/quarterly)
-* Recalculate WoE bins on new data
-* Monitor drift across customer segments
-
-**Insight:**
-
-  Low CSI + High PSI → **concept drift**, not feature drift
-
----
 --------
    
 ## 🔹 Future Improvements
