@@ -193,8 +193,6 @@ bad-debt-prediction/
 * **Feature selection** was challenging due to noisy, correlated, and leakage-prone variables — addressed using WoE/IV and stability checks.
 * Balancing recall vs precision when using SMOTE-Tomek — improved detection but increased overfitting in some models.
 
----
-
 
 -----
   
