@@ -25,106 +25,112 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 
 ---
-
 ## 🔹 Solution Approach
 
-* **Defined the problem as a binary classification task** to identify **Good (0)** and **Bad (1)** customers using historical credit data.
+####  1) Data Preprocessing and EDA
 
-* Performed **data cleaning and preprocessing**, including handling missing values, removing duplicates, and validating variables to ensure the dataset accurately reflects customer financial and credit behavior.
+* Performed **data cleaning** by handling missing values using appropriate imputation techniques (mean/median for numerical, mode for categorical variables).
+* Removed **duplicate records** to avoid bias in model training.
+* Conducted **data validation checks** to ensure consistency in financial and credit-related variables.
+* Performed **Exploratory Data Analysis (EDA)** to understand variable distributions, detect outliers, and identify relationships between features and the target variable.
+* Used **univariate and bivariate analysis** (histograms, box plots, correlation analysis) to study customer behavior patterns.
 
-* Conducted **Exploratory Data Analysis (EDA)** to understand patterns in customer credit behavior and identify variables associated with higher default risk.
-
-* Evaluated two credit-related variables (**NO_SCORE_CR21** and **SCORE_CR22**) using **box plot analysis** to compare their distributions across Good (0) and Bad (1) customers.
-
-* Based on stronger discriminatory power and clearer separation between risk groups, **SCORE_CR22 was selected as the primary credit-related feature** for further analysis and modeling.
-
-* Applied **feature engineering using Weight of Evidence (WoE) binning and Information Value (IV)** for both categorical and numerical variables to create monotonic risk relationships and identify the most predictive features.
-
-* Addressed **class imbalance using SMOTE–Tomek resampling**, improving the model’s ability to detect minority **bad-customer cases**.
-
-* Trained and benchmarked multiple machine learning models, including **Logistic Regression, Random Forest, XGBoost, and CatBoost**, to identify the best-performing model.
-
-* Designed the modeling approach to **prioritize recall for bad customers**, ensuring that a higher proportion of risky borrowers are identified early, since missing a bad customer results in **direct financial loss for the business**.
-
-* Used **MLflow** to track experiments, parameters, and model evaluation metrics, ensuring **experiment management and reproducibility**.
-
-* Evaluated model performance using **KS statistic, Gini coefficient, ROC-AUC, and recall for bad customers**, prioritizing **risk ranking capability and early risk detection rather than relying solely on accuracy**.
-
-* Implemented **Population Stability Index (PSI)** and **Characteristic Stability Index (CSI)** on **Out-of-Time (OOT) validation datasets** to detect data drift and feature distribution changes, ensuring the model’s **long-term stability and reliability**.
-
-* Analyzed **feature importance and key risk drivers** to understand the factors contributing most significantly to customer default behavior.
-
-* Deployed the trained model on **AWS SageMaker** for scalable inference, enabling **real-time credit risk prediction**.
-
-* Built an interactive **Streamlit application** that allows users to input customer attributes and obtain instant **credit risk predictions and risk scores**.
-
-* The final system supports **risk-based lending decisions**, helping financial institutions **capture more high-risk borrowers early, reduce bad-debt exposure, and improve overall credit portfolio quality**.
-
+**Insight:**
+EDA revealed that **credit score variables and repayment-related features strongly influence default behavior**, making them critical for modeling.
 
 ---
 
-## 🔹 Model Comparison 
+#### 2) Feature Engineering
 
- **Attempt 1 (Under-Sampling)**
+* Compared key credit variables (**NO_SCORE_CR21 vs SCORE_CR22**) using distribution analysis and box plots.
+* Selected **SCORE_CR22** due to better separation between good and bad customers.
+* Applied **Weight of Evidence (WoE) binning** to both numerical and categorical variables to transform features into risk-based representations.
+* Calculated **Information Value (IV)** to measure predictive strength and select important features.
+* Ensured **monotonic relationship** between features and target variable for better model interpretability.
 
-| Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
-| ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
-| Logistic Regression | 0.67           | 0.65         | 0.74          | 0.68          | 0.15           | 0.37        | 0.25     | 0.75         | Yes         |
-| CatBoost            | 0.71           | 0.68         | 0.79          | 0.70          | 0.16           | 0.65        | 0.76     | 0.75         | Yes         |
-| XGBoost             | **0.76**       | **0.72**     | **0.84**      | 0.69          | 0.15           | 0.66        | 0.76     | 0.74         | No          |
-| Random Forest       | 0.68           | 0.65         | 0.76          | **0.70**      | 0.16           | 0.66        | **0.77** | 0.75         | Yes         |
-
-**Observation**
-
-* Under-sampling reduced majority class dominance but caused **information loss**.
-* Some models showed **overfitting between training and test metrics**.
-* XGBoost performed relatively stable compared to others.
+**Insight:**
+WoE + IV helped convert raw variables into **risk-aligned features**, improving both interpretability and predictive performance.
 
 ---
 
-**Attempt 2 (SMOTE-Tomek Oversampling)**
+#### 3) Class Imbalance Handling
 
-| Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
-| ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
-| Logistic Regression | 0.61           | **0.97**     | 0.78          | 0.32          | 0.09           | **0.91**    | 0.40     | 0.69         | Yes         |
-| CatBoost            | 0.70           | **0.98**     | **0.88**      | 0.45          | 0.10           | 0.82        | 0.56     | 0.70         | Yes         |
-| XGBoost             | **0.78**       | 0.77         | **0.88**      | **0.76**      | 0.15           | 0.47        | **0.81** | 0.70         | No          |
-| Random Forest       | 0.74           | 0.76         | 0.84          | 0.72          | **0.16**       | **0.61**    | 0.78     | **0.74**     | No          |
+* Identified significant **class imbalance** (majority: good customers, minority: bad customers).
+* Initially applied **under-sampling**, which reduced imbalance but caused **loss of important information**.
+* Implemented **SMOTE-Tomek (oversampling + noise removal)** to generate synthetic minority samples and clean overlapping data points.
 
-**Observation**
-
-* SMOTE-Tomek improved **class balance and recall for bad customers**.
-* Random Forest and XGBoost showed **better generalization and lower overfitting**.
-* Random Forest was selected due to **stable KS, Gini, and higher recall for risky customers**.
-
-----------
-
-## 🔹 **Model Evaluation**
-
-Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini ≈ 0.48, indicating effective separation between good and bad customers.
-KS statistic ≈ 34% confirms good risk discrimination across score deciles.
-The confusion matrix is based on the model’s default classification output.
-
-![Model Metrics](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_model_metrics_dashboard.svg)
+**Insight:**
+SMOTE-Tomek improved **recall for bad customers**, which is critical since failing to detect risky customers leads to financial loss.
 
 ---
 
-## 🔹 PSI Insight & Action
+#### 4) Model Selection
 
-PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
+* Trained multiple machine learning models:
 
-**Actions:**
+  * Logistic Regression (baseline, interpretable)
+  * Random Forest (bagging-based ensemble)
+  * XGBoost (boosting-based model)
+  * CatBoost (handles categorical features efficiently)
 
-* Trigger alert when PSI > 0.25
-* Retrain model periodically (monthly/quarterly)
-* Recalculate WoE bins on new data
-* Monitor drift across customer segments
+* Compared models using **train vs test performance** to detect overfitting.
+
+* Focused on **generalization ability and stability across datasets**.
 
 **Insight:**
 
-  Low CSI + High PSI → **concept drift**, not feature drift.
+* Under-sampling caused instability in most models.
+* SMOTE-Tomek improved performance, especially for **ensemble models (Random Forest, XGBoost)**.
+* **Random Forest** was selected due to stable performance and better recall balance.
 
--------------
+---
+
+#### 5) Model Evaluation
+
+* Evaluated models using multiple metrics:
+
+  * **ROC-AUC (~0.74):** Measures overall ranking performance
+  * **Gini (~0.48):** Indicates model discriminatory power
+  * **KS Statistic (~34%):** Measures separation between good and bad customers
+  * **Recall (Bad Customers):** Priority metric for business
+
+* Analyzed **confusion matrix** to understand classification errors.
+
+**Insight:**
+
+* The model shows **good separation capability** between risky and non-risky customers.
+* Focus on **recall ensures higher detection of bad customers**, aligning with business goals.
+
+---
+
+#### 6) PSI and CSI (Model Stability)
+
+* Applied **Population Stability Index (PSI)** on model scores to detect changes in data distribution over time.
+
+* Applied **Characteristic Stability Index (CSI)** to monitor feature-level distribution changes.
+
+* Evaluated model on **Out-of-Time (OOT) validation dataset**.
+
+* Observed:
+
+  * **PSI = 0.39 (> 0.25)** → significant drift
+  * **CSI low** → features stable
+
+**Insight:**
+
+* High PSI with low CSI indicates **concept drift (change in customer behavior)** rather than feature drift.
+
+**Actions Taken:**
+
+* Set threshold-based alerts (PSI > 0.25)
+* Recommended **periodic model retraining**
+* Recalibrated WoE bins on new data
+* Continuous monitoring of model performance
+
+---
+
+
+
 
 ### 🔹 Business Impact (Scenario)
 
