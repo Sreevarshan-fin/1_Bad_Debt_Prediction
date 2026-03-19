@@ -181,7 +181,6 @@ bad-debt-prediction/
 ## 🔹 Future Improvements
 
 * Maintain an audit-ready scoring history and performance tracking setup so credit decisions can be reviewed and explained over time.
-
 * Although features are stable, score distribution drift indicates the need for stronger monitoring, drift alerts, recalibration, and periodic retraining to keep risk decisions accurate as data patterns change.
 
 ----------
