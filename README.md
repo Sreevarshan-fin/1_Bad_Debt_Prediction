@@ -136,7 +136,6 @@ SMOTE-Tomek improved **recall for bad customers**, which is critical since faili
 * The model **detects ~60% of high-risk borrowers**, enabling preventive actions such as rejection, manual review, or stricter credit terms.
 * Early risk identification could **reduce potential losses from ₹1 million to approximately ₹0.4million** through proactive credit controls.
 * **PSI and CSI monitoring** help detect shifts in customer behavior and score distributions, supporting timely model recalibration and retraining.
-* The solution enables **data-driven credit decisions, improved portfolio risk control,
 
 ---
 
