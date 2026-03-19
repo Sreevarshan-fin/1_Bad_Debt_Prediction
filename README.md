@@ -63,7 +63,9 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-#### 🔹 Model Comparison – Attempt 1 (Under-Sampling)
+## 🔹 Model Comparison 
+
+ **Attempt 1 (Under-Sampling)**
 
 | Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
 | ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
@@ -80,7 +82,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ---
 
-####  Model Comparison – Attempt 2 (SMOTE-Tomek Oversampling)
+**Attempt 2 (SMOTE-Tomek Oversampling)**
 
 | Model               | Train Accuracy | Train Recall | Train ROC-AUC | Test Accuracy | Test Precision | Test Recall | Test F1  | Test ROC-AUC | Overfitting |
 | ------------------- | -------------- | ------------ | ------------- | ------------- | -------------- | ----------- | -------- | ------------ | ----------- |
@@ -97,7 +99,7 @@ This project focuses on predicting whether a customer is likely to be Good or Ba
 
 ----------
 
-### 🔹 **Model Evaluation**
+## 🔹 **Model Evaluation**
 
 Model evaluation shows strong ranking performance with ROC-AUC ≈ 0.74 and Gini ≈ 0.48, indicating effective separation between good and bad customers.
 KS statistic ≈ 34% confirms good risk discrimination across score deciles.
@@ -107,7 +109,7 @@ The confusion matrix is based on the model’s default classification output.
 
 ---
 
-### 🔹 PSI Insight & Action
+## 🔹 PSI Insight & Action
 
 PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
 
@@ -151,11 +153,34 @@ The working dataset contains about 100K customers and 99 features, covering demo
 
 ![Credit Risk Flow](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
+----------------
 
+## 🔹 **Project Structure**
+
+```
+bad-debt-prediction/
+│
+├── app/
+│   └── app.py                     # Streamlit deployment           
+│
+├── models/
+│   └── model.joblib               # Trained model
+│
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_feature_engineering & Model Training & Evaluation.ipynb
+│   ├── 03_PSI and CSI.ipynb
+|
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 
 ---
 
-### 🔹 **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
+## **Proof of Work - Detalied Section**
+
+#### 🔹 **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
 
 
 - **MLflow Tracking Server on AWS EC2**
@@ -282,26 +307,7 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 * Balancing recall vs precision when using SMOTE-Tomek — improved detection but increased overfitting in some models.
 
 ---
-## 🔹 **Project Structure**
 
-```
-bad-debt-prediction/
-│
-├── app/
-│   └── app.py                     # Streamlit deployment           
-│
-├── models/
-│   └── model.joblib               # Trained model
-│
-├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_feature_engineering & Model Training & Evaluation.ipynb
-│   ├── 03_PSI and CSI.ipynb
-|
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
 
 -----
   
