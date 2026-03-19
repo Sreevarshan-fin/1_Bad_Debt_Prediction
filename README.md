@@ -109,7 +109,7 @@ The confusion matrix is based on the model’s default classification output.
 
 ### 🔹 PSI Insight & Action
 
-> PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
+PSI = 0.39 indicates significant drift (> 0.25 threshold), meaning model score distribution has shifted.
 
 **Actions:**
 
