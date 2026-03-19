@@ -24,29 +24,30 @@ Credit-based businesses enable “buy now, pay later” models, increasing sales
 ---
 ## 🔹 Solution Approach
 
-####  1) Data Preprocessing and EDA
+#### 1) Data Preprocessing and EDA
 
-* Performed **data cleaning** by handling missing values using appropriate imputation techniques (mean/median for numerical, mode for categorical variables).
-* Removed **duplicate records** to avoid bias in model training.
-* Conducted **data validation checks** to ensure consistency in financial and credit-related variables.
-* Performed **Exploratory Data Analysis (EDA)** to understand variable distributions, detect outliers, and identify relationships between features and the target variable.
+* Improved data quality by handling missing and inconsistent values, enabling reliable analysis of repayment behavior and delinquency patterns.
+* Removed duplicate records to prevent bias in identifying true customer risk signals.
+* Validated key financial and credit variables to ensure consistency in delinquency and repayment tracking.
+* Conducted EDA to analyze repayment behavior, identify delinquency trends, detect outliers, and uncover key drivers of default risk.
 * Used **univariate and bivariate analysis** (histograms, box plots, correlation analysis) to study customer behavior patterns.
 
 **Insight:**
-EDA revealed that **credit score variables and repayment-related features strongly influence default behavior**, making them critical for modeling.
+Credit score, repayment behavior, and delinquency features emerged as strong predictors of default, clearly distinguishing high-risk customers from low-risk segments.
 
 ---
 
 #### 2) Feature Engineering
 
-* Compared key credit variables (**NO_SCORE_CR21 vs SCORE_CR22**) using distribution analysis and box plots.
-* Selected **SCORE_CR22** due to better separation between good and bad customers.
-* Applied **Weight of Evidence (WoE) binning** to both numerical and categorical variables to transform features into risk-based representations.
-* Calculated **Information Value (IV)** to measure predictive strength and select important features.
-* Ensured **monotonic relationship** between features and target variable for better model interpretability.
+* Compared credit score variables provided by two bureaus (**CR21 vs CR22**) using distribution analysis and box plots.
+* Selected **CR22 score** as it showed clearer separation between good and bad customers, making it more predictive.
+* Applied Weight of Evidence (WoE) binning to transform variables into risk-aligned features.
+* Used Information Value (IV) to identify and retain the most predictive features.
+* Ensured a monotonic relationship between features and default risk for better interpretability.
 
 **Insight:**
-WoE + IV helped convert raw variables into **risk-aligned features**, improving both interpretability and predictive performance.
+CR22 outperformed CR21 in capturing customer risk, and WoE + IV transformed raw data into structured, risk-aligned features, improving both model interpretability and predictive power.
+
 
 ---
 
