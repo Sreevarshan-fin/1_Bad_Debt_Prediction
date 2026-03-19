@@ -179,6 +179,35 @@ bad-debt-prediction/
 ├── README.md
 └── .gitignore
 ```
+## 🔹 Future Improvements
+
+* Maintain an audit-ready scoring history and performance tracking setup so credit decisions can be reviewed and explained over time.
+
+* Although features are stable, score distribution drift indicates the need for stronger monitoring, drift alerts, recalibration, and periodic retraining to keep risk decisions accurate as data patterns change.
+
+----------
+
+### 🔹 **Challenges**
+
+* Handling severe **class imbalance**, where bad customers were a small minority — required careful metric selection and resampling strategy testing.
+* Avoiding misleading accuracy and shifting evaluation toward **bad-class recall, KS, and Gini**.
+* **Feature selection** was challenging due to noisy, correlated, and leakage-prone variables — addressed using WoE/IV and stability checks.
+* Balancing recall vs precision when using SMOTE-Tomek — improved detection but increased overfitting in some models.
+
+---
+
+
+-----
+  
+## 🔹 Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![AWS SageMaker](https://img.shields.io/badge/AWS%20SageMaker-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ---
 ---
@@ -296,32 +325,3 @@ Total Characteristic Stability Index ≈ 0.0032, indicating negligible feature d
 
 --------
    
-## 🔹 Future Improvements
-
-* Maintain an audit-ready scoring history and performance tracking setup so credit decisions can be reviewed and explained over time.
-
-* Although features are stable, score distribution drift indicates the need for stronger monitoring, drift alerts, recalibration, and periodic retraining to keep risk decisions accurate as data patterns change.
-
-----------
-
-### 🔹 **Challenges**
-
-* Handling severe **class imbalance**, where bad customers were a small minority — required careful metric selection and resampling strategy testing.
-* Avoiding misleading accuracy and shifting evaluation toward **bad-class recall, KS, and Gini**.
-* **Feature selection** was challenging due to noisy, correlated, and leakage-prone variables — addressed using WoE/IV and stability checks.
-* Balancing recall vs precision when using SMOTE-Tomek — improved detection but increased overfitting in some models.
-
----
-
-
------
-  
-## 🔹 Tech Stack
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![AWS SageMaker](https://img.shields.io/badge/AWS%20SageMaker-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
