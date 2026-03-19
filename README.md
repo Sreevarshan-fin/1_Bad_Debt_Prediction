@@ -17,10 +17,9 @@ Credit-based businesses enable “buy now, pay later” models, increasing sales
 
 ### 🔹 **Why This Problem Is Hard**
 
-* **Class imbalance:** Only a small percentage of customers default, so a model can achieve high accuracy while still missing many risky borrowers.
-* **Feature stability:** Some variables may appear predictive during training but may not remain reliable when applied to new customers or future data.
-* **Business trade-offs:** Missing a bad customer leads to direct financial loss, while wrongly rejecting a good customer only results in lost opportunity, making model evaluation and threshold decisions more complex.
-
+* **Class imbalance:** Few customers default, so high accuracy can still miss risky cases.
+* **Feature stability:** Predictive features may not hold on new or future data.
+* **Business trade-offs:** Missing bad customers causes losses, while rejecting good ones impacts opportunity—making evaluation and threshold selection critical.
 
 ---
 ## 🔹 Solution Approach
