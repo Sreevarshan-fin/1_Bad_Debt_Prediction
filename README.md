@@ -1,5 +1,19 @@
 # Bad Debt Prediction
 
+![Python](https://img.shields.io/badge/Python-3.11-black)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-black)
+![MLflow](https://img.shields.io/badge/MLflow-black)
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-black)
+![Streamlit](https://img.shields.io/badge/Streamlit-black)
+![XGBoost](https://img.shields.io/badge/XGBoost-black)
+![CatBoost](https://img.shields.io/badge/CatBoost-black)
+![Random Forest](https://img.shields.io/badge/Random_Forest-black)
+![SMOTE-Tomek](https://img.shields.io/badge/SMOTE--Tomek-black)
+![WoE/IV](https://img.shields.io/badge/WoE_/_IV-black)
+![PSI/CSI](https://img.shields.io/badge/PSI_/_CSI-black)
+
+---
+
 ### 🔹 **Overview**
 
 This project builds a data-driven system to predict bad-debt customers before credit approval. It handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling, and compares models (Logistic Regression, Random Forest, XGBoost, CatBoost) using ROC-AUC, KS, and Gini with a focus on risk detection. The solution includes MLflow tracking, a Streamlit app for real-time scoring, and PSI/CSI monitoring to ensure model stability and detect drift.
@@ -15,11 +29,14 @@ Credit-based businesses enable “buy now, pay later” models, increasing sales
 
 ---
 
-### 🔹 **Why This Problem Is Hard**
+## 🔹 Why This Problem Is Hard
 
-* **Class imbalance:** Few customers default, so high accuracy can still miss risky cases.
-* **Feature stability:** Predictive features may not hold on new or future data.
-* **Business trade-offs:** Missing bad customers causes losses, while rejecting good ones impacts opportunity—making evaluation and threshold selection critical.
+| Challenge | Description |
+|---|---|
+| Class imbalance | Very few customers default — high accuracy can still miss risky cases entirely |
+| Feature stability | Predictive features may not hold on new or future customer data |
+| Business trade-offs | Missing bad customers causes direct losses; rejecting good ones reduces revenue opportunity |
+| Threshold selection | Choosing the right cut-off requires balancing recall vs precision based on business cost |
 
 ---
 ## 🔹 Solution Approach
@@ -239,21 +256,7 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 ---
 
 
-# Bad Debt Prediction
 
-![Python](https://img.shields.io/badge/Python-3.11-black)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-black)
-![MLflow](https://img.shields.io/badge/MLflow-black)
-![AWS EC2](https://img.shields.io/badge/AWS_EC2-black)
-![Streamlit](https://img.shields.io/badge/Streamlit-black)
-![XGBoost](https://img.shields.io/badge/XGBoost-black)
-![CatBoost](https://img.shields.io/badge/CatBoost-black)
-![Random Forest](https://img.shields.io/badge/Random_Forest-black)
-![SMOTE-Tomek](https://img.shields.io/badge/SMOTE--Tomek-black)
-![WoE/IV](https://img.shields.io/badge/WoE_/_IV-black)
-![PSI/CSI](https://img.shields.io/badge/PSI_/_CSI-black)
-
----
 
 ## 🔹 Overview
 
@@ -276,14 +279,7 @@ Credit-based businesses enable "buy now, pay later" models, increasing sales but
 
 ---
 
-## 🔹 Why This Problem Is Hard
 
-| Challenge | Description |
-|---|---|
-| Class imbalance | Very few customers default — high accuracy can still miss risky cases entirely |
-| Feature stability | Predictive features may not hold on new or future customer data |
-| Business trade-offs | Missing bad customers causes direct losses; rejecting good ones reduces revenue opportunity |
-| Threshold selection | Choosing the right cut-off requires balancing recall vs precision based on business cost |
 
 ---
 
