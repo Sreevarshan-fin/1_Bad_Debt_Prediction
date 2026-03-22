@@ -245,6 +245,84 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 
 <img width="1911" height="837" alt="Model_Register" src="https://github.com/user-attachments/assets/f246e200-9457-45bd-9828-1f98526183ca" />
 
+-----
+
+## 🔹 Solution Approach
+
+<details>
+<summary><b>1 — Data Preprocessing & EDA</b></summary>
+
+- Cleaned missing values, removed duplicates, and validated financial variables for reliable analysis
+- EDA across repayment behaviour, delinquency trends, and outliers using histograms, box plots, and correlation analysis
+
+**Insight:** Credit score, repayment behaviour, and delinquency features were the strongest default predictors.
+
+</details>
+
+<details>
+<summary><b>2 — Feature Engineering</b></summary>
+
+- Compared CR21 vs CR22 bureau scores — selected CR22 for stronger good/bad customer separation
+- Applied WoE binning and IV ranking to retain the most predictive, risk-aligned features with monotonic relationships
+
+**Insight:** WoE + IV transformed raw noisy data into interpretable, risk-aligned features — improving both performance and explainability.
+
+</details>
+
+<details>
+<summary><b>3 — Class Imbalance Handling</b></summary>
+
+- Under-sampling tested first — caused information loss
+- SMOTE-Tomek applied: synthetic minority oversampling + Tomek link removal to clean boundary overlap
+
+**Insight:** SMOTE-Tomek improved bad customer recall — the critical metric for preventing financial loss.
+
+</details>
+
+<details>
+<summary><b>4 — Model Selection</b></summary>
+
+Trained and compared four models on train vs test performance to detect overfitting:
+
+| Model | Type |
+|---|---|
+| Logistic Regression | Baseline |
+| Random Forest | Bagging ensemble |
+| XGBoost | Boosting |
+| CatBoost | Boosting + categoricals |
+
+**Insight:** Random Forest selected — best recall balance and stable generalisation with SMOTE-Tomek.
+
+</details>
+
+<details>
+<summary><b>5 — Model Evaluation</b></summary>
+
+| Metric | Value | What It Measures |
+|---|---|---|
+| ROC-AUC | 0.74 | Overall ranking performance |
+| Gini | 0.48 | Discriminatory power |
+| KS Statistic | 34% | Good vs bad separation |
+| Recall (bad) | 60% | High-risk customer detection |
+
+**Insight:** Recall-focused evaluation ensures risky customers are flagged before approval.
+
+</details>
+
+<details>
+<summary><b>6 — PSI & CSI Monitoring</b></summary>
+
+| Index | Value | Status |
+|---|---|---|
+| PSI | 0.39 | 🔴 > 0.25 — significant drift |
+| CSI | Low | 🟢 Features stable |
+
+**Diagnosis:** High PSI + low CSI = concept drift — customer behaviour changed, not the features.
+
+**Actions:** PSI > 0.25 alerts set · WoE bins recalibrated · Periodic retraining recommended
+
+</details>
+
 
 
 ---
