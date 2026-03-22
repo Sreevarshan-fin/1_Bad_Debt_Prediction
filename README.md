@@ -154,13 +154,6 @@ SMOTE-Tomek improved **recall for bad customers**, which is critical since faili
 
 ---
 
-
-
-
-
-
----
-
 ### 🔹 **Project Architecture**
 
 
