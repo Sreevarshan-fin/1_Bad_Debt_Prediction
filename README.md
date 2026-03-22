@@ -1,6 +1,4 @@
 # Bad Debt Prediction
-<img width="1440" height="394" alt="image" src="https://github.com/user-attachments/assets/6075e7aa-bf2e-44b6-967d-d2c0a6093bce" />
-
 
 ### 🔹 **Overview**
 
@@ -199,11 +197,8 @@ bad-debt-prediction/
   
 ## 🔹 Tech Stack
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge)
-![AWS SageMaker](https://img.shields.io/badge/AWS%20SageMaker-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+<img width="1200" height="394" alt="image" src="https://github.com/user-attachments/assets/40615243-5520-4645-bc0a-95f23f8f5235" />
+
 
 
 ---
