@@ -1,6 +1,6 @@
 # Bad Debt Prediction
+<img width="1440" height="394" alt="image" src="https://github.com/user-attachments/assets/6075e7aa-bf2e-44b6-967d-d2c0a6093bce" />
 
-**· Python · Scikit-Learn · MLflow · AWS SageMaker · Streamlit · XGBoost · CatBoost · Random Forest · SMOTE-Tomek · WoE / IV · PSI / CSI**
 
 ### 🔹 **Overview**
 
