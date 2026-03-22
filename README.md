@@ -51,106 +51,80 @@ Credit-based businesses enable “buy now, pay later” models, increasing sales
   
 ## 🔹 Solution Approach
 
-#### 1) Data Preprocessing and EDA
+<details>
+<summary><b>1 — Data Preprocessing & EDA</b></summary>
 
-* Improved data quality by handling missing and inconsistent values, enabling reliable analysis of repayment behavior and delinquency patterns.
-* Removed duplicate records to prevent bias in identifying true customer risk signals.
-* Validated key financial and credit variables to ensure consistency in delinquency and repayment tracking.
-* Conducted EDA to analyze repayment behavior, identify delinquency trends, detect outliers, and uncover key drivers of default risk.
-* Used **univariate and bivariate analysis** (histograms, box plots, correlation analysis) to study customer behavior patterns.
+- Cleaned missing values, removed duplicates, and validated financial variables for reliable analysis
+- EDA across repayment behaviour, delinquency trends, and outliers using histograms, box plots, and correlation analysis
 
-**Insight:**
-Credit score, repayment behavior, and delinquency features emerged as strong predictors of default, clearly distinguishing high-risk customers from low-risk segments.
+**Insight:** Credit score, repayment behaviour, and delinquency features were the strongest default predictors.
 
----
+</details>
 
-#### 2) Feature Engineering
+<details>
+<summary><b>2 — Feature Engineering</b></summary>
 
-* Compared credit score variables provided by two bureaus (**CR21 vs CR22**) using distribution analysis and box plots.
-* Selected **CR22 score** as it showed clearer separation between good and bad customers, making it more predictive.
-* Applied Weight of Evidence (WoE) binning to transform variables into risk-aligned features.
-* Used Information Value (IV) to identify and retain the most predictive features.
-* Ensured a monotonic relationship between features and default risk for better interpretability.
+- Compared CR21 vs CR22 bureau scores — selected CR22 for stronger good/bad customer separation
+- Applied WoE binning and IV ranking to retain the most predictive, risk-aligned features with monotonic relationships
 
-**Insight:**
-CR22 outperformed CR21 in capturing customer risk, and WoE + IV transformed raw data into structured, risk-aligned features, improving both model interpretability and predictive power.
+**Insight:** WoE + IV transformed raw noisy data into interpretable, risk-aligned features — improving both performance and explainability.
 
+</details>
 
----
+<details>
+<summary><b>3 — Class Imbalance Handling</b></summary>
 
-#### 3) Class Imbalance Handling
+- Under-sampling tested first — caused information loss
+- SMOTE-Tomek applied: synthetic minority oversampling + Tomek link removal to clean boundary overlap
 
-* Identified significant **class imbalance** (majority: good customers, minority: bad customers).
-* Initially applied **under-sampling**, which reduced imbalance but caused **loss of important information**.
-* Implemented **SMOTE-Tomek (oversampling + noise removal)** to generate synthetic minority samples and clean overlapping data points.
+**Insight:** SMOTE-Tomek improved bad customer recall — the critical metric for preventing financial loss.
 
-**Insight:**
-SMOTE-Tomek improved **recall for bad customers**, which is critical since failing to detect risky customers leads to financial loss.
+</details>
 
----
+<details>
+<summary><b>4 — Model Selection</b></summary>
 
-#### 4) Model Selection
+Trained and compared four models on train vs test performance to detect overfitting:
 
-* Trained multiple machine learning models:
+| Model | Type |
+|---|---|
+| Logistic Regression | Baseline |
+| Random Forest | Bagging ensemble |
+| XGBoost | Boosting |
+| CatBoost | Boosting + categoricals |
 
-  * Logistic Regression (baseline, interpretable)
-  * Random Forest (bagging-based ensemble)
-  * XGBoost (boosting-based model)
-  * CatBoost (handles categorical features efficiently)
+**Insight:** Random Forest selected — best recall balance and stable generalisation with SMOTE-Tomek.
 
-* Compared models using **train vs test performance** to detect overfitting.
+</details>
 
-* Focused on **generalization ability and stability across datasets**.
+<details>
+<summary><b>5 — Model Evaluation</b></summary>
 
-**Insight:**
+| Metric | Value | What It Measures |
+|---|---|---|
+| ROC-AUC | 0.74 | Overall ranking performance |
+| Gini | 0.48 | Discriminatory power |
+| KS Statistic | 34% | Good vs bad separation |
+| Recall (bad) | 60% | High-risk customer detection |
 
-* Under-sampling caused instability in most models.
-* SMOTE-Tomek improved performance, especially for **ensemble models (Random Forest, XGBoost)**.
-* **Random Forest** was selected due to stable performance and better recall balance.
+**Insight:** Recall-focused evaluation ensures risky customers are flagged before approval.
 
----
+</details>
 
-#### 5) Model Evaluation
+<details>
+<summary><b>6 — PSI & CSI Monitoring</b></summary>
 
-* Evaluated models using multiple metrics:
+| Index | Value | Status |
+|---|---|---|
+| PSI | 0.39 | 🔴 > 0.25 — significant drift |
+| CSI | Low | 🟢 Features stable |
 
-  * **ROC-AUC (~0.74):** Measures overall ranking performance
-  * **Gini (~0.48):** Indicates model discriminatory power
-  * **KS Statistic (~34%):** Measures separation between good and bad customers
-  * **Recall (Bad Customers):** Priority metric for business
+**Diagnosis:** High PSI + low CSI = concept drift — customer behaviour changed, not the features.
 
-* Analyzed **confusion matrix** to understand classification errors.
+**Actions:** PSI > 0.25 alerts set · WoE bins recalibrated · Periodic retraining recommended
 
-**Insight:**
+</details>
 
-* The model shows **good separation capability** between risky and non-risky customers.
-* Focus on **recall ensures higher detection of bad customers**, aligning with business goals.
-
----
-
-#### 6) PSI and CSI (Model Stability)
-
-* Applied **Population Stability Index (PSI)** on model scores to detect changes in data distribution over time.
-
-* Applied **Characteristic Stability Index (CSI)** to monitor feature-level distribution changes.
-
-* Evaluated model on **Out-of-Time (OOT) validation dataset**.
-
-* Observed:
-
-  * **PSI = 0.39 (> 0.25)** → significant drift
-  * **CSI low** → features stable
-
-**Insight:**
-
-* High PSI with low CSI indicates **concept drift (change in customer behavior)** rather than feature drift.
-
-**Actions Taken:**
-
-* Set threshold-based alerts (PSI > 0.25)
-* Recommended **periodic model retraining**
-* Recalibrated WoE bins on new data
-* Continuous monitoring of model performance
 
 ---
 
@@ -245,88 +219,8 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 
 <img width="1911" height="837" alt="Model_Register" src="https://github.com/user-attachments/assets/f246e200-9457-45bd-9828-1f98526183ca" />
 
+
+------------
+
 -----
-
-## 🔹 Solution Approach
-
-<details>
-<summary><b>1 — Data Preprocessing & EDA</b></summary>
-
-- Cleaned missing values, removed duplicates, and validated financial variables for reliable analysis
-- EDA across repayment behaviour, delinquency trends, and outliers using histograms, box plots, and correlation analysis
-
-**Insight:** Credit score, repayment behaviour, and delinquency features were the strongest default predictors.
-
-</details>
-
-<details>
-<summary><b>2 — Feature Engineering</b></summary>
-
-- Compared CR21 vs CR22 bureau scores — selected CR22 for stronger good/bad customer separation
-- Applied WoE binning and IV ranking to retain the most predictive, risk-aligned features with monotonic relationships
-
-**Insight:** WoE + IV transformed raw noisy data into interpretable, risk-aligned features — improving both performance and explainability.
-
-</details>
-
-<details>
-<summary><b>3 — Class Imbalance Handling</b></summary>
-
-- Under-sampling tested first — caused information loss
-- SMOTE-Tomek applied: synthetic minority oversampling + Tomek link removal to clean boundary overlap
-
-**Insight:** SMOTE-Tomek improved bad customer recall — the critical metric for preventing financial loss.
-
-</details>
-
-<details>
-<summary><b>4 — Model Selection</b></summary>
-
-Trained and compared four models on train vs test performance to detect overfitting:
-
-| Model | Type |
-|---|---|
-| Logistic Regression | Baseline |
-| Random Forest | Bagging ensemble |
-| XGBoost | Boosting |
-| CatBoost | Boosting + categoricals |
-
-**Insight:** Random Forest selected — best recall balance and stable generalisation with SMOTE-Tomek.
-
-</details>
-
-<details>
-<summary><b>5 — Model Evaluation</b></summary>
-
-| Metric | Value | What It Measures |
-|---|---|---|
-| ROC-AUC | 0.74 | Overall ranking performance |
-| Gini | 0.48 | Discriminatory power |
-| KS Statistic | 34% | Good vs bad separation |
-| Recall (bad) | 60% | High-risk customer detection |
-
-**Insight:** Recall-focused evaluation ensures risky customers are flagged before approval.
-
-</details>
-
-<details>
-<summary><b>6 — PSI & CSI Monitoring</b></summary>
-
-| Index | Value | Status |
-|---|---|---|
-| PSI | 0.39 | 🔴 > 0.25 — significant drift |
-| CSI | Low | 🟢 Features stable |
-
-**Diagnosis:** High PSI + low CSI = concept drift — customer behaviour changed, not the features.
-
-**Actions:** PSI > 0.25 alerts set · WoE bins recalibrated · Periodic retraining recommended
-
-</details>
-
-
-
----
-
-
-
 
