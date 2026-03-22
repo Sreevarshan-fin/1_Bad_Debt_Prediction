@@ -244,7 +244,7 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 ![Python](https://img.shields.io/badge/Python-3.11-black)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-black)
 ![MLflow](https://img.shields.io/badge/MLflow-black)
-![AWS SageMaker](https://img.shields.io/badge/AWS_SageMaker-black)
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-black)
 ![Streamlit](https://img.shields.io/badge/Streamlit-black)
 ![XGBoost](https://img.shields.io/badge/XGBoost-black)
 ![CatBoost](https://img.shields.io/badge/CatBoost-black)
@@ -255,166 +255,230 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
 
 ---
 
-## Overview
+## 🔹 Overview
 
-A data-driven system to predict bad-debt customers **before credit approval**. Handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling. Compares Logistic Regression, Random Forest, XGBoost, and CatBoost using ROC-AUC, KS, and Gini — with a focus on risk detection.
+This project builds a data-driven system to predict bad-debt customers **before credit approval**. It handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling, and compares models — Logistic Regression, Random Forest, XGBoost, and CatBoost — using ROC-AUC, KS, and Gini with a focus on risk detection.
+
+The solution includes:
+- **MLflow** experiment tracking and model registry hosted on **AWS EC2**
+- **Streamlit app** for real-time customer risk scoring
+- **PSI/CSI monitoring** to detect model drift and ensure stability over time
 
 👉 [Open Streamlit App](#)
 
 ---
 
-## Business Problem
+## 🔹 Business Problem
 
 Credit-based businesses enable "buy now, pay later" models, increasing sales but introducing repayment risk. Some high-risk customers get approved due to non-risk-driven decisions, leading to bad debt and financial loss.
 
-**Goal:** Predict Good `0` vs Bad `1` customers before approval to improve credit decisions.
+**Goal:** Predict **Good `0`** vs **Bad `1`** customers before approval to improve credit decisions and reduce financial exposure.
 
 ---
 
-## Why This Problem Is Hard
+## 🔹 Why This Problem Is Hard
 
 | Challenge | Description |
 |---|---|
-| Class imbalance | Few customers default — high accuracy can still miss risky cases |
-| Feature stability | Predictive features may not hold on new or future data |
-| Business trade-offs | Missing bad customers causes losses; rejecting good ones impacts revenue |
+| Class imbalance | Very few customers default — high accuracy can still miss risky cases entirely |
+| Feature stability | Predictive features may not hold on new or future customer data |
+| Business trade-offs | Missing bad customers causes direct losses; rejecting good ones reduces revenue opportunity |
+| Threshold selection | Choosing the right cut-off requires balancing recall vs precision based on business cost |
 
 ---
 
-## Results
+## 🔹 Results
 
 | Model | ROC-AUC | KS | Gini | Recall (Bad) |
 |---|---|---|---|---|
 | Logistic Regression | 0.69 | 28% | 0.38 | 52% |
-| Random Forest ✅ | **0.74** | **34%** | **0.48** | **60%** |
+| **Random Forest** ✅ | **0.74** | **34%** | **0.48** | **60%** |
 | XGBoost | 0.72 | 31% | 0.44 | 57% |
 | CatBoost | 0.71 | 30% | 0.42 | 55% |
 
-> ✅ Random Forest selected — best recall balance and stable generalisation
+> ✅ **Random Forest selected** — best recall balance, stable generalisation, no overfitting with SMOTE-Tomek
 
 ---
 
-## Business Impact
+## 🔹 Business Impact
 
-- ~60% recall for high-risk borrowers — early detection before credit approval
-- Potential to reduce bad-debt exposure from **₹1M → ₹0.4M**
-- Risk-focused evaluation: KS, Gini, Recall prioritised over accuracy
-- Continuous PSI/CSI monitoring with drift alerts and retraining triggers
+- Achieved **~60% recall** for high-risk borrowers — early identification before credit approval
+- Demonstrated potential to reduce bad-debt exposure from **₹1M → ₹0.4M** (scenario-based estimate)
+- Shifted credit decisioning from accuracy to **risk-focused metrics**: KS, Gini, Recall
+- Enabled **continuous monitoring** via PSI/CSI with drift alerts and retraining triggers
 
 ---
 
-## Solution Approach
+## 🔹 Solution Approach
 
 <details>
-<summary>1 — Data Preprocessing & EDA</summary>
+<summary><b>1 — Data Preprocessing & EDA</b></summary>
 
-- Handled missing and inconsistent values
-- Removed duplicates to prevent bias
-- Validated financial and credit variables
-- Univariate and bivariate analysis (histograms, box plots, correlation)
+<br>
 
-**Insight:** Credit score, repayment behaviour, and delinquency features emerged as the strongest default predictors.
+- Handled missing and inconsistent values to ensure reliable repayment and delinquency analysis
+- Removed duplicate records to prevent bias in risk signal identification
+- Validated key financial and credit variables for consistency across delinquency and repayment tracking
+- Conducted full EDA: repayment behaviour, delinquency trends, outlier detection, and default drivers
+- Applied univariate and bivariate analysis — histograms, box plots, correlation matrices
+
+**Insight:** Credit score, repayment behaviour, and delinquency features emerged as the strongest predictors of default, clearly separating high-risk from low-risk customer segments.
 
 </details>
 
 <details>
-<summary>2 — Feature Engineering</summary>
+<summary><b>2 — Feature Engineering</b></summary>
 
-- Compared CR21 vs CR22 credit bureau scores — selected CR22 for clearer good/bad separation
-- Applied WoE binning to transform variables into risk-aligned features
-- Used IV to retain the most predictive features
-- Enforced monotonic relationship between features and default risk
+<br>
 
-**Insight:** WoE + IV transformed raw data into structured, interpretable, risk-aligned features.
+- Compared credit score variables from two bureaus: **CR21 vs CR22** using distribution analysis and box plots
+- Selected **CR22** — showed clearer separation between good and bad customers
+- Applied **Weight of Evidence (WoE)** binning to transform raw variables into risk-aligned features
+- Used **Information Value (IV)** to rank and retain the most predictive features
+- Enforced **monotonic relationship** between features and default risk for better interpretability
 
-</details>
-
-<details>
-<summary>3 — Class Imbalance Handling</summary>
-
-- Under-sampling tested first — caused information loss
-- SMOTE-Tomek applied: oversampling + noise removal
-
-**Insight:** SMOTE-Tomek improved recall for bad customers — critical for financial loss prevention.
+**Insight:** CR22 outperformed CR21 in capturing customer risk. WoE + IV transformed raw, noisy data into structured, interpretable, risk-aligned features — improving both model performance and explainability.
 
 </details>
 
 <details>
-<summary>4 — Model Selection</summary>
+<summary><b>3 — Class Imbalance Handling</b></summary>
 
-- Trained: Logistic Regression, Random Forest, XGBoost, CatBoost
+<br>
+
+- Identified significant class imbalance: majority good customers, minority bad customers
+- Tested **under-sampling** first — reduced imbalance but caused significant information loss
+- Implemented **SMOTE-Tomek**: combines oversampling of minority class with Tomek link removal to clean overlapping boundary points
+
+**Insight:** SMOTE-Tomek improved recall for bad customers substantially. This is the critical metric — failing to detect risky customers directly causes financial loss.
+
+</details>
+
+<details>
+<summary><b>4 — Model Selection</b></summary>
+
+<br>
+
+Trained and compared four models:
+
+| Model | Type | Notes |
+|---|---|---|
+| Logistic Regression | Baseline | Interpretable, low complexity |
+| Random Forest | Bagging ensemble | Stable, handles non-linearity |
+| XGBoost | Boosting | Strong performance, prone to overfit |
+| CatBoost | Boosting | Handles categoricals efficiently |
+
 - Compared train vs test performance to detect overfitting
+- Focused on generalisation ability and stability across datasets
 
-**Insight:** Random Forest selected — stable performance and best recall balance with SMOTE-Tomek.
-
-</details>
-
-<details>
-<summary>5 — Model Evaluation</summary>
-
-- ROC-AUC ~0.74 — overall ranking performance
-- Gini ~0.48 — discriminatory power
-- KS ~34% — separation between good and bad customers
-- Recall (bad customers) — primary business metric
+**Insight:** Under-sampling caused instability across most models. SMOTE-Tomek improved ensemble model performance significantly. **Random Forest selected** for stable recall balance and consistent generalisation.
 
 </details>
 
 <details>
-<summary>6 — PSI & CSI Monitoring</summary>
+<summary><b>5 — Model Evaluation</b></summary>
 
-- PSI = 0.39 (> 0.25 threshold) → significant score drift detected
-- CSI low → features are stable
-- **Diagnosis: concept drift** (customer behaviour changed, not features)
+<br>
 
-Actions taken: threshold alerts, WoE recalibration, periodic retraining recommended.
+Evaluated using multiple complementary metrics:
+
+| Metric | Value | What It Measures |
+|---|---|---|
+| ROC-AUC | ~0.74 | Overall ranking and discrimination |
+| Gini | ~0.48 | Discriminatory power (2×AUC−1) |
+| KS Statistic | ~34% | Separation between good and bad distributions |
+| Recall (Bad) | ~60% | Detection rate for high-risk customers |
+
+- Analysed confusion matrix to understand classification errors
+- Prioritised recall over precision — missing a bad customer is more costly than a false positive
+
+**Insight:** The model shows strong separation capability. Recall-focused evaluation ensures high-risk customers are flagged before approval, directly aligning with business goals.
+
+</details>
+
+<details>
+<summary><b>6 — PSI & CSI Monitoring</b></summary>
+
+<br>
+
+- Applied **Population Stability Index (PSI)** on model scores to detect distribution shift over time
+- Applied **Characteristic Stability Index (CSI)** to monitor feature-level distribution changes
+- Evaluated on **Out-of-Time (OOT)** validation dataset
+
+**Observations:**
+
+| Index | Value | Status |
+|---|---|---|
+| PSI | 0.39 | 🔴 > 0.25 — significant drift |
+| CSI | Low | 🟢 Features stable |
+
+**Diagnosis:** High PSI + low CSI = **concept drift** — customer behaviour changed, not the features themselves.
+
+**Actions Taken:**
+- Set threshold-based alerts at PSI > 0.25
+- Recommended periodic model retraining
+- Recalibrated WoE bins on new data
+- Set up continuous performance monitoring
 
 </details>
 
 ---
 
-## Project Architecture
+## 🔹 Project Architecture
 
 ![Architecture](images/architecture.png)
 
 ---
 
-## Proof of Work
+## 🔹 Proof of Work
 
-**MLflow Tracking on AWS EC2**
+### MLflow Tracking Server on AWS EC2
+
+MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifacts centrally.
 
 ![EC2 Instance](images/ec2_instance.png)
 
-**Experiment Tracking**
+### Experiment Run Tracking
+
+Multiple model runs tracked with parameters and performance metrics for reproducible comparison.
 
 ![Experiment Tracking](images/mlflow_experiments.png)
+![Experiment Comparison](images/mlflow_comparison.png)
 
-**Model Registry**
+### Model Registry
+
+Registered best model with production stage tagging via MLflow Model Registry.
 
 ![Model Registry](images/model_registry.png)
 
 ---
 
-## Data Source
+## 🔹 Data Source
 
-Real client data under NDA — raw dataset cannot be disclosed.
+This project uses real client data under a **Non-Disclosure Agreement** — raw dataset details cannot be disclosed.
 
-- ~100K customers
-- 99 features: demographic, behavioural, credit, and bureau attributes
+- ~**100,000 customers**
+- **99 features** covering demographic, behavioural, credit, and bureau attributes
+- Master dataset used for all analysis, feature engineering, and modelling
 
 ---
 
-## Project Structure
+## 🔹 Project Structure
 ```
 bad-debt-prediction/
 │
 ├── app/
-│   └── app.py                    # Streamlit app
+│   └── app.py                              # Streamlit scoring app
+│
 ├── models/
-│   └── model.joblib              # Trained model
+│   └── model.joblib                        # Trained Random Forest model
+│
 ├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_feature_engineering_modelling.ipynb
-│   └── 03_PSI_CSI.ipynb
+│   ├── 01_data_cleaning.ipynb              # EDA and preprocessing
+│   ├── 02_feature_engineering_modelling.ipynb  # WoE, IV, model training
+│   └── 03_PSI_CSI.ipynb                   # Drift monitoring
+│
+├── images/                                 # README screenshots
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -422,17 +486,18 @@ bad-debt-prediction/
 
 ---
 
-## Challenges
+## 🔹 Challenges
 
-- Severe class imbalance — required careful resampling strategy and metric selection
-- Shifted evaluation away from accuracy toward recall, KS, and Gini
-- Noisy, correlated, leakage-prone features — addressed with WoE/IV and stability checks
-- Balancing recall vs precision with SMOTE-Tomek — improved detection but risked overfitting
+- **Severe class imbalance** — bad customers were a tiny minority, requiring careful resampling strategy selection and metric prioritisation
+- **Misleading accuracy** — shifted evaluation entirely toward recall, KS, and Gini to reflect true business risk
+- **Feature selection complexity** — noisy, correlated, and leakage-prone variables addressed using WoE/IV filtering and stability checks
+- **Recall vs precision trade-off** — SMOTE-Tomek improved bad customer detection but increased overfitting risk in some models, requiring careful validation
 
 ---
 
-## Future Improvements
+## 🔹 Future Improvements
 
-- Audit-ready scoring history for explainable credit decisions
-- Stronger drift monitoring with automated alerts and retraining pipeline
-- WoE bin recalibration on new data as behaviour shifts
+- Build an **audit-ready scoring history** so credit decisions can be reviewed and explained over time
+- Implement **automated drift alerts** with retraining triggers when PSI exceeds threshold
+- **Recalibrate WoE bins** periodically as customer behaviour patterns shift
+- Explore **scorecard development** using logistic regression on WoE features for full regulatory interpretability
