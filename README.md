@@ -1,4 +1,6 @@
-# **Bad Debt Prediction**
+# Bad Debt Prediction
+
+Python · Scikit-Learn · MLflow · AWS SageMaker · Streamlit · XGBoost · CatBoost · Random Forest · SMOTE-Tomek · WoE / IV · PSI / CSI
 
 ### 🔹 **Overview**
 
