@@ -196,8 +196,8 @@ bad-debt-prediction/
 -----
   
 ## 🔹 Tech Stack
+<img width="1406" height="324" alt="image" src="https://github.com/user-attachments/assets/24ac00c5-0956-4848-9e0f-7e12a1d8ab52" />
 
-<img width="1406" height="324" alt="image" src="https://github.com/user-attachments/assets/74b7508d-8965-4fc9-90ef-81cda46f0fc2" />
 
 
 
