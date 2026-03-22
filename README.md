@@ -16,7 +16,7 @@
 
 ### 🔹 **Overview**
 
-This project builds a data-driven system to predict bad-debt customers before credit approval. It handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling, and compares models (Logistic Regression, Random Forest, XGBoost, CatBoost) using ROC-AUC, KS, and Gini with a focus on risk detection. The solution includes MLflow tracking, a Streamlit app for real-time scoring, and PSI/CSI monitoring to ensure model stability and detect drift.
+This project builds a data-driven system to predict bad-debt customers before credit approval. It handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling, and compares models (Logistic Regression, Random Forest, XGBoost, CatBoost) using ROC-AUC, KS, and Gini. The solution includes MLflow tracking, a Streamlit app for real-time scoring, and PSI/CSI monitoring to ensure model stability and detect drift.
 
 [![Open Streamlit App](https://img.shields.io/badge/Open%20App-Streamlit-red?logo=streamlit)](https://1baddebtprediction-h6ntjamopchs3yrgmzjhwf.streamlit.app/)
 ---
@@ -39,6 +39,16 @@ Credit-based businesses enable “buy now, pay later” models, increasing sales
 | Threshold selection | Choosing the right cut-off requires balancing recall vs precision based on business cost |
 
 ---
+
+### 🔹 Business Impact (Scenario)
+
+* Achieved ~60% recall for high-risk borrowers, improving early identification of potential defaulters before credit approval
+* Demonstrated potential to reduce bad-debt exposure from **₹1M to ~₹0.4M** based on model-driven risk detection (scenario-based estimate)
+* Improved credit decisioning by prioritizing **risk-focused metrics (KS, Gini, Recall)** over traditional accuracy
+* Enabled continuous model monitoring using **PSI/CSI**, supporting early detection of behavior shifts and timely **model recalibration**.
+
+----
+  
 ## 🔹 Solution Approach
 
 #### 1) Data Preprocessing and EDA
@@ -147,12 +157,7 @@ SMOTE-Tomek improved **recall for bad customers**, which is critical since faili
 
 
 
-### 🔹 Business Impact (Scenario)
 
-* Achieved ~60% recall for high-risk borrowers, improving early identification of potential defaulters before credit approval
-* Demonstrated potential to reduce bad-debt exposure from **₹1M to ~₹0.4M** based on model-driven risk detection (scenario-based estimate)
-* Improved credit decisioning by prioritizing **risk-focused metrics (KS, Gini, Recall)** over traditional accuracy
-* Enabled continuous model monitoring using **PSI/CSI**, supporting early detection of behavior shifts and timely **model recalibration**.
 
 ---
 
