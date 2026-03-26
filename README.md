@@ -143,7 +143,7 @@ The working dataset contains about 100K customers and 99 features, covering demo
 
 
 
-![Data Architecture(https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
+![Data Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
 ----------------
 
