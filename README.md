@@ -131,7 +131,7 @@ Trained and compared four models on train vs test performance to detect overfitt
 ### 🔹 **Project Architecture**
 
 
-![Credit Risk Flow](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg)
+![Project Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/ml_bdb.svg)
 
 -----
 
@@ -143,7 +143,7 @@ The working dataset contains about 100K customers and 99 features, covering demo
 
 
 
-![Credit Risk Flow](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
+![Data Architecture(https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
 ----------------
 
@@ -198,7 +198,7 @@ bad-debt-prediction/
 
 MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifacts centrally.
 
-<img width="1852" height="143" alt="EC2_Instance" src="https://github.com/user-attachments/assets/3dd85c69-89f4-490c-962a-a569ce3b2807" />
+<img width="1852" height="143" alt="EC2_Instance" src="https://github.com/user-attachments/assets/3dd85c69-89f4-490c-962a-a569ce3b2807" /> 
 
 
 -  **Experiment Run Tracking**
