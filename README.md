@@ -100,20 +100,55 @@ Trained and compared four models on train vs test performance to detect overfitt
 **Insight:** The model is optimised for **higher recall on bad customers**, ensuring risky applicants are flagged even at the cost of some false positives.
 
 </details>
+
+<details>
+<summary><b>6 — Model Performance Visuals</b></summary>
+
+### 🔹 Confusion Matrix
+![Confusion Matrix](path/to/confusion_matrix.png)
+
+👉 Shows classification breakdown:
+- True Positives → Correct defaulters
+- False Negatives → Missed defaulters (highest risk)
+
+---
+
+### 🔹 ROC Curve
+![ROC Curve](path/to/roc_curve.png)
+
+👉 Visualises model’s ability to distinguish between good and bad customers across thresholds.
+
+---
+
+### 🔹 Gini Interpretation
+![Gini Curve](path/to/gini_curve.png)
+
+👉 Derived from ROC; reflects model’s discriminatory power in credit risk evaluation.
+
+---
+
+### 🔹 Feature Importance
+![Feature Importance](path/to/feature_importance.png)
+
+👉 Highlights key drivers of default risk used by the model.
+
+</details>
+
 <details>
 <summary><b>6 — PSI & CSI Monitoring</b></summary>
 
 | Index | Value | Status |
 |---|---|---|
-| PSI | 0.39 | 🔴 > 0.25 — significant drift |
+| PSI | 0.39 | 🔴 Significant drift (> 0.25) |
 | CSI | Low | 🟢 Features stable |
 
-**Diagnosis:** High PSI + low CSI = concept drift — customer behaviour changed, not the features.
+High PSI indicates a shift in customer data distribution, while low CSI confirms that feature importance remains stable.  
 
-**Actions:** PSI > 0.25 alerts set · WoE bins recalibrated · Periodic retraining recommended
+👉 This suggests **concept drift** — customer behaviour has changed, not the underlying features.  
+
+**Action:** PSI alerts (> 0.25), WoE recalibration, and periodic model retraining.
 
 </details>
-
 
 ---
 
