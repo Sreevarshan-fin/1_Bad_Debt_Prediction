@@ -186,6 +186,45 @@ bad-debt-prediction/
 
 --------------
 
+
+## 🔹How to Run Locally
+
+```bash
+git clone https://github.com/your-username/bad-debt-prediction.git
+cd bad-debt-prediction
+
+pip install -r requirements.txt
+streamlit run app/app.py
+```
+
+👉 Open browser: http://localhost:8501
+
+---
+
+##🔹Dataset Note
+
+The original dataset used for this project is not included due to NDA (Non-Disclosure Agreement) restrictions.
+
+👉 This project works using a pre-trained model (`model.joblib`), so no dataset is required to run the application.
+
+Users can directly input customer details in the Streamlit app to generate real-time predictions.
+
+---
+
+## 💡 How to Use the App
+
+1. Open the Streamlit app (local or deployed link)
+2. Enter customer details such as credit score, balance, etc.
+3. Click predict
+
+👉 Output:
+
+* **0 → Good Customer (Low Risk)**
+* **1 → Bad Customer (High Risk)**
+
+---
+
+
 ## 🔹 Challenges
 
 - **Severe class imbalance** — bad customers were a tiny minority, requiring careful resampling strategy selection and metric prioritisation
