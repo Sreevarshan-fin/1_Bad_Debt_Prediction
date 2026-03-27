@@ -138,38 +138,33 @@ Trained and compared four models on train vs test performance to detect overfitt
 
 ## 🔹 How the System Works
 
-1. User enters customer details in Streamlit app
+1. User enters customer details in the Streamlit app
+2. The app sends input data to the trained model (`model.joblib`)
+3. The model predicts:
 
-2. App sends data to trained model (.joblib)
+   * **0 → Good Customer (Low Risk)**
+   * **1 → Bad Customer (High Risk)**
+4. PSI monitors whether new input data differs from training data
 
-3. Model predicts:
+---
 
-   * 0 → Good Customer
-   * 1 → Bad Customer
-
-4. PSI monitors if new data is different from training data
-
---------------
-
-### 🔹 **Data Note**
+### 🔹 Data Note
 
 This project uses real client data under a Non-Disclosure Agreement (NDA), so the dataset and detailed attributes cannot be shared.
 
-The original dataset contains approximately 100K customers and 99 features, including demographic, behavioral, credit, and bureau-related information, and was used for all analysis and modeling.
+The dataset contains approximately **100K customers and 99 features**, including demographic, behavioral, and credit-related variables used for model development.
 
-👉 The application works using a pre-trained model (`model.joblib`), so no dataset is required to run the project.
+👉 The application runs using a pre-trained model, so no dataset is required to use the system.
 
-Users can directly input customer details in the Streamlit app to generate real-time predictions.
-
-
+---
 
 ![Data Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
-----------------
+---
 
-## 🔹How to Run Locally
+## 🔹 How to Run Locally
 
-```bash
+```bash id="h7xj07"
 git clone https://github.com/your-username/bad-debt-prediction.git
 cd bad-debt-prediction
 
@@ -179,19 +174,20 @@ streamlit run app/app.py
 
 👉 Open browser: http://localhost:8501
 
+---
 
-How to Use the App
+## 💡 How to Use the App
 
 1. Open the Streamlit app (local or deployed link)
-2. Enter customer details (e.g., credit score, balance, etc.)
+2. Enter customer details
 3. Click **Predict**
 
-👉 Output
+👉 The model returns customer risk classification (Good / Bad)
 
-* **0 → Good Customer (Low Risk)**
-* **1 → Bad Customer (High Risk)**
+
 
 ---
+
 ## 🔹 **Project Structure**
 
 ```
