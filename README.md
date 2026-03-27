@@ -230,10 +230,13 @@ bad-debt-prediction/
 
 ## 🔹 Future Improvements
 
-- Build an **audit-ready scoring history** so credit decisions can be reviewed and explained over time
-- Implement **automated drift alerts** with retraining triggers when PSI exceeds threshold
-- **Recalibrate WoE bins** periodically as customer behaviour patterns shift
-- Explore **scorecard development** using logistic regression on WoE features for full regulatory interpretability
+* Integrate **Evidently AI** for automated monitoring of data drift, model performance, and data quality in production.
+
+* Implement **A/B testing** to compare multiple models in real-world scenarios and select the best-performing model based on business metrics.
+
+* Introduce a **dynamic decision threshold** based on business risk appetite instead of a fixed cutoff.
+
+* Build a **feedback loop from actual repayment/default outcomes** to continuously improve model performance over time.
 
 
 ---
