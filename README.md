@@ -90,17 +90,16 @@ Trained and compared four models on train vs test performance to detect overfitt
 
 ### 🔹 Metric Interpretation
 
-| Metric | Value | Interpretation |
-|---|---|---|
-| ROC-AUC | 0.74 | The model shows good ability to rank risky customers above safe ones, though separation can still improve |
-| Gini | 0.48 | Indicates moderate predictive strength, suitable for credit risk decision-making |
-| KS Statistic | 34% | Demonstrates strong separation between good and bad customers (above 30% is good) |
-| Recall (bad) | 60% | Successfully identifies 60% of defaulters, helping reduce financial risk |
+| Metric | Interpretation |
+|---|---|
+| ROC-AUC (0.74) | The model has a good ability to distinguish between good and bad customers, meaning it ranks risky customers higher than safe ones most of the time |
+| Gini (0.48) | Indicates moderate discriminatory power; the model is effective in separating defaulters from non-defaulters, which is acceptable for credit risk models |
+| KS Statistic (34%) | Shows strong separation between good and bad customers; values above 30% are generally considered good in credit risk modeling |
+| Recall – Bad Customers (60%) | The model correctly identifies 60% of actual defaulters, helping reduce financial losses by catching high-risk customers early |
 
 **Insight:** The model is optimised for **higher recall on bad customers**, ensuring risky applicants are flagged even at the cost of some false positives.
 
 </details>
-
 <details>
 <summary><b>6 — PSI & CSI Monitoring</b></summary>
 
