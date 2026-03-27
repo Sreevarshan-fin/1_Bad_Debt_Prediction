@@ -1,17 +1,5 @@
 # Bad Debt Prediction
 
-![Python](https://img.shields.io/badge/Python-3.11-black)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-black)
-![MLflow](https://img.shields.io/badge/MLflow-black)
-![AWS EC2](https://img.shields.io/badge/AWS_EC2-black)
-![Streamlit](https://img.shields.io/badge/Streamlit-black)
-![XGBoost](https://img.shields.io/badge/XGBoost-black)
-![CatBoost](https://img.shields.io/badge/CatBoost-black)
-![Random Forest](https://img.shields.io/badge/Random_Forest-black)
-![SMOTE-Tomek](https://img.shields.io/badge/SMOTE--Tomek-black)
-![WoE/IV](https://img.shields.io/badge/WoE_/_IV-black)
-![PSI/CSI](https://img.shields.io/badge/PSI_/_CSI-black)
-
 ---
 
 ### 🔹 **Overview**
