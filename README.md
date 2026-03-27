@@ -199,9 +199,8 @@ streamlit run app/app.py
 
 👉 Open browser: http://localhost:8501
 
----
 
-##🔹Dataset Note
+**Dataset Note**
 
 The original dataset used for this project is not included due to NDA (Non-Disclosure Agreement) restrictions.
 
@@ -209,9 +208,8 @@ The original dataset used for this project is not included due to NDA (Non-Discl
 
 Users can directly input customer details in the Streamlit app to generate real-time predictions.
 
----
 
-## 💡 How to Use the App
+💡 **How to Use the App**
 
 1. Open the Streamlit app (local or deployed link)
 2. Enter customer details such as credit score, balance, etc.
