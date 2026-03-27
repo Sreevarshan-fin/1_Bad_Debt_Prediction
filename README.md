@@ -142,9 +142,7 @@ This project uses real client data under a Non-Disclosure Agreement (NDA), so th
 
 The dataset contains approximately **100K customers and 99 features**, including demographic, behavioral, and credit-related variables used for model development.
 
-👉 The application runs using a pre-trained model, so no dataset is required to use the system.
-
----
+👉 **Data Architecture**
 
 ![Data Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
