@@ -135,6 +135,22 @@ Trained and compared four models on train vs test performance to detect overfitt
 
 -----
 
+
+## 🔹 How the System Works
+
+1. User enters customer details in Streamlit app
+
+2. App sends data to trained model (.joblib)
+
+3. Model predicts:
+
+   * 0 → Good Customer
+   * 1 → Bad Customer
+
+4. PSI monitors if new data is different from training data
+
+-----
+
 ### 🔹 **Data Source**
 
 **This project uses real client data under a Non-Disclosure Agreement, so raw dataset details cannot be disclosed.**
