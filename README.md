@@ -165,7 +165,7 @@ The dataset contains approximately **100K customers and 99 features**, including
 ## 🔹 How to Run Locally
 
 ```bash id="h7xj07"
-git clone https://github.com/your-username/bad-debt-prediction.git
+git clone https://github.com/Sreevarshan-fin/Bad_Debt_Prediction.git
 cd bad-debt-prediction
 
 pip install -r requirements.txt
