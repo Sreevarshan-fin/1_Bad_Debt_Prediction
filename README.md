@@ -151,18 +151,6 @@ Trained and compared four models on train vs test performance to detect overfitt
 
 -----
 
-### 🔹 **Data Source**
-
-**This project uses real client data under a Non-Disclosure Agreement, so raw dataset details cannot be disclosed.**
-
-The working dataset contains about 100K customers and 99 features, covering demographic, behavioral, credit, and bureau attributes. This master dataset was used for all analysis and modeling.
-
-
-
-![Data Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
-
-----------------
-
 ## 🔹 **Project Structure**
 
 ```
@@ -186,6 +174,21 @@ bad-debt-prediction/
 
 --------------
 
+### 🔹 **Data Note**
+
+This project uses real client data under a Non-Disclosure Agreement (NDA), so the dataset and detailed attributes cannot be shared.
+
+The original dataset contains approximately 100K customers and 99 features, including demographic, behavioral, credit, and bureau-related information, and was used for all analysis and modeling.
+
+👉 The application works using a pre-trained model (`model.joblib`), so no dataset is required to run the project.
+
+Users can directly input customer details in the Streamlit app to generate real-time predictions.
+
+
+
+![Data Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
+
+----------------
 
 ## 🔹How to Run Locally
 
@@ -200,25 +203,18 @@ streamlit run app/app.py
 👉 Open browser: http://localhost:8501
 
 
-##### **Dataset Note**
-
-The original dataset used for this project is not included due to NDA (Non-Disclosure Agreement) restrictions.
-
-👉 This project works using a pre-trained model (`model.joblib`), so no dataset is required to run the application.
-
-Users can directly input customer details in the Streamlit app to generate real-time predictions.
-
-
-**How to Use the App**
+How to Use the App
 
 1. Open the Streamlit app (local or deployed link)
-2. Enter customer details such as credit score, balance, etc.
-3. Click predict
+2. Enter customer details (e.g., credit score, balance, etc.)
+3. Click **Predict**
 
-👉 Output:
+👉 Output
 
 * **0 → Good Customer (Low Risk)**
 * **1 → Bad Customer (High Risk)**
+
+---
 
 ---
 
