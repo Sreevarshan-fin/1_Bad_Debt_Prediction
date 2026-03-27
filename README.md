@@ -149,29 +149,6 @@ Trained and compared four models on train vs test performance to detect overfitt
 
 4. PSI monitors if new data is different from training data
 
------
-
-## 🔹 **Project Structure**
-
-```
-bad-debt-prediction/
-│
-├── app/
-│   └── app.py                     # Streamlit deployment           
-│
-├── models/
-│   └── model.joblib               # Trained model
-│
-├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_feature_engineering & Model Training & Evaluation.ipynb
-│   ├── 03_PSI and CSI.ipynb
-|
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
 --------------
 
 ### 🔹 **Data Note**
@@ -215,7 +192,26 @@ How to Use the App
 * **1 → Bad Customer (High Risk)**
 
 ---
+## 🔹 **Project Structure**
 
+```
+bad-debt-prediction/
+│
+├── app/
+│   └── app.py                     # Streamlit deployment           
+│
+├── models/
+│   └── model.joblib               # Trained model
+│
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_feature_engineering & Model Training & Evaluation.ipynb
+│   ├── 03_PSI and CSI.ipynb
+|
+├── requirements.txt
+├── README.md
+└── .gitignore
+```
 ---
 
 
