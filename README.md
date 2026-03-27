@@ -12,6 +12,21 @@
 ![WoE/IV](https://img.shields.io/badge/WoE_/_IV-black)
 ![PSI/CSI](https://img.shields.io/badge/PSI_/_CSI-black)
 
+
+## 🔹 Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3.11-black)
+![Pandas](https://img.shields.io/badge/Pandas-black)
+![NumPy](https://img.shields.io/badge/NumPy-black)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-black)
+![XGBoost](https://img.shields.io/badge/XGBoost-black)
+![CatBoost](https://img.shields.io/badge/CatBoost-black)
+![MLflow](https://img.shields.io/badge/MLflow-black)
+![AWS EC2](https://img.shields.io/badge/AWS_EC2-black)
+![Streamlit](https://img.shields.io/badge/Streamlit-black)
+![WoE/IV](https://img.shields.io/badge/WoE_/_IV-black)
+![PSI/CSI](https://img.shields.io/badge/PSI_/_CSI-black)
+
 ---
 
 ### 🔹 **Overview**
