@@ -88,14 +88,16 @@ Trained and compared four models on train vs test performance to detect overfitt
 <details>
 <summary><b>5 — Model Evaluation</b></summary>
 
-| Metric | Value | What It Measures |
-|---|---|---|
-| ROC-AUC | 0.74 | Overall ranking performance |
-| Gini | 0.48 | Discriminatory power |
-| KS Statistic | 34% | Good vs bad separation |
-| Recall (bad) | 60% | High-risk customer detection |
+### 🔹 Metric Interpretation
 
-**Insight:** Recall-focused evaluation ensures risky customers are flagged before approval.
+| Metric | Value | Interpretation |
+|---|---|---|
+| ROC-AUC | 0.74 | The model shows good ability to rank risky customers above safe ones, though separation can still improve |
+| Gini | 0.48 | Indicates moderate predictive strength, suitable for credit risk decision-making |
+| KS Statistic | 34% | Demonstrates strong separation between good and bad customers (above 30% is good) |
+| Recall (bad) | 60% | Successfully identifies 60% of defaulters, helping reduce financial risk |
+
+**Insight:** The model is optimised for **higher recall on bad customers**, ensuring risky applicants are flagged even at the cost of some false positives.
 
 </details>
 
