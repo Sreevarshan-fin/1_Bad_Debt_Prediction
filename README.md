@@ -21,12 +21,11 @@ Credit businesses operating "buy now, pay later" models face a core tension: app
 
 ## Business Impact
 
-| Metric | Result |
-|---|---|
-| Bad customer recall | 60% — catches 3 in 5 defaulters before approval |
-| Bad-debt exposure reduction | ₹1M → ~₹0.4M (scenario-based estimate) |
-| Primary evaluation focus | KS, Gini, and Recall — not accuracy |
-| Drift monitoring | PSI/CSI tracking with recalibration triggers |
+- Achieved **60% recall** on bad customers, catching 3 in 5 defaulters before credit approval — reducing reactive collections and financial exposure
+- Demonstrated potential to reduce bad-debt exposure from **₹1M to ~₹0.4M** through model-driven risk decisioning (scenario-based estimate based on recall performance)
+- Prioritised **KS (34%), Gini (0.48), and Recall** over accuracy, reflecting the true business cost of approving a high-risk customer
+- Implemented **PSI/CSI monitoring** to detect shifts in customer behaviour and feature distributions, enabling timely recalibration before model performance degrades
+
 
 ---
 
