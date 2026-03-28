@@ -1,6 +1,3 @@
-Here's a cleaner, sharper rewrite:
-
----
 
 # Bad Debt Prediction
 
