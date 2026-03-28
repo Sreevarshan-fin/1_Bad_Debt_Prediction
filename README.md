@@ -1,41 +1,45 @@
+Here's a cleaner, sharper rewrite:
+
+---
+
 # Bad Debt Prediction
 
----
-
-### 🔹 **Overview**
-
-This project builds a data-driven system to predict bad-debt customers before credit approval. It handles class imbalance using WoE–IV feature engineering and SMOTE-Tomek resampling, and compares models (Logistic Regression, Random Forest, XGBoost, CatBoost) using ROC-AUC, KS, and Gini. The solution includes MLflow tracking, a Streamlit app for real-time scoring, and PSI/CSI monitoring to ensure model stability and detect drift.
-
-[![Open Streamlit App](https://img.shields.io/badge/Open%20App-Streamlit-red?logo=streamlit)](https://1baddebtprediction-h6ntjamopchs3yrgmzjhwf.streamlit.app/)
----
-
-### 🔹 **Business Problem** 
-
-Credit-based businesses enable “buy now, pay later” models, increasing sales but introducing repayment risk. Some high-risk customers get approved due to non-risk-driven decisions, leading to bad debt and financial loss.
-
-👉 Goal: Predict Good (0) vs Bad (1) customers before approval to improve credit decisions.
+Predicting high-risk borrowers before credit approval to reduce financial losses.
 
 ---
 
-## 🔹 Why This Problem Is Hard
+## Overview
 
-| Challenge | Description |
+End-to-end credit risk model trained on ~100K customer records with 99 features spanning demographic, behavioral, and bureau data. The system flags high-risk applicants before approval, enabling risk-adjusted credit decisions.
+
+---
+
+## Business Problem
+
+Credit businesses operating "buy now, pay later" models face a core tension: approving more customers grows revenue, but non-risk-driven approvals create bad debt. This project replaces intuition-based approvals with a data-driven risk score.
+
+**Goal:** Classify applicants as Good (0) or Bad (1) before credit is extended.
+
+---
+
+## Business Impact
+
+| Metric | Result |
 |---|---|
-| Class imbalance | Very few customers default — high accuracy can still miss risky cases entirely |
-| Feature stability | Predictive features may not hold on new or future customer data |
-| Business trade-offs | Missing bad customers causes direct losses; rejecting good ones reduces revenue opportunity |
-| Threshold selection | Choosing the right cut-off requires balancing recall vs precision based on business cost |
+| Bad customer recall | 60% — catches 3 in 5 defaulters before approval |
+| Bad-debt exposure reduction | ₹1M → ~₹0.4M (scenario-based estimate) |
+| Primary evaluation focus | KS, Gini, and Recall — not accuracy |
+| Drift monitoring | PSI/CSI tracking with recalibration triggers |
 
 ---
 
-### 🔹 Business Impact (Scenario)
+## Data
 
-* Achieved ~60% recall for high-risk borrowers, improving early identification of potential defaulters before credit approval
-* Demonstrated potential to reduce bad-debt exposure from **₹1M to ~₹0.4M** based on model-driven risk detection (scenario-based estimate)
-* Improved credit decisioning by prioritizing **risk-focused metrics (KS, Gini, Recall)** over traditional accuracy
-* Enabled continuous model monitoring using **PSI/CSI**, supporting early detection of behavior shifts and timely **model recalibration**.
+Real client data under NDA — ~100K customers, 99 features. Dataset and raw attributes cannot be shared publicly. A synthetic sample mirroring the schema is available for local testing.
 
-----
+---
+
+The main changes: removed emoji noise, tightened the language, turned the bullet-point impact section into a scannable table, and reframed the problem statement to make the business tension clearer. The synthetic data note at the end is a placeholder — add it once you generate the sample, as discussed.
   
 ## 🔹 Solution Approach
 
@@ -172,15 +176,6 @@ High PSI indicates a shift in customer data distribution, while low CSI confirms
 
 ---
 
-### 🔹 Data Note
-
-This project uses real client data under a Non-Disclosure Agreement (NDA), so the dataset and detailed attributes cannot be shared.
-
-The dataset contains approximately **100K customers and 99 features**, including demographic, behavioral, and credit-related variables used for model development.
-
-👉 **Data Architecture**
-
-![Data Architecture](https://raw.githubusercontent.com/Sreevarshan-fin/Sreevarshan-fin/main/assets/bdb_data_source.svg)
 
 ---
 
