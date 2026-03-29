@@ -1,7 +1,7 @@
-<h1 align="center">Bad Debt Prediction</h1>
-
 <p align="center">
-  Detecting High-Risk Borrowers Preventing Bad Debt and Financial Losses
+  <b>Bad Debt Prediction</b><br>
+  Predicting high-risk borrowers to prevent bad debt and financial losses.<br>
+  Built an end-to-end machine learning system with risk-based feature engineering, model evaluation, and drift monitoring.
 </p>
 
 <p align="center">
@@ -166,17 +166,25 @@ Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor mod
 
 
 ---
-## 🔹 Tech Stack
 
-* **Programming:** Python
-* **Machine Learning:** Scikit-learn, XGBoost, CatBoost
-* **Data Processing & Analysis:** Pandas, NumPy
-* **Model Tracking & Deployment:** MLflow, AWS SageMaker, Streamlit
-* **Monitoring & Risk Analytics:** WoE/IV, PSI, CSI
+## Tech Stack
+
+* **Programming:** Python  
+* **Machine Learning:** Scikit-learn, XGBoost, CatBoost  
+* **Data Processing:** Pandas, NumPy  
+* **Deployment & Tracking:** MLflow, AWS SageMaker, Streamlit  
+* **Monitoring:** PSI, CSI  
+
+## Key Techniques
+
+* WoE (Weight of Evidence)  
+* Information Value (IV)  
+* SMOTE-Tomek  
+* OOT Validation  
   
 ----
 
-## 🔹 Challenges
+## Challenges
 
 - **Severe class imbalance** — bad customers were a tiny minority, requiring careful resampling strategy selection and metric prioritisation
 - **Misleading accuracy** — shifted evaluation entirely toward recall, KS, and Gini to reflect true business risk
@@ -185,7 +193,7 @@ Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor mod
 
 ---
 
-## 🔹 Future Improvements
+## Future Improvements
 
 * Integrate **Evidently AI** for automated monitoring of data drift, model performance, and data quality in production.
 
