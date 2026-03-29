@@ -18,6 +18,8 @@
 ![Project Architecture](assets/projectworkflow.jpg)
 
 
+----
+
 ## Problem Statement
 
 Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off between **revenue growth** and **credit risk**. Approving customers without **structured risk assessment** leads to **payment defaults**, causing **bad debts** and **financial losses**. This lack of **predictive evaluation** impacts **cash flow**, **profitability**, and **risk management**.
@@ -26,6 +28,19 @@ This project builds a **machine learning classification model** to label custome
 
 --
 
+## Data Overview
+
+Real-world credit dataset (~100K customers, 99 features) collected under NDA, structured based on key risk dimensions:
+
+* **Customer Behaviour**
+* **Credit Behaviour**
+* **Credit Bureau Data**
+
+Includes credit bureau scores from two providers — **CR21** and **CR22** — enabling comparative analysis of their effectiveness in identifying high-risk customers.
+
+⚠️ Dataset cannot be shared due to confidentiality constraints.
+
+----
 
 ## 🔹 Solution Approach
 
