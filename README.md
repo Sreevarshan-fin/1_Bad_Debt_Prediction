@@ -14,6 +14,10 @@
 
 ---
 
+
+![Project Architecture](assets/projectworkflow.jpg)
+
+
 ## Problem Statement
 
 Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off between **revenue growth** and **credit risk**. Approving customers without **structured risk assessment** leads to **payment defaults**, causing **bad debts** and **financial losses**. This lack of **predictive evaluation** impacts **cash flow**, **profitability**, and **risk management**.
