@@ -26,7 +26,7 @@
 ---
 
 
-![Project Architecture](assets/projectworkflow.jpg)
+![Project Architecture](assets/projectworkflow.gif)
 
 
 ----
