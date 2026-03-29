@@ -43,7 +43,7 @@ Includes credit bureau scores from two providers — **CR21** and **CR22** — e
 
 ----
 
-## 🔹 Solution Approach
+## Solution Approach
 
 <details>
 <summary><b>1. Data Preprocessing & EDA</b></summary>
