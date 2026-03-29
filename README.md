@@ -20,6 +20,116 @@ Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off betwee
 
 This project builds a **machine learning classification model** to label customers as **Good (0) / Bad (1)**, enabling **data-driven credit decisions**.
 
+--
+
+
+## 🔹 Solution Approach
+
+<details>
+<summary><b>1. Data Preprocessing & EDA</b></summary>
+
+Handled **missing values**, removed **duplicates**, and validated **financial variables** to ensure data consistency and reliability.
+Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**, **delinquency trends**, and **outliers** using statistical plots and correlation analysis.
+
+**Insight:** **Credit score**, **repayment behaviour**, and **delinquency patterns** showed strong differentiation between **defaulters** and **non-defaulters**.
+
+</details>
+
+---
+
+<details>
+<summary><b>2. Feature Engineering</b></summary>
+
+Compared **CR21** and **CR22** bureau scores using **box plots**, analysing **median separation**, **distribution spread**, and **outliers** between good and bad customers.
+**CR22** showed clearer separation with reduced overlap, making it a more reliable predictor of default risk.
+
+Applied **Weight of Evidence (WoE)** binning to transform variables into **monotonic risk-based categories**, improving interpretability and alignment with credit risk behaviour.
+
+Performed **feature selection using Information Value (IV)**:
+
+* **IV < 0.02** → Weak (**removed**)
+* **0.02 – 0.1** → Medium
+* **0.1 – 0.3** → Strong
+* **> 0.3** → Very strong
+
+Removed **highly correlated features** to avoid **multicollinearity** and improve **model stability**.
+
+**Insight:** **CR22 + WoE + IV filtering** significantly improved **class separation**, **interpretability**, and overall **model performance**.
+
+</details>
+
+---
+
+<details>
+<summary><b>3. Class Imbalance Handling</b></summary>
+
+Initial **under-sampling** led to **information loss**.
+Implemented **SMOTE-Tomek** to balance the dataset using **synthetic sampling + noise removal**.
+
+**Insight:** Improved detection of **defaulters**, increasing **recall** and reducing **missed high-risk customers**.
+
+</details>
+
+---
+
+<details>
+<summary><b>4. Model Selection</b></summary>
+
+Trained multiple models: **Logistic Regression**, **Random Forest**, **XGBoost**, and **CatBoost**.
+Evaluated based on **generalisation**, **recall**, and ability to detect **high-risk customers**.
+
+**Final Model:** **Random Forest** (best balance of **recall + stability**)
+
+**Insight:** **Ensemble models** captured complex patterns while maintaining **robust performance**.
+
+</details>
+
+---
+
+<details>
+<summary><b>5. Model Evaluation</b></summary>
+
+Evaluated using key **credit risk metrics**:
+
+* **ROC-AUC (0.74)** → Good class discrimination
+* **Gini (0.48)** → Moderate predictive power
+* **KS (34%)** → Strong separation
+* **Recall (60%)** → Majority of defaulters identified
+
+Maintained consistent performance across **train**, **test**, and **OOT datasets**.
+Threshold tuning (e.g., **0.3**) used to prioritise **risk detection**.
+
+**Insight:** Model is optimised for **high recall**, ensuring early detection of **risky customers**.
+
+</details>
+
+---
+
+<details>
+<summary><b>6. Performance Analysis</b></summary>
+
+Focused on **classification errors** and **feature contribution**.
+Special attention on **False Negatives**, as they represent the highest **financial risk**.
+Used **feature importance** to identify key drivers of default.
+
+**Insight:** Strong **risk separation** and clear **driver identification** validate model reliability.
+
+</details>
+
+---
+
+<details>
+<summary><b>7. PSI & CSI Monitoring</b></summary>
+
+Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor model stability.
+
+* **PSI (0.39)** → Significant **data drift**
+* **CSI (Stable)** → Consistent feature importance
+
+**Insight:** Indicates **concept drift**, requiring **monitoring**, **recalibration**, and **periodic retraining**.
+
+</details>
+
 ---
 
 ## Business Impact
@@ -45,120 +155,6 @@ Features include:
 
 ---
   
-## 🔹 Solution Approach
-
-<details>
-<summary><b>1 — Data Preprocessing & EDA</b></summary>
-
-- Cleaned missing values, removed duplicates, and validated financial variables for reliable analysis
-- EDA across repayment behaviour, delinquency trends, and outliers using histograms, box plots, and correlation analysis
-
-**Insight:** Credit score, repayment behaviour, and delinquency features were the strongest default predictors.
-
-</details>
-
-<details>
-<summary><b>2 — Feature Engineering</b></summary>
-
-- Compared CR21 vs CR22 bureau scores — selected CR22 for stronger good/bad customer separation
-- Applied WoE binning and IV ranking to retain the most predictive, risk-aligned features with monotonic relationships
-
-**Insight:** WoE + IV transformed raw noisy data into interpretable, risk-aligned features — improving both performance and explainability.
-
-</details>
-
-<details>
-<summary><b>3 — Class Imbalance Handling</b></summary>
-
-- Under-sampling tested first — caused information loss
-- SMOTE-Tomek applied: synthetic minority oversampling + Tomek link removal to clean boundary overlap
-
-**Insight:** SMOTE-Tomek improved bad customer recall — the critical metric for preventing financial loss.
-
-</details>
-
-<details>
-<summary><b>4 — Model Selection</b></summary>
-
-Trained and compared four models on train vs test performance to detect overfitting:
-
-| Model | Type |
-|---|---|
-| Logistic Regression | Baseline |
-| Random Forest | Bagging ensemble |
-| XGBoost | Boosting |
-| CatBoost | Boosting + categoricals |
-
-**Insight:** Random Forest selected — best recall balance and stable generalisation with SMOTE-Tomek.
-
-</details>
-
-<details>
-<summary><b>5 — Model Evaluation</b></summary>
-
-### 🔹 Metric Interpretation
-
-| Metric | Interpretation |
-|---|---|
-| ROC-AUC (0.74) | The model has a good ability to distinguish between good and bad customers, meaning it ranks risky customers higher than safe ones most of the time |
-| Gini (0.48) | Indicates moderate discriminatory power; the model is effective in separating defaulters from non-defaulters, which is acceptable for credit risk models |
-| KS Statistic (34%) | Shows strong separation between good and bad customers; values above 30% are generally considered good in credit risk modeling |
-| Recall – Bad Customers (60%) | The model correctly identifies 60% of actual defaulters, helping reduce financial losses by catching high-risk customers early |
-
-**Insight:** The model is optimised for **higher recall on bad customers**, ensuring risky applicants are flagged even at the cost of some false positives.
-
-</details>
-
-<details>
-<summary><b>6 — Model Performance Visuals</b></summary>
-
-### 🔹 Confusion Matrix
-![Confusion Matrix](path/to/confusion_matrix.png)
-
-👉 Shows classification breakdown:
-- True Positives → Correct defaulters
-- False Negatives → Missed defaulters (highest risk)
-
----
-
-### 🔹 ROC Curve
-![ROC Curve](path/to/roc_curve.png)
-
-👉 Visualises model’s ability to distinguish between good and bad customers across thresholds.
-
----
-
-### 🔹 Gini Interpretation
-![Gini Curve](path/to/gini_curve.png)
-
-👉 Derived from ROC; reflects model’s discriminatory power in credit risk evaluation.
-
----
-
-### 🔹 Feature Importance
-![Feature Importance](path/to/feature_importance.png)
-
-👉 Highlights key drivers of default risk used by the model.
-
-</details>
-
-<details>
-<summary><b>6 — PSI & CSI Monitoring</b></summary>
-
-| Index | Value | Status |
-|---|---|---|
-| PSI | 0.39 | 🔴 Significant drift (> 0.25) |
-| CSI | Low | 🟢 Features stable |
-
-High PSI indicates a shift in customer data distribution, while low CSI confirms that feature importance remains stable.  
-
-👉 This suggests **concept drift** — customer behaviour has changed, not the underlying features.  
-
-**Action:** PSI alerts (> 0.25), WoE recalibration, and periodic model retraining.
-
-</details>
-
----
 
 
 ### 🔹 **Project Architecture**
