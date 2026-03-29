@@ -13,10 +13,9 @@ End-to-end credit risk model trained on ~100K customer records with 99 features 
 
 ## Business Problem
 
-> Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off between **revenue growth** and **credit risk**.
-> Approving customers without **structured risk assessment** leads to **payment defaults**, causing **bad debts** and **financial losses**.
-> This lack of **predictive evaluation** impacts **cash flow**, **profitability**, and **risk management**.
-> This project builds a **machine learning classification model** to label customers as **Good (0) / Bad (1)**, enabling **data-driven credit decisions**.
+Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off between **revenue growth** and **credit risk**. Approving customers without **structured risk assessment** leads to **payment defaults**, causing **bad debts** and **financial losses**. This lack of **predictive evaluation** impacts **cash flow**, **profitability**, and **risk management**.
+
+This project builds a **machine learning classification model** to label customers as **Good (0) / Bad (1)**, enabling **data-driven credit decisions**.
 
 ---
 
