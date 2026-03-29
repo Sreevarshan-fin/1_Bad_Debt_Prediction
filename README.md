@@ -1,7 +1,7 @@
 <p align="center">
   <b>Bad Debt Prediction</b><br>
-  Predicting high-risk borrowers to prevent bad debt and financial losses.<br>
-  Built an end-to-end machine learning system with risk-based feature engineering, model evaluation, and drift monitoring.
+  Predicting high-risk borrowers to minimize bad debt and financial losses.<br>
+  Designed an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring.
 </p>
 
 <p align="center">
