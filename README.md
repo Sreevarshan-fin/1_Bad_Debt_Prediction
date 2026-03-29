@@ -12,7 +12,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Pandas-green?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/NumPy-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Scikit--Learn-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/MLflow-black?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/AWS%20SageMaker-yellow?style=for-the-badge"/>
