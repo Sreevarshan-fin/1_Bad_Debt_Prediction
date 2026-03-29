@@ -1,7 +1,7 @@
 <h1 align="center">Bad Debt Prediction</h1>
 
 <p align="center">
-  Predicting high-risk borrowers to reduce credit default losses using Machine Learning
+  Detecting High-Risk Borrowers Preventing Bad Debt and Financial Losses
 </p>
 
 <p align="center">
