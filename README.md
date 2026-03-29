@@ -56,7 +56,7 @@ Includes credit bureau scores from two providers — **CR21** and **CR22** — e
 Handled **missing values**, removed **duplicates**, and validated **financial variables** to ensure data consistency and reliability.
 Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**, **delinquency trends**, and **outliers** using statistical plots and correlation analysis.
 
-**Insight:** **Credit score**, **repayment behaviour**, and **delinquency patterns** showed strong differentiation between **defaulters** and **non-defaulters**.
+👉  **Insight:** **Credit score**, **repayment behaviour**, and **delinquency patterns** showed strong differentiation between **defaulters** and **non-defaulters**.
 
 </details>
 
@@ -79,7 +79,7 @@ Performed **feature selection using Information Value (IV)**:
 
 Removed **highly correlated features** to avoid **multicollinearity** and improve **model stability**.
 
-**Insight:** **CR22 + WoE + IV filtering** significantly improved **class separation**, **interpretability**, and overall **model performance**.
+👉  **Insight:** **CR22 + WoE + IV filtering** significantly improved **class separation**, **interpretability**, and overall **model performance**.
 
 </details>
 
@@ -91,7 +91,7 @@ Removed **highly correlated features** to avoid **multicollinearity** and improv
 Initial **under-sampling** led to **information loss**.
 Implemented **SMOTE-Tomek** to balance the dataset using **synthetic sampling + noise removal**.
 
-**Insight:** Improved detection of **defaulters**, increasing **recall** and reducing **missed high-risk customers**.
+👉  **Insight:** Improved detection of **defaulters**, increasing **recall** and reducing **missed high-risk customers**.
 
 </details>
 
@@ -105,7 +105,7 @@ Evaluated based on **generalisation**, **recall**, and ability to detect **high-
 
 **Final Model:** **Random Forest** (best balance of **recall + stability**)
 
-**Insight:** **Ensemble models** captured complex patterns while maintaining **robust performance**.
+👉  **Insight:** **Ensemble models** captured complex patterns while maintaining **robust performance**.
 
 </details>
 
@@ -124,7 +124,7 @@ Evaluated using key **credit risk metrics**:
 Maintained consistent performance across **train**, **test**, and **OOT datasets**.
 Threshold tuning (e.g., **0.3**) used to prioritise **risk detection**.
 
-**Insight:** Model is optimised for **high recall**, ensuring early detection of **risky customers**.
+👉  **Insight:** Model is optimised for **high recall**, ensuring early detection of **risky customers**.
 
 </details>
 
@@ -137,7 +137,7 @@ Focused on **classification errors** and **feature contribution**.
 Special attention on **False Negatives**, as they represent the highest **financial risk**.
 Used **feature importance** to identify key drivers of default.
 
-**Insight:** Strong **risk separation** and clear **driver identification** validate model reliability.
+👉 **Insight:** Strong **risk separation** and clear **driver identification** validate model reliability.
 
 </details>
 
@@ -151,7 +151,7 @@ Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor mod
 * **PSI (0.39)** → Significant **data drift**
 * **CSI (Stable)** → Consistent feature importance
 
-**Insight:** Indicates **concept drift**, requiring **monitoring**, **recalibration**, and **periodic retraining**.
+👉  **Insight:** Indicates **concept drift**, requiring **monitoring**, **recalibration**, and **periodic retraining**.
 
 </details>
 
@@ -159,10 +159,10 @@ Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor mod
 
 ## Business Impact
 
-- Achieved **60% recall** on bad customers, catching 3 in 5 defaulters before credit approval — reducing reactive collections and financial exposure
-- Demonstrated potential to reduce bad-debt exposure from **₹1M to ~₹0.4M** through model-driven risk decisioning (scenario-based estimate based on recall performance)
-- Prioritised **KS (34%), Gini (0.48), and Recall** over accuracy, reflecting the true business cost of approving a high-risk customer
-- Implemented **PSI/CSI monitoring** to detect shifts in customer behaviour and feature distributions, enabling timely recalibration before model performance degrades
+* Achieved **60% recall** on high-risk customers, identifying **3 out of 5 defaulters** before credit approval
+* Reduced potential bad-debt exposure from **₹1M to ~₹0.4M** through model-driven risk decisions *(scenario-based estimate)*
+* Prioritised **KS (34%)**, **Gini (0.48)**, and **Recall** over accuracy, aligning with real-world **credit risk cost considerations**
+* Implemented **PSI/CSI monitoring** to detect data drift, enabling **proactive recalibration** and sustained model performance
 
 
 ---
