@@ -151,10 +151,13 @@ Used **feature importance** to identify key drivers of default.
 <details>
 <summary><b>7. PSI & CSI Monitoring</b></summary>
 
-Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor model stability.
 
-* **PSI (0.39)** → Significant **data drift**
-* **CSI (Stable)** → Consistent feature importance
+Used **PSI** and **CSI** with **Out-of-Time (OOT) validation** to track data drift and ensure model stability.
+
+* **PSI (0.39)** → Significant shift in data distribution
+* **CSI (Stable)** → Feature importance remains consistent
+
+Currently, drift is monitored using **PSI and CSI with OOT validation**; future enhancements will extend this to **real-time production monitoring** using tools like **Evidently AI**.
 
 👉  **Insight:** Indicates **concept drift**, requiring **monitoring**, **recalibration**, and **periodic retraining**.
 
@@ -198,15 +201,16 @@ Used **PSI** and **CSI** along with **Out-of-Time (OOT) testing** to monitor mod
 
 ---
 
-## Future Improvements
+##  Future Improvements
 
-* Integrate **Evidently AI** for automated monitoring of data drift, model performance, and data quality in production.
+* Integrate **Evidently AI** for automated monitoring of **data drift, model performance, and data quality** in production.
+  *(Currently, drift is monitored using **PSI and CSI with OOT validation**; future work will extend this to real-time production data.)*
 
-* Implement **A/B testing** to compare multiple models in real-world scenarios and select the best-performing model based on business metrics.
+* Implement **A/B testing** to compare multiple models in real-world scenarios and select the best-performing model based on **business metrics**
 
-* Introduce a **dynamic decision threshold** based on business risk appetite instead of a fixed cutoff.
+* Introduce a **dynamic decision threshold** based on **business risk appetite**, replacing a fixed cutoff
 
-* Build a **feedback loop from actual repayment/default outcomes** to continuously improve model performance over time.
+* Build a **feedback loop** using actual repayment/default outcomes to continuously improve model performance over time
 
 
 ---
