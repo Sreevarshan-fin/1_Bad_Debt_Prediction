@@ -1,13 +1,16 @@
+<h1 align="center">Bad Debt Prediction</h1>
 
-# Bad Debt Prediction
+<p align="center">
+  Predicting high-risk borrowers to reduce credit default losses using Machine Learning
+</p>
 
-Predicting high-risk borrowers before credit approval to reduce financial losses.
-
----
-
-## Overview
-
-End-to-end credit risk model trained on ~100K customer records with 99 features spanning demographic, behavioral, and bureau data. The system flags high-risk applicants before approval, enabling risk-adjusted credit decisions.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Pandas-Data-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/NumPy-Array-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/MLflow-Tracking-purple?style=for-the-badge" />
+</p>
 
 ---
 
