@@ -5,11 +5,16 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Pandas-Data-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/NumPy-Array-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/MLflow-Tracking-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Pandas-Data-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/NumPy-Array-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-ML-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/WoE-Feature%20Engineering-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Information%20Value-IV-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/MLflow-Tracking-black?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AWS-SageMaker-yellow?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/FastAPI-API-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/PSI%2FCSI-Monitoring-red?style=for-the-badge"/>
 </p>
 
 
