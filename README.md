@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/MLflow-Tracking-purple?style=for-the-badge" />
 </p>
 
+
 ---
 
 
@@ -26,7 +27,7 @@ Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off betwee
 
 This project builds a **machine learning classification model** to label customers as **Good (0) / Bad (1)**, enabling **data-driven credit decisions**.
 
---
+----
 
 ## Data Overview
 
