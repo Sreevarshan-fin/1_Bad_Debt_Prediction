@@ -91,7 +91,7 @@ Removed **highly correlated features** to avoid **multicollinearity** and improv
 ---
 
 
-</details>
+<details>
 <summary><b>3. Class Imbalance Handling</b></summary>
 
 To address severe class imbalance, two strategies were evaluated:
@@ -119,7 +119,7 @@ Applied SMOTE for synthetic minority generation and Tomek Links for noise remova
 **Improvements:**
 - Better class representation without information loss  
 - Reduction in class overlap and noise  
-- More consistent performance across models  
+- More consistent model performance  
 
 **Model Comparison (Test Performance)**
 
@@ -140,11 +140,11 @@ Applied SMOTE for synthetic minority generation and Tomek Links for noise remova
 <details>
 <summary><b>4. Model Selection</b></summary>
 
-Trained and evaluated Logistic Regression, Random Forest, XGBoost, and CatBoost using recall, precision trade-off, and generalisation performance.
+Evaluated multiple models to identify the most reliable performer on balanced data.
 
-**Final Model:** Random Forest — selected for its consistent performance without overfitting.
+**Final Model:** Random Forest — selected for its consistent performance and ability to generalise well without overfitting.
 
-👉 **Insight:** Tree-based ensemble models effectively captured complex patterns, leading to more stable predictions on unseen data.
+👉 **Insight:** Ensemble tree-based models effectively capture complex, non-linear relationships, leading to stable predictions on unseen data.
 
 </details>
 
