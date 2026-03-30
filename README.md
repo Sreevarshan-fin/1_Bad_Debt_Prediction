@@ -215,38 +215,33 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-#### 🔹 **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
+## 🔬 Experiment Tracking & Model Lifecycle (MLflow on AWS)
+
+### 🔹 MLflow Tracking Server (AWS EC2)
+
+Deployed an **MLflow Tracking Server on AWS EC2** to centrally log experiments, parameters, metrics, and artifacts.
+
+![MLflow EC2](assets/EC2_Instance.png)
+
+---
+
+### 🔹 Experiment Run Tracking
+
+Tracked multiple model runs with **parameters and performance metrics**, enabling reproducible comparison and model selection.
+
+![Experiment Tracking](assets/Experimental_Tracking_Table_EC2.png)
+
+![Model Comparison](assets/Comparision_2.png)
+
+---
+
+### 🔹 Model Registry
+
+Registered and versioned models using **MLflow Model Registry** for structured lifecycle management and deployment readiness.
+
+![Model Registry](assets/Model_Register.png)
 
 
-- **MLflow Tracking Server on AWS EC2**
-
-MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifacts centrally.
-
-
-![MLflow AWS EC2](assets/EC2_Instance.png)
-
-------------------
-
--  **Experiment Run Tracking**
-
- Multiple model runs tracked with parameters and performance metrics to enable reproducible model comparison.
- 
-
-![MLflow AWS EC2](assets/Experimental_Tracking_Table_EC2.png)
-
-------------------------------------------
-
-
-![MLflow AWS EC2](assets/Comparision_2.png)
-
------------------------------
-
-
-- **Model Registry**
-
-![MLflow AWS EC2](assets/Model_Register.png)
-
-
-------------
+-------------------
 
 ## 🔹**Deployment**
