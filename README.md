@@ -31,7 +31,7 @@
 
 ----
 
-## Problem Statement
+## 🔎 Problem Statement
 
 Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off between **revenue growth** and **credit risk**. Approving customers without **structured risk assessment** leads to **payment defaults**, causing **bad debts** and **financial losses**. This lack of **predictive evaluation** impacts **cash flow**, **profitability**, and **risk management**.
 
@@ -39,7 +39,7 @@ This project builds a **machine learning classification model** to label custome
 
 ----
 
-## Data Overview
+## 📊 Data Overview
 
 Real-world credit dataset (~100K customers, 99 features) collected under NDA, structured based on key risk dimensions:
 
@@ -53,7 +53,7 @@ Includes credit bureau scores from two providers — **CR21** and **CR22** — e
 
 ----
 
-## Solution Approach
+## ⚙️ Solution Approach
 
 <details>
 <summary><b>1. Data Preprocessing & EDA</b></summary>
@@ -165,7 +165,7 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-## Business Impact
+## 📈 Business Impact
 
 * Achieved **60% recall** on high-risk customers, identifying **3 out of 5 defaulters** before credit approval
 * Reduced potential bad-debt exposure from **₹1M to ~₹0.4M** through model-driven risk decisions *(scenario-based estimate)*
@@ -175,24 +175,21 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-## Tech Stack
 
-* **Programming:** Python  
-* **Machine Learning:** Scikit-learn, XGBoost, CatBoost  
-* **Data Processing:** Pandas, NumPy  
-* **Deployment & Tracking:** MLflow, AWS SageMaker, Streamlit  
-* **Monitoring:** PSI, CSI  
+## 🧰 Tech Stack
 
-## Key Techniques
+* **Programming & Libraries:** Python, Pandas, NumPy
+* **Machine Learning:** Scikit-learn, XGBoost, CatBoost
+* **Experiment Tracking & Deployment:** MLflow, AWS SageMaker, Streamlit
+* **Monitoring & Risk Analytics:** PSI, CSI
+* **Feature Engineering & Techniques:** WoE, Information Value (IV), SMOTE-Tomek, OOT Validation
 
-* WoE (Weight of Evidence)  
-* Information Value (IV)  
-* SMOTE-Tomek  
-* OOT Validation  
-  
+
+
 ----
 
-## Challenges
+
+## ⚡ Challenges
 
 - **Severe class imbalance** — bad customers were a tiny minority, requiring careful resampling strategy selection and metric prioritisation
 - **Misleading accuracy** — shifted evaluation entirely toward recall, KS, and Gini to reflect true business risk
@@ -201,7 +198,7 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-##  Future Improvements
+##  🚀 Future Improvements
 
 * Integrate **Evidently AI** for automated monitoring of **data drift, model performance, and data quality** in production.
   *(Currently, drift is monitored using **PSI and CSI with OOT validation**; future work will extend this to real-time production data.)*
