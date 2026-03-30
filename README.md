@@ -130,8 +130,10 @@ Applied SMOTE for synthetic minority generation and Tomek Links for noise remova
 | XGBoost | 0.47 | 0.15 | 0.70 | No | Stable but lower detection |
 | **Random Forest** | **0.61** | **0.16** | **0.74** | **No** | ✅ Best trade-off between detection and stability |
 
+
 👉 **Final Choice:** SMOTE-Tomek retained as the optimal resampling strategy  
-👉 **Insight:** Enabled reliable identification of defaulters while preserving model stability
+
+👉 **Insight:** Achieved reliable detection of **high-risk customers (improved recall)** while maintaining **model stability and generalisation**
 
 </details>
 
