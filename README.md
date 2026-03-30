@@ -179,10 +179,11 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 ## 🧰 Tech Stack
 
 * **Programming & Libraries:** Python, Pandas, NumPy
-* **Machine Learning:** Scikit-learn, XGBoost, CatBoost
+* **Machine Learning:** Scikit-learn, XGBoost, CatBoost, Random Forest
 * **Experiment Tracking & Deployment:** MLflow, AWS SageMaker, Streamlit
 * **Monitoring & Risk Analytics:** PSI, CSI
 * **Feature Engineering & Techniques:** WoE, Information Value (IV), SMOTE-Tomek, OOT Validation
+* **Evaluation Techniques:** KS Statistic, Gini Coefficient, ROC-AUC, with prioritisation of Recall to ensure effective detection of high-risk customers
 
 
 
