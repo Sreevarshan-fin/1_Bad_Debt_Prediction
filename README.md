@@ -222,7 +222,8 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifacts centrally.
 
-<img width="1852" height="143" alt="EC2_Instance" src="https://github.com/user-attachments/assets/3dd85c69-89f4-490c-962a-a569ce3b2807" /> 
+
+![MLflow AWS EC2](assets/EC2_Instance.png)
 
 ------------------
 
@@ -231,21 +232,19 @@ MLflow tracking server hosted on AWS EC2 to log experiments, metrics, and artifa
  Multiple model runs tracked with parameters and performance metrics to enable reproducible model comparison.
  
 
-<img width="1917" height="893" alt="Experimental_Tracking_Table_EC2" src="https://github.com/user-attachments/assets/886ff470-703b-4e5a-bb10-3dbdcfce65b1" />
-
+![MLflow AWS EC2](assets/Experimental_Tracking_Table_EC2.png)
 
 ------------------------------------------
- 
-<img width="1193" height="512" alt="Comparision_2" src="https://github.com/user-attachments/assets/b72fcd6f-df1a-4e6c-aa33-12c1145eadc3" />
 
+
+![MLflow AWS EC2](assets/Comparision_2.png)
 
 -----------------------------
 
 
 - **Model Registry**
 
-
-<img width="1911" height="837" alt="Model_Register" src="https://github.com/user-attachments/assets/f246e200-9457-45bd-9828-1f98526183ca" />
+![MLflow AWS EC2](assets/Model_Register.png)
 
 
 ------------
