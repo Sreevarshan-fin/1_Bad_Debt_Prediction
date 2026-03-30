@@ -102,7 +102,7 @@ To address severe class imbalance, two approaches were evaluated:
 
 Reduced majority class size to balance the dataset.
 
-❌ **Key Observations:**
+**Key Observations:**
 - Significant **information loss** due to removal of majority samples  
 - Models showed **poor generalisation**, especially in precision  
 - **Overfitting observed** in most models  
@@ -116,13 +116,13 @@ Reduced majority class size to balance the dataset.
 
 Applied **SMOTE (synthetic minority generation)** + **Tomek Links (noise removal)**.
 
-✅ **Key Improvements:**
+**Key Improvements:**
 - **Recall significantly improved** across models  
 - Better **class balance without losing information**  
 - Reduced **noise and class overlap**  
 - Improved **generalisation**, especially in tree-based models  
 
-📊 **Model Comparison (Test Performance)**
+**Model Comparison (Test Performance)**
 
 | Model | Recall | Precision | AUC | Overfitting | Insight |
 |------|--------|----------|-----|------------|--------|
@@ -131,7 +131,6 @@ Applied **SMOTE (synthetic minority generation)** + **Tomek Links (noise removal
 | XGBoost | 0.47 | 0.15 | 0.70 | No | Stable but lower recall |
 | **Random Forest** | **0.61** | **0.16** | **0.74** | **No** | ✅ Best balance of recall + stability |
 
----
 
 👉 **Final Choice:** SMOTE-Tomek retained as the optimal resampling strategy  
 
