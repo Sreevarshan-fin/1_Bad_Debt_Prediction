@@ -91,50 +91,46 @@ Removed **highly correlated features** to avoid **multicollinearity** and improv
 ---
 
 
-<details>
 <summary><b>3. Class Imbalance Handling</b></summary>
 
-To address severe class imbalance, two approaches were evaluated:
+To address severe class imbalance, two strategies were evaluated:
 
 ---
 
 ### 🔹 Attempt 1: Under-Sampling
 
-Reduced majority class size to balance the dataset.
+Reduced the majority class to balance the dataset.
 
-**Key Observations:**
-- Significant **information loss** due to removal of majority samples  
-- Models showed **poor generalisation**, especially in precision  
-- **Overfitting observed** in most models  
-- Despite reasonable **ROC-AUC (~0.74–0.84)**, imbalance in recall and precision made models unreliable  
+**Observations:**
+- Loss of critical information due to removal of majority samples  
+- Poor model generalisation, especially in precision  
+- Overfitting observed across multiple models  
+- ROC-AUC remained moderate (~0.74–0.84), but imbalance in precision-recall reduced reliability  
 
-👉 **Conclusion:** Under-sampling degraded model performance and failed to capture full data patterns.
+👉 **Conclusion:** Under-sampling failed to capture full data distribution and degraded performance.
 
 ---
 
 ### 🔹 Attempt 2: SMOTE-Tomek (Final Approach)
 
-Applied **SMOTE (synthetic minority generation)** + **Tomek Links (noise removal)**.
+Applied SMOTE for synthetic minority generation and Tomek Links for noise removal.
 
-**Key Improvements:**
-- **Recall significantly improved** across models  
-- Better **class balance without losing information**  
-- Reduced **noise and class overlap**  
-- Improved **generalisation**, especially in tree-based models  
+**Improvements:**
+- Better class representation without information loss  
+- Reduction in class overlap and noise  
+- More consistent performance across models  
 
 **Model Comparison (Test Performance)**
 
 | Model | Recall | Precision | AUC | Overfitting | Insight |
 |------|--------|----------|-----|------------|--------|
-| Logistic Regression | 0.91 | 0.09 | 0.69 | Yes | High recall but poor precision → many false positives |
-| CatBoost | 0.82 | 0.10 | 0.70 | Yes | Overfitting despite strong recall |
-| XGBoost | 0.47 | 0.15 | 0.70 | No | Stable but lower recall |
-| **Random Forest** | **0.61** | **0.16** | **0.74** | **No** | ✅ Best balance of recall + stability |
-
+| Logistic Regression | 0.91 | 0.09 | 0.69 | Yes | High recall but excessive false positives |
+| CatBoost | 0.82 | 0.10 | 0.70 | Yes | Strong recall but unstable |
+| XGBoost | 0.47 | 0.15 | 0.70 | No | Stable but lower detection |
+| **Random Forest** | **0.61** | **0.16** | **0.74** | **No** | ✅ Best trade-off between detection and stability |
 
 👉 **Final Choice:** SMOTE-Tomek retained as the optimal resampling strategy  
-
-👉 **Insight:** Enabled effective detection of **defaulters (high recall)** while maintaining **model stability and avoiding information loss**
+👉 **Insight:** Enabled reliable identification of defaulters while preserving model stability
 
 </details>
 
@@ -143,12 +139,11 @@ Applied **SMOTE (synthetic minority generation)** + **Tomek Links (noise removal
 <details>
 <summary><b>4. Model Selection</b></summary>
 
-Trained multiple models: **Logistic Regression**, **Random Forest**, **XGBoost**, and **CatBoost**.
-Evaluated based on **generalisation**, **recall**, and ability to detect **high-risk customers**.
+Trained and evaluated Logistic Regression, Random Forest, XGBoost, and CatBoost using recall, precision trade-off, and generalisation performance.
 
-**Final Model:** **Random Forest** (best balance of **recall + stability**)
+**Final Model:** Random Forest — selected for its consistent performance without overfitting.
 
-👉  **Insight:** **Ensemble models** captured complex patterns while maintaining **robust performance**.
+👉 **Insight:** Tree-based ensemble models effectively captured complex patterns, leading to more stable predictions on unseen data.
 
 </details>
 
