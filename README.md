@@ -137,6 +137,7 @@ Applied **SMOTE (synthetic minority generation)** + **Tomek Links (noise removal
 👉 **Insight:** Enabled effective detection of **defaulters (high recall)** while maintaining **model stability and avoiding information loss**
 
 </details>
+
 ---
 
 <details>
