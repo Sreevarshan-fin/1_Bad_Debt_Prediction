@@ -133,7 +133,9 @@ Applied SMOTE for synthetic minority generation and Tomek Links for noise remova
 
 👉 **Final Choice:** SMOTE-Tomek retained as the optimal resampling strategy  
 
-👉 **Insight:** Achieved reliable detection of **high-risk customers (improved recall)** while maintaining **model stability and generalisation**
+👉 **Decision Logic:** Prioritised a model that balances **risk detection (high recall)** with **stability and generalisation**, rather than maximising accuracy  
+
+👉 **Insight:** Enabled reliable identification of **high-risk customers** while maintaining **robust and consistent model performance**
 
 </details>
 
