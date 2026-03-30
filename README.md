@@ -98,7 +98,7 @@ To address severe class imbalance, two strategies were evaluated:
 
 ---
 
-### 🔹 Attempt 1: Under-Sampling
+🔹**Attempt 1: Under-Sampling**
 
 Reduced the majority class to balance the dataset.
 
@@ -112,7 +112,7 @@ Reduced the majority class to balance the dataset.
 
 ---
 
-### 🔹 Attempt 2: SMOTE-Tomek (Final Approach)
+🔹 **Attempt 2: SMOTE-Tomek**
 
 Applied SMOTE for synthetic minority generation and Tomek Links for noise removal.
 
