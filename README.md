@@ -215,8 +215,6 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-## 👉 **Proof of Work - Detailed Section**
-
 #### 🔹 **Experiment Tracking & Model Lifecycle Setup (AWS MLflow)**
 
 
