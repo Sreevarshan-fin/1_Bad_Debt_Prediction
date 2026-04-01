@@ -9,7 +9,6 @@
   recall-optimized modeling, and drift monitoring.
 </p>
 
-<h3 align="center">Tech Stack & Deployment</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
@@ -25,9 +24,8 @@
   <img src="https://img.shields.io/badge/IV-6A0DAD?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/PSI-D32F2F?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/CSI-D32F2F?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Deployment-SageMaker-success?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/API-Real--Time-blue?style=for-the-badge"/>
 </p>
+
 
 ---
 
