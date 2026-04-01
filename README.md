@@ -300,11 +300,11 @@ Designed a scalable model deployment pipeline using AWS SageMaker for real-time 
 #### **System Architecture**
 
 ```text
-              ┌───────────────┐
-              │     User      │
-              └──────┬────────┘
-                     │
-                     ▼
+             ┌───────────────┐
+             │     User      │
+             └──────┬────────┘
+                    │
+                    ▼
         ┌────────────────────────┐
         │  Streamlit App (EC2)   │
         │  - UI & Input Handling │
