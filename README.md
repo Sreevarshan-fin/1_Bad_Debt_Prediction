@@ -9,52 +9,45 @@
   recall-optimized modeling, and drift monitoring.
 </p>
 
-
-
-
-
-<h3 align="center">⚙️ Tech Stack</h3>
+<h3 align="center">Tech Stack & Deployment</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
   <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white"/>
-</p>
-
-<h3 align="center">☁️ Cloud & Deployment</h3>
-
-<p align="center">
   <img src="https://img.shields.io/badge/AWS%20S3-569A31?style=for-the-badge&logo=amazonaws&logoColor=white"/>
   <img src="https://img.shields.io/badge/AWS%20SageMaker-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Hosting-EC2-orange?style=for-the-badge"/>
-</p>
-
-<h3 align="center">🚀 API & Application</h3>
-
-<p align="center">
+  <img src="https://img.shields.io/badge/EC2-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
   <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
   <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
-</p>
-
-<h3 align="center">📊 Feature Engineering & Monitoring</h3>
-
-<p align="center">
   <img src="https://img.shields.io/badge/WoE-6A0DAD?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/IV-6A0DAD?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/PSI-D32F2F?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/CSI-D32F2F?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Deployment-SageMaker-success?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/API-Real--Time-blue?style=for-the-badge"/>
 </p>
 
-<h3 align="center">⚡ Deployment Highlights</h3>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS%20S3-569A31?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS%20SageMaker-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/EC2-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  <img src="https://img.shields.io/badge/WoE-6A0DAD?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/IV-6A0DAD?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/PSI-D32F2F?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/CSI-D32F2F?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Deployment-SageMaker-success?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/API-Real--Time%20Inference-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/API-Real--Time-blue?style=for-the-badge"/>
 </p>
+
 
 
 ---
