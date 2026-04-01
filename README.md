@@ -1,7 +1,7 @@
 <h1 align="center">Bad Debt Prediction</h1>
 
 <p align="center">
-  <b>Predicting high-risk borrowers to minimize bad debt and financial losses.</b>
+  <b>🚀 End-to-End Credit Risk Modeling System to Detect High-Risk Borrowers and Reduce Financial Losses</b>
 </p>
 
 <p align="center">
@@ -29,6 +29,20 @@
 
 ---
 
+## 🚀 Key Highlights
+
+* Developed an end-to-end **credit risk classification system** to identify high-risk borrowers and support data-driven lending decisions
+* Achieved **60% recall**, enabling early detection of a majority of potential defaulters
+* Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M** through risk-based decisioning
+* Engineered predictive features using **Weight of Evidence (WoE)** and **Information Value (IV)** to enhance interpretability and predictive power
+* Addressed class imbalance using **SMOTE-Tomek**, improving minority class detection without losing critical information
+* Selected **Random Forest** for its stability, generalisation capability, and optimal trade-off between recall and precision
+* Evaluated model performance using **ROC-AUC, Gini, and KS**, aligning with industry-standard credit risk metrics
+* Implemented **PSI (0.39)** and **CSI monitoring** along with **Out-of-Time (OOT) validation** to detect data drift and ensure reliability in real-world production scenarios
+* Designed a scalable deployment architecture using **AWS SageMaker, FastAPI, and Streamlit** for real-time inference
+* Integrated **MLflow on AWS EC2** for experiment tracking, model versioning, and lifecycle management
+
+-----------------
 
 ![Project Architecture](assets/projectworkflow.gif)
 
