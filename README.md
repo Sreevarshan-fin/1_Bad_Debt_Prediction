@@ -284,62 +284,50 @@ Registered and versioned models using **MLflow Model Registry** for structured l
 
 -------------------
 
-## 🌐 **Deployment**
+## ☁️ Deployment
 
-☁️ SageMaker Deployment (Design & Implementation)
+##### SageMaker Deployment (Design & Implementation)
 
 Designed a scalable model deployment pipeline using AWS SageMaker for real-time inference.
 
-* Uploaded trained model artifacts to Amazon S3
-* Developed custom inference script for prediction handling
-* Configured SageMaker model and endpoint for API-based deployment
-* Tested endpoint locally using SageMaker SDK
+* 📦 Uploaded trained model artifacts to **Amazon S3**
+* ⚙️ Developed custom inference script for prediction handling
+* 🚀 Configured SageMaker model and deployed a real-time endpoint
+* 🧪 Tested endpoint locally using SageMaker SDK
 
-⚠️ Note: Full deployment was designed and partially implemented; continuous hosting was not maintained due to cost constraints.
+⚠️ **Note:** Full deployment was designed and partially implemented; continuous hosting was not maintained due to cost constraints.
 
-#### **System Architecture**
+---
+
+## 🏗️ System Architecture
 
 ```text
-             ┌───────────────┐
-             │     User      │
-             └──────┬────────┘
-                    │
-                    ▼
-        ┌────────────────────────┐
-        │  Streamlit App (EC2)   │
-        │  - UI & Input Handling │
-        └────────┬───────────────┘
-                 │
-                 ▼
-        ┌────────────────────────┐
-        │   FastAPI Backend      │
-        │   - Validation & API   │
-        └────────┬───────────────┘
-                 │
-                 ▼
-        ┌────────────────────────┐
-        │ SageMaker Endpoint     │
-        │ - Real-time Inference  │
-        └────────┬───────────────┘
-                 │
-                 ▼
-        ┌────────────────────────┐
-        │ Prediction Response    │
-        │ → Returned to UI       │
-        └────────────────────────┘
+👤 User
+   ↓
+🖥️ Streamlit App (EC2)  →  UI & Input Handling
+   ↓
+⚙️ FastAPI Backend     →  Validation & API Processing
+   ↓
+☁️ SageMaker Endpoint  →  Real-time Inference
+   ↓
+📊 Prediction Response →  Returned to UI
 
 
-     ┌──────────────────────────────┐
-     │        Amazon S3             │
-     │  - Model Storage             │
-     │  - Versioning                │
-     └──────────────────────────────┘
+🗄️ Amazon S3 → Model Storage & Versioning (used during deployment)
 ```
 
----------
+---
 
-This architecture enables scalable real-time predictions by separating the application layer, API layer, and model inference layer. The Streamlit app handles user interaction, FastAPI manages request processing, and SageMaker serves the model as a real-time endpoint. Amazon S3 is used for model storage and version management.
+### 💡 Architecture Overview
 
---------
+This architecture enables **scalable real-time predictions** by separating key components:
+
+* 🖥️ **Application Layer (Streamlit on EC2):** Handles user interaction
+* ⚙️ **Backend Layer (FastAPI):** Validates and processes requests
+* ☁️ **Model Layer (SageMaker):** Serves the model via real-time endpoint
+* 🗄️ **Storage Layer (S3):** Stores model artifacts and supports versioning
+
+👉 Predictions are generated in real time and returned to the UI for user display.
+
 
 ⚡ **Streamlit UI**
