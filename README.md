@@ -41,7 +41,7 @@
 - Designed a scalable real-time inference system using **AWS SageMaker, FastAPI, and Streamlit**  
 - Enabled experiment tracking and model lifecycle management using **MLflow on AWS EC2**
 
-> 💡 This project simulates real-world credit risk modeling used in fintech and banking systems, focusing on business impact over raw accuracy.
+> 💡 This project leverages real-world credit data to predict bad debt risk, using industry-standard credit risk modeling techniques followed in fintech and banking systems.
 
 -----------------
 
