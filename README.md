@@ -313,27 +313,33 @@ Designed a scalable model deployment pipeline using AWS SageMaker for real-time 
                  ▼
         ┌────────────────────────┐
         │   FastAPI Backend      │
-        │   - Request Processing │
+        │   - Validation & API   │
         └────────┬───────────────┘
                  │
                  ▼
         ┌────────────────────────┐
         │ SageMaker Endpoint     │
-        │ - Model Inference API  │
-        └────────┬───────────────┘
-                 │
-                 ▼
-        ┌────────────────────────┐
-        │      Model (S3)        │
-        │ - Stored Artifacts     │
+        │ - Real-time Inference  │
         └────────┬───────────────┘
                  │
                  ▼
         ┌────────────────────────┐
         │ Prediction Response    │
-        │ → Sent back to UI      │
+        │ → Returned to UI       │
         └────────────────────────┘
+
+
+   ┌──────────────────────────────┐
+   │        Amazon S3             │
+   │  - Model Storage            │
+   │  - Versioning               │
+   └──────────────────────────────┘
 ```
 
-**This architecture enables scalable real-time predictions by separating UI, backend logic, and model inference. SageMaker handles model serving, while EC2 hosts the application layer.**
+---------
 
+This architecture enables scalable real-time predictions by separating the application layer, API layer, and model inference layer. The Streamlit app handles user interaction, FastAPI manages request processing, and SageMaker serves the model as a real-time endpoint. Amazon S3 is used for model storage and version management.
+
+--------
+
+⚡ **Streamlit UI**
