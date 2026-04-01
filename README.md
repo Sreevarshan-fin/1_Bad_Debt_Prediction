@@ -329,11 +329,11 @@ Designed a scalable model deployment pipeline using AWS SageMaker for real-time 
         └────────────────────────┘
 
 
-   ┌──────────────────────────────┐
-   │        Amazon S3             │
-   │  - Model Storage             │
-   │  - Versioning                │
-   └──────────────────────────────┘
+     ┌──────────────────────────────┐
+     │        Amazon S3             │
+     │  - Model Storage             │
+     │  - Versioning                │
+     └──────────────────────────────┘
 ```
 
 ---------
