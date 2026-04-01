@@ -284,50 +284,51 @@ Registered and versioned models using **MLflow Model Registry** for structured l
 
 -------------------
 
-## ☁️ Deployment
+## 🌩️ Deployment
 
-##### SageMaker Deployment (Design & Implementation)
+### SageMaker Deployment (Design & Implementation)
 
 Designed a scalable model deployment pipeline using AWS SageMaker for real-time inference.
 
-* 📦 Uploaded trained model artifacts to **Amazon S3**
-* ⚙️ Developed custom inference script for prediction handling
-* 🚀 Configured SageMaker model and deployed a real-time endpoint
-* 🧪 Tested endpoint locally using SageMaker SDK
+* Uploaded trained model artifacts to Amazon S3
+* Developed custom inference script for prediction handling
+* Configured SageMaker model and deployed a real-time endpoint
+* Tested endpoint locally using SageMaker SDK
 
-⚠️ **Note:** Full deployment was designed and partially implemented; continuous hosting was not maintained due to cost constraints.
+**Note:** Full deployment was designed and partially implemented; continuous hosting was not maintained due to cost constraints.
 
 ---
 
 ## 🏗️ System Architecture
 
-```text
-👤 User
-   ↓
-🖥️ Streamlit App (EC2)  →  UI & Input Handling
-   ↓
-⚙️ FastAPI Backend     →  Validation & API Processing
-   ↓
-☁️ SageMaker Endpoint  →  Real-time Inference
-   ↓
-📊 Prediction Response →  Returned to UI
+```text id="f9t2b8"
+User
+  ↓
+Streamlit App (EC2)  →  UI & Input Handling
+  ↓
+FastAPI Backend     →  Validation & API Processing
+  ↓
+SageMaker Endpoint  →  Real-time Inference
+  ↓
+Prediction Response →  Returned to UI
 
 
-🗄️ Amazon S3 → Model Storage & Versioning (used during deployment)
+Amazon S3 → Model Storage & Versioning (used during deployment)
 ```
 
 ---
 
-### 💡 Architecture Overview
+### Architecture Overview
 
-This architecture enables **scalable real-time predictions** by separating key components:
+This architecture enables scalable real-time predictions by separating key components:
 
-* 🖥️ **Application Layer (Streamlit on EC2):** Handles user interaction
-* ⚙️ **Backend Layer (FastAPI):** Validates and processes requests
-* ☁️ **Model Layer (SageMaker):** Serves the model via real-time endpoint
-* 🗄️ **Storage Layer (S3):** Stores model artifacts and supports versioning
+* **Application Layer (Streamlit on EC2):** Handles user interaction
+* **Backend Layer (FastAPI):** Validates and processes requests
+* **Model Layer (SageMaker):** Serves the model via real-time endpoint
+* **Storage Layer (S3):** Stores model artifacts and supports versioning
 
-👉 Predictions are generated in real time and returned to the UI for user display.
+**Predictions are generated in real time and returned to the UI for display.**
 
+-------
 
 ⚡ **Streamlit UI**
