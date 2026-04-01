@@ -285,3 +285,55 @@ Registered and versioned models using **MLflow Model Registry** for structured l
 -------------------
 
 ## 🌐 **Deployment**
+
+☁️ SageMaker Deployment (Design & Implementation)
+
+Designed a scalable model deployment pipeline using AWS SageMaker for real-time inference.
+
+* Uploaded trained model artifacts to Amazon S3
+* Developed custom inference script for prediction handling
+* Configured SageMaker model and endpoint for API-based deployment
+* Tested endpoint locally using SageMaker SDK
+
+⚠️ Note: Full deployment was designed and partially implemented; continuous hosting was not maintained due to cost constraints.
+
+#### **System Architecture**
+
+```text
+              ┌───────────────┐
+              │     User      │
+              └──────┬────────┘
+                     │
+                     ▼
+        ┌────────────────────────┐
+        │  Streamlit App (EC2)   │
+        │  - UI & Input Handling │
+        └────────┬───────────────┘
+                 │
+                 ▼
+        ┌────────────────────────┐
+        │   FastAPI Backend      │
+        │   - Request Processing │
+        └────────┬───────────────┘
+                 │
+                 ▼
+        ┌────────────────────────┐
+        │ SageMaker Endpoint     │
+        │ - Model Inference API  │
+        └────────┬───────────────┘
+                 │
+                 ▼
+        ┌────────────────────────┐
+        │      Model (S3)        │
+        │ - Stored Artifacts     │
+        └────────┬───────────────┘
+                 │
+                 ▼
+        ┌────────────────────────┐
+        │ Prediction Response    │
+        │ → Sent back to UI      │
+        └────────────────────────┘
+```
+
+**This architecture enables scalable real-time predictions by separating UI, backend logic, and model inference. SageMaker handles model serving, while EC2 hosts the application layer.**
+
