@@ -1,14 +1,16 @@
 <h1 align="center">Bad Debt Prediction</h1>
 
 <p align="center">
-  <b>🚀 End-to-End Credit Risk Modeling System to Detect High-Risk Borrowers and Reduce Financial Losses</b>
+  <b>A production-oriented credit risk system designed to minimize bad debt and enable risk-adjusted lending decisions in BNPL environments</b>
 </p>
 
 <p align="center">
-  Designed an end-to-end machine learning pipeline with risk-based feature engineering,
-  recall-optimized modeling, and drift monitoring.
+  🚀 End-to-End Credit Risk Modeling System for Detecting High-Risk Borrowers and Reducing Financial Losses
 </p>
 
+<p align="center">
+  Built an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
@@ -27,20 +29,16 @@
 ---
 ## 🚀 Key Highlights
 
-- Developed an end-to-end **Bad Debt Prediction (credit risk) system** to identify high-risk borrowers and support data-driven lending decisions  
-- Achieved **60% recall**, enabling early detection of potential defaulters before credit approval  
-- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving financial risk control  
+- Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers  
+- Achieved **60% recall**, enabling early detection of defaulters before credit approval  
+- Reduced estimated bad-debt exposure by ~60%, improving portfolio risk control  
 - **Enabled risk-based lending decisions**, allowing rejection of high-risk applicants or application of stricter credit terms, while fast-tracking low-risk customers
 - Supported **risk-adjusted credit policy decisions**, balancing growth and default risk in BNPL lending  
-- Applied **WoE-IV feature engineering** to enhance interpretability and risk-based segmentation  
-- Addressed severe class imbalance using **SMOTE-Tomek**, improving detection of minority (high-risk) customers  
+- Applied **WoE-IV feature engineering** for interpretability and handled class imbalance using **SMOTE-Tomek**, improving detection of high-risk customers  
 - Selected **Random Forest** for its robustness and optimal balance between recall, precision, and generalisation  
 - Evaluated model performance using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC**, aligned with industry credit risk standards  
 - Implemented **PSI (0.39), CSI monitoring, and OOT validation** to detect data drift and ensure model stability  
-- Designed a scalable real-time inference pipeline using **AWS SageMaker, FastAPI, and Streamlit**  
-- Enabled experiment tracking and model lifecycle management using **MLflow on AWS EC2**
-
-> This project applies industry-standard credit risk modeling techniques to predict bad debt risk and support risk-aware lending decisions.
+- Designed a scalable real-time inference pipeline using **AWS SageMaker, FastAPI, and Streamlit**, with **MLflow on AWS EC2** for experiment tracking and model lifecycle management  
 
 -----------------
 
@@ -65,11 +63,18 @@ This project builds a **machine learning classification model** to label custome
 **Decision Strategy**
 
 - Model optimized for **high recall** to prioritize detection of risky customers  
-- Threshold (~0.3) tuned to minimize false negatives and reduce financial loss  
+- Threshold (~0.3) tuned to minimize false negatives and reduce financial loss
 
 **Business Trade-Off**
 - Accepts a controlled increase in false positives (manual review effort)  
-- Significantly reduces bad debt risk from undetected defaulters  
+- Significantly reduces bad debt risk from undetected defaulters
+
+**Cost Consideration**
+
+- False Negative (missed defaulter): High financial loss  
+- False Positive (safe customer flagged): Opportunity loss / manual review cost  
+
+Model is optimized to minimize **high-cost errors (false negatives)**.
 
 **Decision Enablement**
 - High-risk customers: Reject or approve with stricter terms (higher interest, lower limits)  
@@ -97,7 +102,7 @@ Includes credit bureau scores from two providers — **CR21** and **CR22** — e
 
 ----
 
-## ⚙️ Model Development & Methodology
+## ⚙️ Model Development & Validation
 
 <details>
 <summary><b>1. Data Preprocessing & EDA</b></summary>
