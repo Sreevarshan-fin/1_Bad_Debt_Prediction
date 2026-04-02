@@ -28,8 +28,8 @@
 - Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers  
 - Achieved **60% recall**, enabling early detection of defaulters before credit approval  
 - Reduced estimated bad-debt exposure by ~60%, improving portfolio risk control  
-- **Enabled risk-based lending decisions**, allowing rejection of high-risk applicants or application of stricter credit terms, while fast-tracking low-risk customers 
-- Applied **WoE-IV feature engineering** for interpretability and handled class imbalance using **SMOTE-Tomek**, improving detection of high-risk customers  
+- Enabled risk-based lending decisions by identifying high-risk applicants for rejection or stricter terms, while fast-tracking low-risk customers 
+- Applied WoE-IV feature engineering and SMOTE-Tomek resampling to improve interpretability and detection of high-risk customers  
 - Selected **Random Forest** for its robustness and optimal balance between recall, precision, and generalisation  
 - Evaluated model performance using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC**, aligned with industry credit risk standards  
 - Implemented **PSI (0.39), CSI monitoring, and OOT validation** to detect data drift and ensure model stability  
