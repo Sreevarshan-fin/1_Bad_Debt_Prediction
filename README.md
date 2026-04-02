@@ -226,20 +226,21 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 - Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
 - Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
-- 
-### Decision Strategy
+
+**Decision Strategy**
+
 - Model optimized for **high recall** to prioritize detection of risky customers  
 - Threshold (~0.3) tuned to minimize false negatives and reduce financial loss  
 
-### Business Trade-Off
+**Business Trade-Off**
 - Accepts a controlled increase in false positives (manual review effort)  
 - Significantly reduces bad debt risk from undetected defaulters  
 
-### Decision Enablement
+**Decision Enablement**
 - High-risk customers: Reject or approve with stricter terms (higher interest, lower limits)  
 - Low-risk customers: Fast-track approvals with better credit offers  
 
-### Model Reliability
+**Model Reliability**
 - Evaluated using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC** aligned with credit risk standards  
 - Implemented **PSI/CSI monitoring with OOT validation** to ensure stability under data drift  
 
