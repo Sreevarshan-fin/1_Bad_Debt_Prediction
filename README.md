@@ -367,4 +367,10 @@ Registered and versioned models using **MLflow Model Registry** for structured l
 -------------------
 
 
+---
+**Author:** Sree Varshan  
+**Open to Data Analyst / Data Scientist opportunities**  
+
+⭐ If you found this project useful, feel free to star the repository.
+
 
