@@ -244,7 +244,7 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 **Model Reliability**
 - Evaluated using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC** aligned with credit risk standards  
-- Implemented **PSI/CSI monitoring with OOT validation** to ensure stability under data drift  
+- Implemented **PSI/CSI monitoring with OOT validation** ensuring model stability in production
 
 Ensures data-driven, risk-aware, and scalable lending decisions.
 
