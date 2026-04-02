@@ -30,18 +30,19 @@
 ---
 ## 🚀 Key Highlights
 
-- Built an end-to-end **credit risk classification system** to identify high-risk borrowers and enable data-driven lending decisions  
-- Achieved **60% recall**, successfully detecting the majority of potential defaulters before credit approval  
+- Developed an end-to-end **Bad Debt Prediction (credit risk) system** to identify high-risk borrowers and support data-driven lending decisions  
+- Achieved **60% recall**, enabling early detection of potential defaulters before credit approval  
 - Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving financial risk control  
-- Engineered predictive features using **WoE and IV**, enhancing model interpretability and risk separation  
-- Handled severe class imbalance using **SMOTE-Tomek**, improving minority class detection without information loss  
-- Selected **Random Forest** for its strong generalisation and optimal balance between recall and precision  
-- Evaluated performance using **ROC-AUC, Gini, and KS**, aligning with industry-standard credit risk evaluation metrics  
-- Implemented **PSI (0.39), CSI monitoring, and Out-of-Time (OOT) validation** to detect data drift and ensure production reliability  
-- Designed a scalable real-time inference system using **AWS SageMaker, FastAPI, and Streamlit**  
+- **Enabled risk-based lending decisions**, allowing rejection of high-risk applicants or application of stricter credit terms, while fast-tracking low-risk customers  
+- Applied **WoE-IV feature engineering** to enhance interpretability and risk-based segmentation  
+- Addressed severe class imbalance using **SMOTE-Tomek**, improving detection of minority (high-risk) customers  
+- Selected **Random Forest** for its robustness and optimal balance between recall, precision, and generalisation  
+- Evaluated model performance using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC**, aligned with industry credit risk standards  
+- Implemented **PSI (0.39), CSI monitoring, and OOT validation** to detect data drift and ensure model stability  
+- Designed a scalable real-time inference pipeline using **AWS SageMaker, FastAPI, and Streamlit**  
 - Enabled experiment tracking and model lifecycle management using **MLflow on AWS EC2**
 
-> 💡 This project leverages real-world credit data to predict bad debt risk, using industry-standard credit risk modeling techniques followed in fintech and banking systems.
+> This project applies industry-standard credit risk modeling techniques to predict bad debt risk and support risk-aware lending decisions.
 
 -----------------
 
