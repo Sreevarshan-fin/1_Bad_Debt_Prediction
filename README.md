@@ -17,7 +17,7 @@
   <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
   <img src="https://img.shields.io/badge/WoE%20%2F%20IV-6A0DAD?style=flat-square"/>
   <img src="https://img.shields.io/badge/PSI%20%2F%20CSI-D32F2F?style=flat-square"/>
-</p>>
+</p>
 
 
 ---
