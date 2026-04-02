@@ -209,6 +209,8 @@ Evaluated using key **credit risk metrics**:
 Maintained consistent performance across **train**, **test**, and **OOT datasets**.
 Threshold tuning (e.g., **0.3**) used to prioritise **risk detection**.
 
+**Accuracy was not used as the primary metric due to class imbalance.  Business risk is better captured through Recall, KS, and Gini.**
+
 👉  **Insight:** Model is optimised for **high recall**, ensuring early detection of **risky customers**.
 
 </details>
