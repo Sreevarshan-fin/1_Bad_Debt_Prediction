@@ -306,7 +306,7 @@ This architecture enables scalable real-time predictions by separating key compo
 
 -------
 
-⚡ **Streamlit UI**
+### **Streamlit UI**
 
 
 ![UI](assets/streamlit_ui.png)
