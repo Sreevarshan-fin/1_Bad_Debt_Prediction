@@ -1,15 +1,11 @@
 <h1 align="center">Bad Debt Prediction</h1>
 
 <p align="center">
-  <b>A production-oriented credit risk system designed to minimize bad debt and enable risk-adjusted lending decisions in BNPL environments</b>
+  <b>Production-oriented credit risk system to minimize bad debt and support risk-adjusted lending decisions in BNPL environments</b>
 </p>
 
 <p align="center">
-  🚀 End-to-End Credit Risk Modeling System for Detecting High-Risk Borrowers and Reducing Financial Losses
-</p>
-
-<p align="center">
-  Built an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
+  🚀 Built using an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
 </p>
 
 <p align="center">
