@@ -229,6 +229,22 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 * Prioritised **KS (34%)**, **Gini (0.48)**, and **Recall** over accuracy, aligning with real-world **credit risk cost considerations**
 * Implemented **PSI/CSI monitoring** to detect data drift, enabling **proactive recalibration** and sustained model performance
 
+## 🧠 Business Decision Framework
+
+This model supports risk-based lending decisions:
+
+- **High-risk customers:** Reject or approve with stricter terms (higher interest, lower limits)  
+- **Low-risk customers:** Fast-track approvals with better credit offers  
+
+### 🎯 Decision Strategy
+- Optimized for **Recall (60%)** to identify high-risk borrowers  
+- Threshold tuned (~0.3) to minimize financial risk from missed defaulters  
+
+### ⚖️ Trade-Off
+- Slight increase in false positives (manual review)  
+- Significant reduction in bad debt risk  
+
+👉 Enables data-driven, risk-aware credit decision-making
 
 ---
 
