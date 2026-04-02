@@ -57,7 +57,7 @@ This project builds a **machine learning classification model** to label custome
 
 ----
 
-## 📈 Business Impact & Decision Framework
+## 💹 Business Impact & Decision Framework
 
 - Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
 - Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
