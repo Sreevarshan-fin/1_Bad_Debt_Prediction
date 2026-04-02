@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  🚀 Built using an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
+   Built using an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
 </p>
 
 <p align="center">
