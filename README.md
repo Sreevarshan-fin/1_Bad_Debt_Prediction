@@ -59,6 +59,32 @@ This project builds a **machine learning classification model** to label custome
 
 ----
 
+## 📈 Business Impact & Decision Framework
+
+- Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
+- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
+
+**Decision Strategy**
+
+- Model optimized for **high recall** to prioritize detection of risky customers  
+- Threshold (~0.3) tuned to minimize false negatives and reduce financial loss  
+
+**Business Trade-Off**
+- Accepts a controlled increase in false positives (manual review effort)  
+- Significantly reduces bad debt risk from undetected defaulters  
+
+**Decision Enablement**
+- High-risk customers: Reject or approve with stricter terms (higher interest, lower limits)  
+- Low-risk customers: Fast-track approvals with better credit offers  
+
+**Model Reliability**
+- Evaluated using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC** aligned with credit risk standards  
+- Implemented **PSI/CSI monitoring with OOT validation** ensuring model stability in production
+
+Ensures data-driven, risk-aware, and scalable lending decisions.
+
+-----
+
 ## 📊 Data Overview
 
 Real-world credit dataset (~100K customers, 99 features) collected under NDA, structured based on key risk dimensions:
@@ -223,32 +249,6 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-## 📈 Business Impact & Decision Framework
-
-- Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
-- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
-
-**Decision Strategy**
-
-- Model optimized for **high recall** to prioritize detection of risky customers  
-- Threshold (~0.3) tuned to minimize false negatives and reduce financial loss  
-
-**Business Trade-Off**
-- Accepts a controlled increase in false positives (manual review effort)  
-- Significantly reduces bad debt risk from undetected defaulters  
-
-**Decision Enablement**
-- High-risk customers: Reject or approve with stricter terms (higher interest, lower limits)  
-- Low-risk customers: Fast-track approvals with better credit offers  
-
-**Model Reliability**
-- Evaluated using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC** aligned with credit risk standards  
-- Implemented **PSI/CSI monitoring with OOT validation** ensuring model stability in production
-
-Ensures data-driven, risk-aware, and scalable lending decisions.
-
----
-
 
 ## 🧰 Tech Stack
 
@@ -259,62 +259,7 @@ Ensures data-driven, risk-aware, and scalable lending decisions.
 * **Feature Engineering & Techniques:** WoE, Information Value (IV), SMOTE-Tomek, OOT Validation
 * **Evaluation Techniques:** KS Statistic, Gini Coefficient, ROC-AUC, with prioritisation of Recall to ensure effective detection of high-risk customers
 
-
-
-----
-
-
-## ⚡ Challenges
-
-- **Severe class imbalance** — bad customers were a tiny minority, requiring careful resampling strategy selection and metric prioritisation
-- **Misleading accuracy** — shifted evaluation entirely toward recall, KS, and Gini to reflect true business risk
-- **Feature selection complexity** — noisy, correlated, and leakage-prone variables addressed using WoE/IV filtering and stability checks
-- **Recall vs precision trade-off** — SMOTE-Tomek improved bad customer detection but increased overfitting risk in some models, requiring careful validation
-
----
-
-##  🚀 Future Improvements
-
-* Integrate **Evidently AI** for automated monitoring of **data drift, model performance, and data quality** in production.
-  *(Currently, drift is monitored using **PSI and CSI with OOT validation**; future work will extend this to real-time production data.)*
-
-* Implement **A/B testing** to compare multiple models in real-world scenarios and select the best-performing model based on **business metrics**
-
-* Introduce a **dynamic decision threshold** based on **business risk appetite**, replacing a fixed cutoff
-
-* Build a **feedback loop** using actual repayment/default outcomes to continuously improve model performance over time
-
-
----
-
-## 🔬 Experiment Tracking & Model Lifecycle (MLflow on AWS)
-
-### 🔹 MLflow Tracking Server (AWS EC2)
-
-Deployed an **MLflow Tracking Server on AWS EC2** to centrally log experiments, parameters, metrics, and artifacts.
-
-![MLflow EC2](assets/EC2_Instance.png)
-
----
-
-### 🔹 Experiment Run Tracking
-
-Tracked multiple model runs with **parameters and performance metrics**, enabling reproducible comparison and model selection.
-
-![Experiment Tracking](assets/Experimental_Tracking_Table_EC2.png)
-
-![Model Comparison](assets/Comparision_2.png)
-
----
-
-### 🔹 Model Registry
-
-Registered and versioned models using **MLflow Model Registry** for structured lifecycle management and deployment readiness.
-
-![Model Registry](assets/Model_Register.png)
-
-
--------------------
+---------
 
 ## 🌩️ Deployment
 
@@ -369,5 +314,60 @@ This architecture enables scalable real-time predictions by separating key compo
 ![UI](assets/streamlit_ui.png)
 
 -----------
+
+
+
+## ⚡ Challenges
+
+- **Severe class imbalance** — bad customers were a tiny minority, requiring careful resampling strategy selection and metric prioritisation
+- **Misleading accuracy** — shifted evaluation entirely toward recall, KS, and Gini to reflect true business risk
+- **Feature selection complexity** — noisy, correlated, and leakage-prone variables addressed using WoE/IV filtering and stability checks
+- **Recall vs precision trade-off** — SMOTE-Tomek improved bad customer detection but increased overfitting risk in some models, requiring careful validation
+
+---
+
+##  🚀 Future Improvements
+
+* Integrate **Evidently AI** for automated monitoring of **data drift, model performance, and data quality** in production.
+  *(Currently, drift is monitored using **PSI and CSI with OOT validation**; future work will extend this to real-time production data.)*
+
+* Implement **A/B testing** to compare multiple models in real-world scenarios and select the best-performing model based on **business metrics**
+
+* Introduce a **dynamic decision threshold** based on **business risk appetite**, replacing a fixed cutoff
+
+* Build a **feedback loop** using actual repayment/default outcomes to continuously improve model performance over time
+
+
+---
+
+## 🔬 Experiment Tracking & Model Lifecycle (MLflow on AWS)
+
+### 🔹 MLflow Tracking Server (AWS EC2)
+
+Deployed an **MLflow Tracking Server on AWS EC2** to centrally log experiments, parameters, metrics, and artifacts.
+
+![MLflow EC2](assets/EC2_Instance.png)
+
+---
+
+### 🔹 Experiment Run Tracking
+
+Tracked multiple model runs with **parameters and performance metrics**, enabling reproducible comparison and model selection.
+
+![Experiment Tracking](assets/Experimental_Tracking_Table_EC2.png)
+
+![Model Comparison](assets/Comparision_2.png)
+
+---
+
+### 🔹 Model Registry
+
+Registered and versioned models using **MLflow Model Registry** for structured lifecycle management and deployment readiness.
+
+![Model Registry](assets/Model_Register.png)
+
+
+-------------------
+
 
 
