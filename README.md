@@ -222,29 +222,28 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ---
 
-## 📈 Business Impact
+## 📈 Business Impact & Decision Framework
 
-* Achieved **60% recall** on high-risk customers, identifying **3 out of 5 defaulters** before credit approval
-* Reduced potential bad-debt exposure from **₹1M to ~₹0.4M** through model-driven risk decisions *(scenario-based estimate)*
-* Prioritised **KS (34%)**, **Gini (0.48)**, and **Recall** over accuracy, aligning with real-world **credit risk cost considerations**
-* Implemented **PSI/CSI monitoring** to detect data drift, enabling **proactive recalibration** and sustained model performance
+- Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
+- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
+- 
+### Decision Strategy
+- Model optimized for **high recall** to prioritize detection of risky customers  
+- Threshold (~0.3) tuned to minimize false negatives and reduce financial loss  
 
-## 🧠 Business Decision Framework
+### Business Trade-Off
+- Accepts a controlled increase in false positives (manual review effort)  
+- Significantly reduces bad debt risk from undetected defaulters  
 
-This model supports risk-based lending decisions:
+### Decision Enablement
+- High-risk customers: Reject or approve with stricter terms (higher interest, lower limits)  
+- Low-risk customers: Fast-track approvals with better credit offers  
 
-- **High-risk customers:** Reject or approve with stricter terms (higher interest, lower limits)  
-- **Low-risk customers:** Fast-track approvals with better credit offers  
+### Model Reliability
+- Evaluated using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC** aligned with credit risk standards  
+- Implemented **PSI/CSI monitoring with OOT validation** to ensure stability under data drift  
 
-### 🎯 Decision Strategy
-- Optimized for **Recall (60%)** to identify high-risk borrowers  
-- Threshold tuned (~0.3) to minimize financial risk from missed defaulters  
-
-### ⚖️ Trade-Off
-- Slight increase in false positives (manual review)  
-- Significant reduction in bad debt risk  
-
-👉 Enables data-driven, risk-aware credit decision-making
+Ensures data-driven, risk-aware, and scalable lending decisions.
 
 ---
 
