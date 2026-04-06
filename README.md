@@ -3,7 +3,6 @@
 <p align="center">
   <b>Production-oriented credit risk system to minimize bad debt and support risk-adjusted lending decisions in BNPL environments</b>
 </p>
-
 <p align="center">
    Built using an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
 </p>
