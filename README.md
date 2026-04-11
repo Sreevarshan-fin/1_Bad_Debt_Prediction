@@ -73,7 +73,7 @@ To simulate this, a simple rule-based model was created:
 ### Baseline vs ML Impact
 Before ML, credit decisions relied on manual rules based on factors like credit score and past defaults, often resulting in higher bad debt due to limited risk assessment.
 
-Compared to this:
+**Compared to this:**
 - Rule-based approach had lower detection of high-risk customers  
 - ML model significantly improved early risk detection and reduced financial loss 
 
