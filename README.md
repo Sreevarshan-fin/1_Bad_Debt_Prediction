@@ -62,6 +62,7 @@ To simulate this, a simple rule-based model was created:
 - May misclassify risky or safe customers  
 
 </details>
+
 ----
 
 ## 💹 Business Impact & Decision Framework
