@@ -260,14 +260,14 @@ Currently, drift is monitored using **PSI and CSI with OOT validation**; future 
 
 ### SageMaker Deployment (Design & Implementation)
 
-Designed a scalable model deployment pipeline using AWS SageMaker for real-time inference.
+Designed and validated a scalable deployment pipeline using AWS SageMaker for real-time inference.
 
 * Uploaded trained model artifacts to Amazon S3
-* Developed custom inference script for prediction handling
-* Configured SageMaker model and deployed a real-time endpoint
-* Tested endpoint locally using SageMaker SDK
+* Developed a custom inference script for prediction handling
+* Configured and deployed a real-time SageMaker endpoint using the SDK
+* Successfully tested end-to-end inference using the SageMaker runtime client
 
-**Note:** Full deployment was designed and partially implemented; continuous hosting was not maintained due to cost constraints.
+**Note:** The full deployment pipeline was implemented and validated; the endpoint was not kept live due to cost constraints.
 
 ---
 
