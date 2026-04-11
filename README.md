@@ -45,6 +45,23 @@ Credit Business Operating **Buy Now, Pay Later (BNPL)** faces a trade-off betwee
 
 This project builds a **machine learning classification model** to label customers as **Good (0) / Bad (1)**, enabling **data-driven credit decisions**.
 
+<details>
+<summary><b>Baseline (Manual Credit Policy Simulation)</b></summary>
+
+Before ML, credit decisions were made using manual rules based on key factors like credit score and past defaults.
+
+To simulate this, a simple rule-based model was created:
+
+- Reject if credit score < 600  
+- Reject if past defaults ≥ 2  
+- Approve otherwise  
+
+### ⚠️ Limitations
+- Fixed rules lack flexibility  
+- Cannot capture complex relationships  
+- May misclassify risky or safe customers  
+
+</details>
 ----
 
 ## 💹 Business Impact & Decision Framework
