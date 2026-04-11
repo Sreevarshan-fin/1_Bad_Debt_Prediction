@@ -48,7 +48,7 @@ This project builds a **machine learning classification model** to label custome
 <details>
 <summary><b>Baseline (Manual Credit Policy Simulation)</b></summary>
 
-Before ML, credit decisions were made using manual rules based on key factors like credit score and past defaults.
+Before ML, credit decisions relied on manual rules using factors like credit score and past defaults, often resulting in higher bad debt due to limited and rigid risk assessment.
 
 To simulate this, a simple rule-based model was created:
 
