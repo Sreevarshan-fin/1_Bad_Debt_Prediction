@@ -276,16 +276,13 @@ Designed and validated a scalable deployment pipeline using AWS SageMaker for re
 ```text id="f9t2b8"
 User
   ↓
-Streamlit App (EC2)  →  UI & Input Handling
+Streamlit App (UI & Input Handling)
   ↓
-FastAPI Backend     →  Validation & API Processing
+SageMaker Endpoint (Real-time Inference)
   ↓
-SageMaker Endpoint  →  Real-time Inference
-  ↓
-Prediction Response →  Returned to UI
+Prediction Response → Returned to UI
 
-
-Amazon S3 → Model Storage & Versioning (used during deployment)
+Amazon S3 → Model Storage & Versioning
 ```
 
 ---
