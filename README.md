@@ -68,7 +68,14 @@ To simulate this, a simple rule-based model was created:
 ## 💹 Business Impact & Decision Framework
 
 - Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
-- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control  
+- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
+
+### Baseline vs ML Impact
+Before ML, credit decisions relied on manual rules based on factors like credit score and past defaults, often resulting in higher bad debt due to limited risk assessment.
+
+Compared to this:
+- Rule-based approach had lower detection of high-risk customers  
+- ML model significantly improved early risk detection and reduced financial loss 
 
 ### Decision Strategy
 - Model optimized for **high recall** to prioritize detection of high-risk customers  
