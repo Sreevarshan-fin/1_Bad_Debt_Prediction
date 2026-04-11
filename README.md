@@ -1,11 +1,11 @@
 <h1 align="center">Bad Debt Prediction</h1>
 
 <p align="center">
-  <b>Production-oriented credit risk system to minimize bad debt and support risk-adjusted lending decisions in BNPL environments</b>
+  <b>End-to-end machine learning system for predicting credit risk in BNPL environments
+Designed to identify high-risk borrowers and reduce bad debt exposure
+Enables data-driven, risk-aware lending decisions at scale</b>
 </p>
-<p align="center">
-   Built using an end-to-end machine learning pipeline with risk-based feature engineering, recall-optimized modeling, and drift monitoring
-</p>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
