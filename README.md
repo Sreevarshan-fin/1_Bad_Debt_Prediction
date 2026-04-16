@@ -296,29 +296,40 @@ Designed and validated a scalable deployment pipeline using AWS SageMaker for re
 * Configured and deployed a real-time SageMaker endpoint using the SDK
 * Successfully tested end-to-end inference using the SageMaker runtime client
 
-**Note:** Designed and validated a scalable deployment pipeline using AWS SageMaker; endpoint tested but not kept live due to cost constraints
+**Note:** Designed and validated a scalable deployment pipeline using AWS SageMaker; endpoint tested but not kept live due to cost constraints.
 
-### 🔄 MLOps Pipeline & Lifecycle
+----------
 
-This system is designed with an end-to-end ML lifecycle to ensure scalability and production readiness.
+## 🔄 MLOps Pipeline & Lifecycle
 
-### Pipeline Overview:
+This system is designed with an end-to-end ML lifecycle, with deployment and monitoring components implemented and retraining strategy defined for production scalability.
+
+#### Pipeline Overview:
 1. Data Ingestion → Raw credit data collected and validated  
 2. Data Processing → Feature engineering (WoE, IV)  
 3. Model Training → Multiple models evaluated using MLflow  
 4. Model Selection → Best model registered in MLflow Model Registry  
-5. Deployment → Model deployed via AWS SageMaker endpoint  
-6. Monitoring → PSI/CSI used for drift detection  
-7. Retraining → Triggered when drift exceeds threshold  
+5. Deployment → Model deployed via AWS SageMaker endpoint (tested)  
+6. Monitoring → PSI/CSI with OOT validation used to detect data drift  
 
-### 🔁 Retraining Strategy
+#### 🔁 Retraining Strategy (Planned)
+
 - PSI > 0.2 → Warning  
 - PSI > 0.3 → Retraining required  
 
-### 📦 Model Versioning
+Retraining pipeline is designed to:
+- Re-train model on updated data  
+- Validate using KS, Gini  
+- Register new version in MLflow  
+- Deploy updated model  
+
+(Current implementation includes monitoring; retraining automation is planned.)
+
+#### Model Versioning
+
 - Experiments tracked using MLflow  
 - Best model versioned in Model Registry  
-- Enables reproducibility and rollback
+- Ensures reproducibility and version control
   
 ---
 
