@@ -24,7 +24,7 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 
 - Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers  
 - Achieved **60% recall**, enabling early detection of defaulters before credit approval  
-- Reduced estimated bad-debt exposure by ~60%, improving portfolio risk control  
+- Estimated a ~60% reduction in bad-debt exposure through model-driven decision simulation, improving portfolio risk control. 
 - Enabled risk-based lending decisions by identifying high-risk applicants for rejection or stricter terms,fast-tracking low-risk customers 
 - Applied WoE-IV feature engineering and SMOTE-Tomek resampling to improve interpretability and detection of high-risk customers  
 - Selected **Random Forest** for its robustness and optimal balance between recall, precision, and generalisation  
