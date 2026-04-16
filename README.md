@@ -22,7 +22,7 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 ---
 ## 🚀 Key Highlights
 
-- Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers  
+- Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers
 - Achieved **60% recall** for early detection of high-risk borrowers
 - Demonstrated potential reduction in bad-debt exposure through model-driven credit decision simulation
 - Enabled risk-based lending decisions by identifying high-risk applicants for rejection or stricter terms,fast-tracking low-risk customers 
@@ -395,19 +395,19 @@ This architecture enables scalable real-time predictions by separating key compo
 
 ---
 
-## 🔬 Experiment Tracking & Model Lifecycle (MLflow on AWS)
+## 🔬 Experiment Tracking & Model Registry (MLflow on AWS)
 
-### 🔹 MLflow Tracking Server (AWS EC2)
 
-Deployed an **MLflow Tracking Server on AWS EC2** to centrally log experiments, parameters, metrics, and artifacts.
+#### 🔹 MLflow Tracking Server (AWS EC2)
+Deployed an MLflow Tracking Server on AWS EC2 to log experiments, parameters, metrics, and artifacts.
+
 
 ![MLflow EC2](assets/EC2_Instance.png)
 
 ---
 
-### 🔹 Experiment Run Tracking
-
-Tracked multiple model runs with **parameters and performance metrics**, enabling reproducible comparison and model selection.
+#### 🔹 Experiment Run Tracking
+Tracked multiple model runs with parameters and performance metrics, enabling reproducible comparison and model selection.
 
 ![Experiment Tracking](assets/Experimental_Tracking_Table_EC2.png)
 
@@ -415,9 +415,8 @@ Tracked multiple model runs with **parameters and performance metrics**, enablin
 
 ---
 
-### 🔹 Model Registry
-
-Registered and versioned models using **MLflow Model Registry** for structured lifecycle management and deployment readiness.
+#### 🔹 Model Registry
+Registered and versioned models using MLflow Model Registry for structured model management and version control.
 
 ![Model Registry](assets/Model_Register.png)
 
