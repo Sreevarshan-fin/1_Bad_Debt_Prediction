@@ -23,8 +23,8 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 ## 🚀 Key Highlights
 
 - Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers  
-- Achieved **60% recall** in detecting high-risk borrowers, enabling early identification of defaulters and demonstrating a potential **~60% reduction** in bad-debt
-  exposure through simulation-based credit risk decision optimization.”
+- Achieved 60% recall in detecting high-risk borrowers, enabling early identification of defaulters and demonstrating a potential ~60% reduction in bad-debt
+  exposure through simulation-based credit risk decision optimization.
 - Enabled risk-based lending decisions by identifying high-risk applicants for rejection or stricter terms,fast-tracking low-risk customers 
 - Applied WoE-IV feature engineering and SMOTE-Tomek resampling to improve interpretability and detection of high-risk customers  
 - Selected **Random Forest** for its robustness and optimal balance between recall, precision, and generalisation  
@@ -298,6 +298,28 @@ Designed and validated a scalable deployment pipeline using AWS SageMaker for re
 
 **Note:** Designed and validated a scalable deployment pipeline using AWS SageMaker; endpoint tested but not kept live due to cost constraints
 
+### 🔄 MLOps Pipeline & Lifecycle
+
+This system is designed with an end-to-end ML lifecycle to ensure scalability and production readiness.
+
+### Pipeline Overview:
+1. Data Ingestion → Raw credit data collected and validated  
+2. Data Processing → Feature engineering (WoE, IV)  
+3. Model Training → Multiple models evaluated using MLflow  
+4. Model Selection → Best model registered in MLflow Model Registry  
+5. Deployment → Model deployed via AWS SageMaker endpoint  
+6. Monitoring → PSI/CSI used for drift detection  
+7. Retraining → Triggered when drift exceeds threshold  
+
+### 🔁 Retraining Strategy
+- PSI > 0.2 → Warning  
+- PSI > 0.3 → Retraining required  
+
+### 📦 Model Versioning
+- Experiments tracked using MLflow  
+- Best model versioned in Model Registry  
+- Enables reproducibility and rollback
+  
 ---
 
 ## 🏗️ System Architecture
