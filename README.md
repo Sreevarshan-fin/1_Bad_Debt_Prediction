@@ -68,8 +68,8 @@ To simulate this, a simple rule-based model was created:
 ## 💹 Business Impact & Decision Framework
 
 - Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
-- Reduced estimated bad-debt exposure from **₹1M to ~₹0.4M**, improving portfolio risk control
-
+- Simulated reduction in bad-debt exposure from ₹1M to ₹0.4M based on model-driven decision policy
+  
 #### - Baseline vs ML Impact
 Before ML, credit decisions relied on manual rules based on factors like credit score and past defaults, often resulting in higher bad debt due to limited risk assessment.
 
@@ -231,7 +231,9 @@ Evaluated using key **credit risk metrics**:
 Maintained consistent performance across **train**, **test**, and **OOT datasets**.
 Threshold tuning (e.g., **0.3**) used to prioritise **risk detection**.
 
-**Accuracy was not used as the primary metric due to class imbalance.  Business risk is better captured through Recall, KS, and Gini.**
+Accuracy was not used as the primary metric due to class imbalance. Business risk is better captured through Recall, KS, and Gini.
+
+**Precision is intentionally lower due to recall prioritization. In credit risk, false positives lead to additional manual review costs, whereas false negatives result in direct financial loss. The model is therefore optimized to minimize high-cost errors (false negatives).**
 
 👉  **Insight:** Model is optimised for **high recall**, ensuring early detection of **risky customers**.
 
@@ -258,12 +260,14 @@ Used **feature importance** to identify key drivers of default.
 
 Used **PSI** and **CSI** with **Out-of-Time (OOT) validation** to track data drift and ensure model stability.
 
-* **PSI (0.39)** → Significant shift in data distribution
-* **CSI (Stable)** → Feature importance remains consistent
+* PSI (0.39) → Significant shift in data distribution
+* CSI (Stable) → Feature importance remains consistent
+
+
 
 Currently, drift is monitored using **PSI and CSI with OOT validation**; future enhancements will extend this to **real-time production monitoring** using tools like **Evidently AI**.
 
-👉  **Insight:** Indicates **concept drift**, requiring **monitoring**, **recalibration**, and **periodic retraining**.
+👉  **Insight:** **The high PSI value indicates significant data drift, suggesting that the model may degrade over time. This requires periodic retraining, monitoring, and recalibration before full-scale production deployment.**
 
 </details>
 
@@ -292,7 +296,7 @@ Designed and validated a scalable deployment pipeline using AWS SageMaker for re
 * Configured and deployed a real-time SageMaker endpoint using the SDK
 * Successfully tested end-to-end inference using the SageMaker runtime client
 
-**Note:** The full deployment pipeline was implemented and validated; the endpoint was not kept live due to cost constraints.
+**Note:** Designed and validated a scalable deployment pipeline using AWS SageMaker; endpoint tested but not kept live due to cost constraints
 
 ---
 
@@ -345,7 +349,7 @@ This architecture enables scalable real-time predictions by separating key compo
 
 ##  🚀 Future Improvements
 
-* Integrate **Evidently AI** for automated monitoring of **data drift, model performance, and data quality** in production.
+* Implement automated retraining pipelines triggered by drift thresholds (PSI-based alerts)
   
   *(Currently, drift is monitored using **PSI and CSI with OOT validation**; future work will extend this to real-time production data.)*
 
