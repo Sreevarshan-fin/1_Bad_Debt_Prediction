@@ -77,7 +77,8 @@ To simulate this, a simple rule-based model was created:
 
 ## 💹 Business Impact & Decision Framework
 
-> This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation through early detection of high-risk customers
+> This model improves credit approval by identifying high-risk customers early.It helps reduce bad debt by preventing risky approvals before they happen.The system prioritizes risk
+> reduction over approval speed, accepting small operational costs to avoid large financial losses
 
 
 ####  Business Impact
@@ -93,17 +94,17 @@ To simulate this, a simple rule-based model was created:
 * **Optimized threshold (~0.3)** based on recall–precision trade-off, prioritizing reduction of high-cost false negatives and improving detection of high-risk customers
 
 
-#### Business Trade-Off & Cost Logic
+#### Risk & Cost Strategy  *(cleaner heading)*
 
-* Accepts a **controlled increase in false positives** (manual review effort)
-* Minimizes **false negatives**, which carry significantly higher financial impact
+* Allows a **controlled increase in false positives** (manual review effort)
+* Strong focus on **reducing false negatives**, which have higher financial impact
 
 | Error Type     | Business Impact                |
 | -------------- | ------------------------------ |
 | False Negative | High financial loss (critical) |
 | False Positive | Lower cost (review / delay)    |
 
-➡️ Strategy prioritizes **minimizing high-cost errors over overall accuracy**
+➡️ Focus is on **minimizing high-cost risk**, not just improving accuracy
 
 
 #### Decision Enablement
@@ -112,18 +113,36 @@ To simulate this, a simple rule-based model was created:
 * **Low-risk customers** → Fast-track approvals with better offers, improving customer experience
 
 
-#### Model Reliability
+#### Model Performance & Reliability
 
+* **Recall:** 60%
+* **ROC-AUC:** 0.74
 * **KS Score:** 34%
-* **Gini Coefficient:** 0.48
-* **ROC-AUC:** Strong discriminatory performance
+* **Gini:** 0.48
+* **Overfitting:** Not observed
 
-✔️ Metrics align with **industry standards for credit risk modeling**
+✔️ Strong ability to **separate good vs bad customers**
+✔️ Metrics aligned with **credit risk standards**
 
-✔️ Ensures **reliable, scalable, and data-driven decision-making**
+#### Monitoring & Stability
+
+* Used **PSI and CSI with Out-of-Time (OOT) validation** to track model stability
+
+* **PSI (0.39):** Indicates **significant data drift**
+
+* **CSI:** Stable → feature importance remains consistent
+
+* Current setup supports **drift detection**
+
+* Future plan: **real-time monitoring** (e.g., Evidently AI)
 
 
-> The model is designed to **reduce bad-debt risk by prioritizing early detection**, accepting minor operational costs to avoid significant financial losses.
+#### 👉 Key Insight
+
+> High PSI suggests the model may degrade over time.
+> Regular **monitoring, retraining, and recalibration** are required before full-scale production deployment.
+
+
 
 
 -----
