@@ -188,7 +188,7 @@ Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**
 
 > The combination of **CR22 selection, WoE transformation, and IV-based filtering** produced **high-quality, risk-aligned features**, improving **interpretability, class separation, and overall model performance**.
 
-<details>
+</details>
   
 ---
 
