@@ -160,14 +160,14 @@ Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**
 <summary><b>2. Feature Engineering</b></summary>
 
 
-### 🔸 CR21 vs CR22 Analysis
+#### 🔸 CR21 vs CR22 Analysis
 
 * Compared **CR21 and CR22**, two **credit bureau score providers**, using box plots to analyze **median separation, distribution spread, and outliers** across good vs bad customers
 * **CR22 showed stronger class separation** with reduced overlap, making it a more reliable predictor of default risk
 
 ---
 
-### 🔸 WoE–IV Feature Engineering & Selection
+#### 🔸 WoE–IV Feature Engineering & Selection
 
 * Applied **Weight of Evidence (WoE)** binning to transform variables into **monotonic, risk-aligned categories**, improving interpretability and ensuring a stable relationship with default probability
 
@@ -184,7 +184,7 @@ Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**
 
 ---
 
-### 👉 Key Insight
+👉 **Key Insight**
 
 > The combination of **CR22 selection, WoE transformation, and IV-based filtering** produced **high-quality, risk-aligned features**, improving **interpretability, class separation, and overall model performance**.
 
