@@ -65,40 +65,59 @@ To simulate this, a simple rule-based model was created:
 
 ----
 
+Here’s a **documentation-ready version** (clean, slightly more formal, GitHub-friendly):
+
+---
+
 ## 💹 Business Impact & Decision Framework
 
-- Achieved **60% recall**, identifying **3 out of 5 defaulters** before credit approval, enabling early risk detection  
-- Simulated reduction in bad-debt exposure from **₹1M to ₹0.4M** based on model-driven decision policy  
+> This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation and reducing potential financial losses.
 
-#### 🔹 Baseline vs ML Impact
-Before ML, credit decisions relied on manual rules using limited factors such as credit score and past defaults, leading to higher bad debt due to rigid and incomplete risk assessment.
 
-**Compared to this:**
-- Rule-based approach had lower detection of high-risk customers  
-- ML model improved early risk detection and reduced potential financial loss  
+#### Business Impact
 
-#### 🔹 Decision Strategy
-- Model optimized for **high recall** to prioritize detection of high-risk customers  
-- Threshold (~0.3) selected based on recall–precision trade-off to minimize false negatives  
+* Achieved **60% recall**, identifying **3 out of 5 defaulters before approval**, improving early risk detection
+* Reduced simulated bad-debt exposure from **₹1M → ₹0.4M (~60% reduction)** using model-driven decision policies
 
-#### 🔹 Business Trade-Off
-- Accepts a controlled increase in false positives (manual review effort)  
-- Significantly reduces bad debt risk from undetected defaulters  
 
-#### 🔹 Cost Consideration
-- False Negative (missed defaulter): High financial loss  
-- False Positive (safe customer flagged): Opportunity loss / manual review cost  
+#### Why This Approach Works
 
-The model is optimized to minimize **high-cost errors (false negatives)**.
+* **High Recall Focus:** Missing a defaulter (false negative) leads to **direct financial loss**, so the model prioritizes detecting risky applicants
+* **ML over Rule-Based:** Traditional methods rely on limited variables, while ML leverages **multi-feature relationships** to capture complex risk patterns
+* **Optimized Threshold (~0.3):** Lower than the default (0.5) to **increase recall**, ensuring fewer high-risk customers are missed
 
-#### 🔹 Decision Enablement
-- High-risk customers → Reject or approve with stricter terms (higher interest, lower limits)  
-- Low-risk customers → Fast-track approvals with better credit offers  
 
-#### 🔹 Model Reliability
-- Evaluated using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC**, aligned with credit risk standards  
+#### Business Trade-Off & Cost Logic
 
-Ensures **data-driven, risk-aware, and scalable lending decisions**.
+* Accepts a **controlled increase in false positives** (manual review effort)
+* Minimizes **false negatives**, which carry significantly higher financial impact
+
+| Error Type     | Business Impact                |
+| -------------- | ------------------------------ |
+| False Negative | High financial loss (critical) |
+| False Positive | Lower cost (review / delay)    |
+
+➡️ Strategy prioritizes **minimizing high-cost errors over overall accuracy**
+
+
+#### Decision Enablement
+
+* **High-risk customers** → Reject or approve with stricter terms (higher interest, lower limits)
+* **Low-risk customers** → Fast-track approvals with better offers, improving customer experience
+
+
+#### Model Reliability
+
+* **KS Score:** 34%
+* **Gini Coefficient:** 0.48
+* **ROC-AUC:** Strong discriminatory performance
+
+✔️ Metrics align with **industry standards for credit risk modeling**
+✔️ Ensures **reliable, scalable, and data-driven decision-making**
+
+
+> The model is designed to **reduce bad debt by prioritizing early detection of high-risk customers**, accepting minor operational costs to avoid significant financial losses.
+
 
 -----
 
