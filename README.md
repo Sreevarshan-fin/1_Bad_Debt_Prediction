@@ -70,7 +70,7 @@ To simulate this, a simple rule-based model was created:
 > This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation and reducing potential financial losses.
 
 
-#### -Business Impact
+#### * Business Impact
 
 * Achieved **60% recall**, identifying **3 out of 5 defaulters before approval**, improving early risk detection
 * Reduced simulated bad-debt exposure from **₹1M → ₹0.4M (~60% reduction)** using model-driven decision policies
