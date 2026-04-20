@@ -65,10 +65,6 @@ To simulate this, a simple rule-based model was created:
 
 ----
 
-Here’s a **documentation-ready version** (clean, slightly more formal, GitHub-friendly):
-
----
-
 ## 💹 Business Impact & Decision Framework
 
 > This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation and reducing potential financial losses.
