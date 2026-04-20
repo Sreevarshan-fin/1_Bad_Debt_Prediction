@@ -26,7 +26,7 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 * Built an **end-to-end Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers and enable **data-driven credit decisions**
 
 * Achieved **60% recall**, detecting **3/5 defaulters before approval**, demonstrating a potential ~60% reduction in bad-debt exposure (₹1M → ₹0.4M) through model-driven decision simulation
-* 
+  
 * Designed a **risk-based decision framework (threshold ~0.3)** to minimize **high-cost errors (false negatives)**
 
 * Applied **WoE–IV feature engineering** for **risk-aligned transformation and feature selection**, improving interpretability and maintaining performance across models
