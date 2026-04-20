@@ -124,7 +124,7 @@ To simulate this, a simple rule-based model was created:
 ✔️ Strong ability to **separate good vs bad customers**
 ✔️ Metrics aligned with **credit risk standards**
 
-#### 🔸 Monitoring & Stability — Business Impact
+#### 🔸 Monitoring & Stability 
 
 * **PSI (0.39):** Customer behavior has shifted → risk of **wrong credit decisions**
 * **CSI Stable:** Core risk drivers still valid → model logic remains usable
@@ -312,11 +312,11 @@ Used **PSI** and **CSI** with **Out-of-Time (OOT) validation** to track data dri
 * PSI (0.39) → Significant shift in data distribution
 * CSI (Stable) → Feature importance remains consistent
 
-
+Requires periodic retraining using recent data to maintain decision accuracy.
 
 Currently, drift is monitored using **PSI and CSI with OOT validation**; future enhancements will extend this to **real-time production monitoring** using tools like **Evidently AI**.
 
-👉  **Insight:** **High PSI indicates the model may degrade over time, requiring **continuous monitoring, periodic retraining, and threshold recalibration** to maintain reliable performance.**
+👉  **Insight:** **High PSI indicates the model may degrade over time, requiring **continuous monitoring, periodic retraining, and threshold recalibration** to maintain reliable performance. **
 
 </details>
 
