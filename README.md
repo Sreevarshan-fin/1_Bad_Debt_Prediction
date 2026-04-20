@@ -25,8 +25,8 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 
 * Built an **end-to-end Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers and enable **data-driven credit decisions**
 
-* Achieved **60% recall**, detecting **3/5 defaulters before approval**, resulting in **~60% reduction in bad-debt exposure (₹1M → ₹0.4M)** through **model-driven decision simulation**
-
+* Achieved **60% recall**, detecting **3/5 defaulters before approval**, demonstrating a potential ~60% reduction in bad-debt exposure (₹1M → ₹0.4M) through model-driven decision simulation
+* 
 * Designed a **risk-based decision framework (threshold ~0.3)** to minimize **high-cost errors (false negatives)**
 
 * Applied **WoE–IV feature engineering** for **risk-aligned transformation and feature selection**, improving interpretability and maintaining performance across models
@@ -77,7 +77,7 @@ To simulate this, a simple rule-based model was created:
 
 ## 💹 Business Impact & Decision Framework
 
-> This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation and reducing potential financial losses.
+> This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation through early detection of high-risk customers
 
 
 ####  Business Impact
@@ -90,7 +90,7 @@ To simulate this, a simple rule-based model was created:
 
 * **High Recall Focus:** Missing a defaulter (false negative) leads to **direct financial loss**, so the model prioritizes detecting risky applicants
 * **ML over Rule-Based:** Traditional methods rely on limited variables, while ML leverages **multi-feature relationships** to capture complex risk patterns
-* **Optimized Threshold (~0.3):** Lower than the default (0.5) to **increase recall**, ensuring fewer high-risk customers are missed
+* **Optimized threshold (~0.3)** based on recall–precision trade-off, prioritizing reduction of high-cost false negatives and improving detection of high-risk customers
 
 
 #### Business Trade-Off & Cost Logic
@@ -123,7 +123,7 @@ To simulate this, a simple rule-based model was created:
 ✔️ Ensures **reliable, scalable, and data-driven decision-making**
 
 
-> The model is designed to **reduce bad debt by prioritizing early detection of high-risk customers**, accepting minor operational costs to avoid significant financial losses.
+> The model is designed to **reduce bad-debt risk by prioritizing early detection**, accepting minor operational costs to avoid significant financial losses.
 
 
 -----
