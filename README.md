@@ -87,14 +87,14 @@ To simulate this, a simple rule-based model was created:
 * Reduced simulated bad-debt exposure from **₹1M → ₹0.4M (~60% reduction)** using model-driven decision policies
 
 
-####  Why This Approach Works
+#### Approach & Strategy
 
 * **High Recall Focus:** Missing a defaulter (false negative) leads to **direct financial loss**, so the model prioritizes detecting risky applicants
 * **ML over Rule-Based:** Traditional methods rely on limited variables, while ML leverages **multi-feature relationships** to capture complex risk patterns
 * **Optimized threshold (~0.3)** based on recall–precision trade-off, prioritizing reduction of high-cost false negatives and improving detection of high-risk customers
 
 
-#### Risk & Cost Strategy  *(cleaner heading)*
+#### Risk & Cost Strategy 
 
 * Allows a **controlled increase in false positives** (manual review effort)
 * Strong focus on **reducing false negatives**, which have higher financial impact
