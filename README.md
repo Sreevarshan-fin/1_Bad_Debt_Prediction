@@ -20,17 +20,30 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 
 
 ---
+Here’s your **final updated FULL version** with that phrase added naturally:
+
+---
+
 ## 🚀 Key Highlights
 
-- Developed an end-to-end **Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers
-- Achieved **60% recall** for early detection of high-risk borrowers
-- Demonstrated potential reduction in bad-debt exposure through model-driven credit decision simulation
-- Enabled risk-based lending decisions by identifying high-risk applicants for rejection or stricter terms,fast-tracking low-risk customers 
-- Applied WoE-IV feature engineering and SMOTE-Tomek resampling to improve interpretability and detection of high-risk customers  
-- Selected **Random Forest** for its robustness and optimal balance between recall, precision, and generalisation  
-- Evaluated model performance using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC**, aligned with industry credit risk standards  
-- Implemented **PSI (0.39), CSI monitoring, and OOT validation** to detect data drift and ensure model stability  
-- Designed a scalable real-time inference pipeline using **AWS SageMaker, FastAPI, and Streamlit**, with **MLflow on AWS EC2** for experiment tracking and model lifecycle management
+* Built an **end-to-end Bad Debt Prediction system** for BNPL lending to identify high-risk borrowers and enable **data-driven credit decisions**
+
+* Achieved **60% recall**, detecting **3/5 defaulters before approval**, resulting in **~60% reduction in bad-debt exposure (₹1M → ₹0.4M)** through **model-driven decision simulation**
+
+* Designed a **risk-based decision framework (threshold ~0.3)** to minimize **high-cost errors (false negatives)**
+
+* Applied **WoE–IV feature engineering** for **risk-aligned transformation and feature selection**, improving interpretability and maintaining performance across models
+
+* Addressed **severe class imbalance** using **SMOTE–Tomek**, improving minority class detection while preserving data distribution
+
+* Selected **Random Forest** for its optimal balance between **recall, stability, and generalisation**, avoiding overfitting
+
+* Evaluated model performance using **KS (34%)**, **Gini (0.48)**, and **ROC-AUC**, ensuring strong separation of good vs bad customers
+
+* Built a **model monitoring framework** using **PSI (0.39), CSI, and OOT validation** to detect data drift and ensure model stability
+
+* Designed a **scalable ML pipeline** using **AWS SageMaker, FastAPI, Streamlit, and MLflow (EC2)** for real-time inference, experiment tracking, and lifecycle management.
+
   
 -----------------
 
@@ -149,23 +162,23 @@ Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**
 <details>
 <summary><b>2. Feature Engineering</b></summary>
 
-Compared **CR21** and **CR22** bureau scores using **box plots**, analysing **median separation**, **distribution spread**, and **outliers** between good and bad customers.
-**CR22** showed clearer separation with reduced overlap, making it a more reliable predictor of default risk.
+Compared **CR21** and **CR22** bureau scores using **box plots**, evaluating **median separation**, **distribution spread**, and **outliers** across good vs. bad customers.  
+**CR22** demonstrated stronger class separation with reduced overlap, making it a more reliable predictor of default risk.
 
-Applied **Weight of Evidence (WoE)** binning to transform variables into **monotonic risk-based categories**, improving interpretability and alignment with credit risk behaviour.
+Applied **Weight of Evidence (WoE) binning** to convert variables into **monotonic, risk-aligned categories**, improving interpretability and ensuring a stable relationship with default probability.
 
-Performed **feature selection using Information Value (IV)**:
+Performed **feature selection using Information Value (IV)** to retain high-predictive variables:
 
-* **IV < 0.02** → Weak (**removed**)
-* **0.02 – 0.1** → Medium
-* **0.1 – 0.3** → Strong
-* **> 0.3** → Very strong
+- **IV < 0.02** → Not predictive (**excluded**)  
+- **0.02 – 0.1** → Weak  
+- **0.1 – 0.3** → Medium  
+- **> 0.3** → Strong  
 
-Removed **highly correlated features** to avoid **multicollinearity** and improve **model stability**.
+Eliminated **highly correlated features** to reduce **multicollinearity**, improving model robustness and generalization.
 
-👉  **Insight:** **CR22 + WoE + IV filtering** significantly improved **class separation**, **interpretability**, and overall **model performance**.
-
+👉 **Insight:** The combination of **CR22 selection, WoE transformation, and IV-based filtering** enhanced **class separability, feature interpretability, and model stability** across both :contentReference[oaicite:0]{index=0} and :contentReference[oaicite:1]{index=1}.
 </details>
+
 
 ---
 
