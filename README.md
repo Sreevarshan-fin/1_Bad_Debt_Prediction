@@ -109,6 +109,7 @@ To simulate this, a simple rule-based model was created:
 * **ROC-AUC:** Strong discriminatory performance
 
 ✔️ Metrics align with **industry standards for credit risk modeling**
+
 ✔️ Ensures **reliable, scalable, and data-driven decision-making**
 
 
