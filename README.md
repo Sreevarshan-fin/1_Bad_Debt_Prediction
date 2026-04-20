@@ -324,7 +324,7 @@ Used **PSI** and **CSI** with **Out-of-Time (OOT) validation** to track data dri
 
 Currently, drift is monitored using **PSI and CSI with OOT validation**; future enhancements will extend this to **real-time production monitoring** using tools like **Evidently AI**.
 
-👉  **Insight:** **The high PSI value indicates significant data drift, suggesting that the model may degrade over time. This requires periodic retraining, monitoring, and recalibration before full-scale production deployment.**
+👉  **Insight:** **High PSI indicates the model may degrade over time, requiring **continuous monitoring, periodic retraining, and threshold recalibration** to maintain reliable performance.**
 
 </details>
 
