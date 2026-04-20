@@ -70,20 +70,20 @@ To simulate this, a simple rule-based model was created:
 > This model enhances credit approval decisions by focusing on **early identification of high-risk customers**, enabling proactive risk mitigation and reducing potential financial losses.
 
 
-#### * Business Impact
+####  Business Impact
 
 * Achieved **60% recall**, identifying **3 out of 5 defaulters before approval**, improving early risk detection
 * Reduced simulated bad-debt exposure from **₹1M → ₹0.4M (~60% reduction)** using model-driven decision policies
 
 
-#### -Why This Approach Works
+####  Why This Approach Works
 
 * **High Recall Focus:** Missing a defaulter (false negative) leads to **direct financial loss**, so the model prioritizes detecting risky applicants
 * **ML over Rule-Based:** Traditional methods rely on limited variables, while ML leverages **multi-feature relationships** to capture complex risk patterns
 * **Optimized Threshold (~0.3):** Lower than the default (0.5) to **increase recall**, ensuring fewer high-risk customers are missed
 
 
-#### -Business Trade-Off & Cost Logic
+#### Business Trade-Off & Cost Logic
 
 * Accepts a **controlled increase in false positives** (manual review effort)
 * Minimizes **false negatives**, which carry significantly higher financial impact
@@ -96,13 +96,13 @@ To simulate this, a simple rule-based model was created:
 ➡️ Strategy prioritizes **minimizing high-cost errors over overall accuracy**
 
 
-#### -Decision Enablement
+#### Decision Enablement
 
 * **High-risk customers** → Reject or approve with stricter terms (higher interest, lower limits)
 * **Low-risk customers** → Fast-track approvals with better offers, improving customer experience
 
 
-#### -Model Reliability
+#### Model Reliability
 
 * **KS Score:** 34%
 * **Gini Coefficient:** 0.48
