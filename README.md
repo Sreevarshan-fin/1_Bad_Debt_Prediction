@@ -159,23 +159,34 @@ Performed **exploratory data analysis (EDA)** to analyse **repayment behaviour**
 <details>
 <summary><b>2. Feature Engineering</b></summary>
 
-Compared **CR21** and **CR22** bureau scores using **box plots**, evaluating **median separation**, **distribution spread**, and **outliers** across good vs. bad customers.  
-**CR22** demonstrated stronger class separation with reduced overlap, making it a more reliable predictor of default risk.
 
-Applied **Weight of Evidence (WoE) binning** to convert variables into **monotonic, risk-aligned categories**, improving interpretability and ensuring a stable relationship with default probability.
+### 🔸 CR21 vs CR22 Analysis
 
-Performed **feature selection using Information Value (IV)** to retain high-predictive variables:
+* Compared **CR21 and CR22**, two **credit bureau score providers**, using box plots to analyze **median separation, distribution spread, and outliers** across good vs bad customers
+* **CR22 showed stronger class separation** with reduced overlap, making it a more reliable predictor of default risk
 
-- **IV < 0.02** → Not predictive (**excluded**)  
-- **0.02 – 0.1** → Weak  
-- **0.1 – 0.3** → Medium  
-- **> 0.3** → Strong  
+---
 
-Eliminated **highly correlated features** to reduce **multicollinearity**, improving model robustness and generalization.
+### 🔸 WoE–IV Feature Engineering & Selection
 
-👉 **Insight:** The combination of **CR22 selection, WoE transformation, and IV-based filtering** enhanced **class separability, feature interpretability, and model stability** across both :contentReference[oaicite:0]{index=0} and :contentReference[oaicite:1]{index=1}.
-</details>
+* Applied **Weight of Evidence (WoE)** binning to transform variables into **monotonic, risk-aligned categories**, improving interpretability and ensuring a stable relationship with default probability
 
+* Performed **feature selection using Information Value (IV)** to retain high-predictive variables:
+
+  * **IV < 0.02** → Not predictive (excluded)
+  * **0.02 – 0.1** → Weak
+  * **0.1 – 0.3** → Medium
+  * **> 0.3** → Strong
+
+* Used **WoE–IV for feature selection** in a highly imbalanced dataset to identify variables with strong class separation
+
+* Removed **highly correlated features** to reduce multicollinearity and improve **model robustness and generalisation**
+
+---
+
+### 👉 Key Insight
+
+> The combination of **CR22 selection, WoE transformation, and IV-based filtering** produced **high-quality, risk-aligned features**, improving **interpretability, class separation, and overall model performance**.
 
 ---
 
