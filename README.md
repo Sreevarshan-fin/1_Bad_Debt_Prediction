@@ -46,6 +46,7 @@ Enables data-driven, risk-aware lending decisions at scale</b>
 
 ![Project Architecture](assets/projectworkflow.gif)
 
+![Project Architecture](assets/bdp_1.png)
 
 ----
 
